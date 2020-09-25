@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa8f244b-bd5c-4fa2-a6eb-5f8541654648" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/web_html/static/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/spring_blog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/spring_blog.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web_html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web_html/index.html" afterDir="false" />
     </list>
@@ -35,9 +37,9 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -48,11 +50,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1601017205151</updated>
-      <workItem from="1601017206234" duration="630000" />
+      <workItem from="1601017206234" duration="1223000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="792" y="-874" key="SettingsEditor" timestamp="1601018100676">
+      <screen x="-280" y="-1080" width="2560" height="1040" />
+    </state>
+    <state x="792" y="-874" key="SettingsEditor/0.0.1536.824/-280.-1080.2560.1040@-280.-1080.2560.1040" timestamp="1601018100676" />
   </component>
 </project>
