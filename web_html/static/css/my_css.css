@@ -8,6 +8,11 @@
     justify-content: center
 }
 
+
+.m_inline_block{
+    display: inline-block
+}
+
 a:hover{
     color: #35434c;
 }
