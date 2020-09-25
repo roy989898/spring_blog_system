@@ -37,6 +37,13 @@ a:active {
 
 }
 
+.blog_inf_small_text{
+    color: #2a2e32;
+
+}
+
+.tag{}
+
 .test1 {
     background: red;
 }
@@ -54,4 +61,9 @@ a:active {
 }
 
 
-
+img.small_img_icon_rounded {
+    width:15px;
+    height:15px;
+    object-fit:cover;
+    border-radius:50%;
+}
