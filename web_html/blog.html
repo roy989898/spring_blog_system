@@ -148,11 +148,14 @@
 
                 <div class="text-center mt-2 mb-3">
 
-                    <div class="btn btn-warning " type="button" data-toggle="modal" data-target="#exampleModalCenter">Like!</div>
+                    <div class="btn btn-warning " type="button" data-toggle="modal" data-target="#exampleModalCenter">
+                        Like!
+                    </div>
 
 
                     <!-- Modal -->
-                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
 
@@ -180,7 +183,6 @@
                         </div>
 
 
-
                     </div>
                     <div class="col-sm-3">
                         <div class="right_image_container">
@@ -191,7 +193,39 @@
             </div>
 
             <div class=" list-group-item">
-                message
+                <form action="*" method="post">
+
+                    <div class="form-group pt-2">
+
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                  placeholder="Please input message"></textarea>
+
+                    </div>
+
+
+                    <div class="row  pt-2">
+                        <div class="col-5">
+                            <div class="form-group ">
+
+                                <input type="text" class="form-control"
+                                       placeholder="Name">
+
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <div class="form-group">
+
+                                <input type="text" class="form-control"
+                                       placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <button type="submit" class="btn btn-primary">Post</button>
+                        </div>
+                    </div>
+
+
+                </form>
             </div>
         </div>
 
@@ -200,7 +234,6 @@
 
 
 </div>
-
 
 
 <!-- footer-->
