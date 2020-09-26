@@ -68,8 +68,8 @@ a:active {
 
 
 img.small_img_icon_rounded {
-    width: 15px;
-    height: 15px;
+    width: 35px;
+    height: 35px;
     object-fit: cover;
     border-radius: 50%;
 }
