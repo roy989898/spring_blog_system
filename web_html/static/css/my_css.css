@@ -2,6 +2,10 @@ body {
     /*background-image: url("../../static/images/b2.jpg");*/
 }
 
+.blog_text_color{
+    color: #4a4a4a;
+}
+
 .qr_code {
     height: 130px;
     width: 130px;
