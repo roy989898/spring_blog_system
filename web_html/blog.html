@@ -144,12 +144,26 @@
 
                 <div class="d-flex  flex-wrap mt-2">
                     <div class="btn btn-danger btn-sm p-1 m-1">Tag</div>
-
                 </div>
 
                 <div class="text-center mt-2 mb-3">
 
-                    <div class="btn btn-warning ">Like!</div>
+                    <div class="btn btn-warning " type="button" data-toggle="modal" data-target="#exampleModalCenter">Like!</div>
+
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+
+                                <div class="card">
+                                    <div class="center_image_container">
+                                        <img src="static/images/qr.png" class="rounded qr_code  "/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
 
@@ -169,6 +183,7 @@
 
 
 </div>
+
 
 
 <!-- footer-->

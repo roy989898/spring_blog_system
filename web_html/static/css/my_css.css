@@ -2,6 +2,12 @@ body {
     /*background-image: url("../../static/images/b2.jpg");*/
 }
 
+
+.transparent{
+    color: #1d1d1d;
+    opacity: 0; !important;
+}
+
 .blog_text_color{
     color: #4a4a4a;
 }
