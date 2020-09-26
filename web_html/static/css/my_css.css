@@ -1,3 +1,7 @@
+body {
+    /*background-image: url("../../static/images/b2.jpg");*/
+}
+
 .qr_code {
     height: 130px;
     width: 130px;
@@ -9,11 +13,11 @@
 }
 
 
-.m_inline_block{
+.m_inline_block {
     display: inline-block
 }
 
-a:hover{
+a:hover {
     color: #35434c;
 }
 
@@ -32,17 +36,19 @@ a:hover {
 a:active {
     text-decoration: none;
 }
-.footer_detail_text{
+
+.footer_detail_text {
     color: #8a95a1;
 
 }
 
-.blog_inf_small_text{
+.blog_inf_small_text {
     color: #2a2e32;
 
 }
 
-.tag{}
+.tag {
+}
 
 .test1 {
     background: red;
@@ -62,8 +68,8 @@ a:active {
 
 
 img.small_img_icon_rounded {
-    width:15px;
-    height:15px;
-    object-fit:cover;
-    border-radius:50%;
+    width: 15px;
+    height: 15px;
+    object-fit: cover;
+    border-radius: 50%;
 }
