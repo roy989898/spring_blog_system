@@ -12,6 +12,11 @@
     <!--    <link rel="stylesheet" href="static/css/bootstrap.min.css">-->
     <link rel="stylesheet" href="../static/css/my_css.css">
 
+
+    <link rel="stylesheet" href="../static/lib/editormd/css/editormd.min.css"/>
+
+    <link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon"/>
+
     <title>Blog input Page</title>
 </head>
 <body>
@@ -112,7 +117,10 @@
         </div>
 
         <div class="form-group">
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"> please input </textarea>
+            <div id="test-editor">
+                <textarea rows="3" style="display:none;"> please input </textarea>
+            </div>
+
         </div>
 
         <div class="form-row">
@@ -190,8 +198,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
-
-
+<script src="../static/lib/editormd/editormd.js"></script>
 <script>
     $(document).ready(function () {
         $(".dropdown-item_before_title").click(function () {
@@ -200,7 +207,33 @@
             $("#drop_down_button_before_title").text(text)
 
         });
+
+
+
     });
+
+    var testEditor;
+
+    $(function () {
+        testEditor = editormd("test-editor", {
+            width: "100%",
+            height: 640,
+            syncScrolling: "single",
+            path: "../static/lib/editormd/lib/"
+        });
+
+        /*
+        // or
+        testEditor = editormd({
+            id      : "test-editormd",
+            width   : "90%",
+            height  : 640,
+            path    : "../lib/"
+        });
+        */
+    });
+
+
 </script>
 </body>
 </html>
