@@ -22,5 +22,16 @@ data class Blog(
         @Temporal(TemporalType.TIMESTAMP)
         var createTime: Date,
         @Temporal(TemporalType.TIMESTAMP)
-        var updateTime: Date
+        var updateTime: Date,
+
+        @ManyToOne(cascade = [CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH])
+        var type: Type?,
+
+        @OneToMany(mappedBy = "blog")
+        var comments: List<Comment>,
+
+        @ManyToOne(cascade = [CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH])
+        var user: User,
+        @ManyToMany
+        var tags: List<Tag>
 )

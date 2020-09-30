@@ -14,6 +14,12 @@ data class Comment(
         var content: String,
         var avatar: String,
         @Temporal(TemporalType.TIMESTAMP)
-        var createTime: Date
+        var createTime: Date,
+        @ManyToOne(cascade = [CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH])
+        var blog: Blog,
+        @OneToMany(mappedBy = "parentComment")
+        var replyComments: List<Comment>,
+        @ManyToOne(cascade = [CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH])
+        var parentComment: Comment?
 
 )

@@ -1,10 +1,8 @@
 package com.example.demo.po
 
 import java.util.*
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.Id
-import javax.persistence.Table
+import javax.persistence.*
+import kotlin.collections.ArrayList
 
 @Entity
 @Table(name = "t_type")
@@ -12,6 +10,12 @@ data class Type(
         @Id
         @GeneratedValue
         var id: Long?,
-        var name: String
+        var name: String,
+        @OneToMany(mappedBy = "type")
+        var blogs: List<Blog>
 
-)
+
+        ) {
+
+
+}

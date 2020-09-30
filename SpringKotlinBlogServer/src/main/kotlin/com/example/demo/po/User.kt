@@ -4,7 +4,7 @@ import java.util.*
 import javax.persistence.*
 
 @Entity
-@Table(name = "t_tag")
+@Table(name = "t_user")
 data class User(
         @Id
         @GeneratedValue
@@ -18,6 +18,9 @@ data class User(
         @Temporal(TemporalType.TIMESTAMP)
         var createTime: Date,
         @Temporal(TemporalType.TIMESTAMP)
-        var updateTime: Date
+        var updateTime: Date,
+
+        @OneToMany(mappedBy = "user")
+        var blogs: List<Blog>
 
 )
