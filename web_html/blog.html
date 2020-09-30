@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="static/css/my_css.css">
     <link rel="stylesheet" href="static/lib/prism/prism.css">
     <link rel="stylesheet" href="static/lib/typo/typo.css">
+
+    <link rel="stylesheet" href="static/lib/tocbot/tocbot.css">
     <title>Blog Page</title>
 </head>
 <body>
@@ -126,7 +128,7 @@
                 </div>
 
                 <div class="text-left ">
-                    <div id="wrapper" class="typo typo-selection">
+                    <div id="wrapper" class="typo typo-selection js-toc-content">
                         <h1>中文网页重设与排版：<i class="serif">Typo.css</i></h1><br/>
 
                         <h2 id="tagline" class="serif">一致化浏览器排版效果，构建最适合中文阅读的网页排版</h2>
@@ -749,6 +751,10 @@ h5,h6{font-size:1em;}
 <!---->
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+<div class="js-toc" style="position: fixed ;top: 0">
+
+</div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -761,5 +767,18 @@ h5,h6{font-size:1em;}
 
 
 <script src="static/lib/prism/prism.js"></script>
+<script src="static/lib/tocbot/tocbot.js"></script>
+<script>
+    tocbot.init({
+        // Where to render the table of contents.
+        tocSelector: '.js-toc',
+        // Where to grab the headings to build the table of contents.
+        contentSelector: '.js-toc-content',
+        // Which headings to grab inside of the contentSelector element.
+        headingSelector: 'h1, h2, h3',
+        // For headings inside relative or absolute positioned containers within content.
+        hasInnerContainers: true,
+    });
+</script>
 </body>
 </html>
