@@ -10,10 +10,10 @@ class IndexController {
     @GetMapping("/")
     fun index(): String {
 
-       /* val blog = null
-        if (blog == null) {
-            throw NotFoundException("Blog not found")
-        }*/
-        return "index"
+        /* val blog = null
+         if (blog == null) {
+             throw NotFoundException("Blog not found")
+         }*/
+        return "admin/blogs_admin"
     }
 }
