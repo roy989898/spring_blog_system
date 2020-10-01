@@ -20,7 +20,7 @@ data class User(
         @Temporal(TemporalType.TIMESTAMP)
         var updateTime: Date,
 
-        @OneToMany(mappedBy = "user")
+        @OneToMany(mappedBy = "user", cascade = [CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE, CascadeType.REFRESH])
         var blogs: List<Blog>
 
 )

@@ -11,11 +11,11 @@ data class Type(
         @GeneratedValue
         var id: Long?,
         var name: String,
-        @OneToMany(mappedBy = "type")
+        @OneToMany(mappedBy = "type", cascade = [CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH])
         var blogs: List<Blog>
 
 
-        ) {
+) {
 
 
 }

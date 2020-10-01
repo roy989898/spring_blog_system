@@ -10,7 +10,7 @@ data class Tag(
         @GeneratedValue
         var id: Long?,
         var name: String,
-        @ManyToMany(mappedBy = "tags")
+        @ManyToMany(mappedBy = "tags",cascade = [CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH])
         var blogs: List<Blog>
 
 )

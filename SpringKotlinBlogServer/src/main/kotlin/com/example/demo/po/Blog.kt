@@ -24,10 +24,12 @@ data class Blog(
         @Temporal(TemporalType.TIMESTAMP)
         var updateTime: Date,
 
+
+//        TODO can delete the blog without delete the type???
         @ManyToOne(cascade = [CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH])
         var type: Type?,
 
-        @OneToMany(mappedBy = "blog")
+        @OneToMany(mappedBy = "blog", cascade = [CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE, CascadeType.REFRESH])
         var comments: List<Comment>,
 
         @ManyToOne(cascade = [CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH])
