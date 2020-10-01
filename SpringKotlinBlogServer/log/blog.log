@@ -267,3 +267,972 @@
 2020-10-01 18:07:57.331  INFO 15888 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
 2020-10-01 18:07:57.337  INFO 15888 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Rquest ----- ReqeustLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.example.demo.web.IndexController.index', args=[]}
 2020-10-01 18:07:57.339  INFO 15888 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Return ------ admin/blogs_admin
+2020-10-01 18:10:04.933  INFO 15888 --- [Thread-9] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-10-01 18:10:04.933  INFO 15888 --- [Thread-9] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-10-01 18:10:04.933  INFO 15888 --- [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2020-10-01 18:10:04.984  INFO 15888 --- [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2020-10-01 18:10:05.097  INFO 15888 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Starting SpringKotlinBlogServerApplicationKt on DESKTOP-9A1DSE9 with PID 15888 (D:\Program\Spring\spring_blog\SpringKotlinBlogServer\target\classes started by roy in D:\Program\Spring\spring_blog\SpringKotlinBlogServer)
+2020-10-01 18:10:05.097 DEBUG 15888 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-10-01 18:10:05.098  INFO 15888 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : No active profile set, falling back to default profiles: default
+2020-10-01 18:10:05.362  INFO 15888 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 18:10:05.362  INFO 15888 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-10-01 18:10:05.362  INFO 15888 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2ms. Found 0 JPA repository interfaces.
+2020-10-01 18:10:05.362  INFO 15888 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 18:10:05.362  INFO 15888 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-10-01 18:10:05.378  INFO 15888 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2ms. Found 0 Redis repository interfaces.
+2020-10-01 18:10:05.563  INFO 15888 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-10-01 18:10:05.564  INFO 15888 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-01 18:10:05.564  INFO 15888 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-10-01 18:10:05.611  INFO 15888 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-01 18:10:05.611  INFO 15888 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 510 ms
+2020-10-01 18:10:05.643  INFO 15888 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2020-10-01 18:10:05.653  INFO 15888 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2020-10-01 18:10:05.653  INFO 15888 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:./data/sample'
+2020-10-01 18:10:05.708  INFO 15888 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-01 18:10:05.724  INFO 15888 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-01 18:10:05.737  INFO 15888 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-10-01 18:10:05.800  WARN 15888 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-01 18:10:05.847  INFO 15888 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-10-01 18:10:05.847  INFO 15888 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-10-01 18:10:06.024  INFO 15888 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-10-01 18:10:06.080  INFO 15888 --- [task-2] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-10-01 18:10:06.527  INFO 15888 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-10-01 18:10:06.528  INFO 15888 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-10-01 18:10:06.528  INFO 15888 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-10-01 18:10:06.528  INFO 15888 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-10-01 18:10:06.528  INFO 15888 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-10-01 18:10:06.532  INFO 15888 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Started SpringKotlinBlogServerApplicationKt in 1.469 seconds (JVM running for 175.331)
+2020-10-01 18:10:06.532  INFO 15888 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-10-01 18:10:06.541  INFO 15888 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 13 ms
+2020-10-01 18:10:06.551  INFO 15888 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Rquest ----- ReqeustLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.example.demo.web.IndexController.index', args=[]}
+2020-10-01 18:10:06.564  INFO 15888 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Return ------ admin/blogs_input
+2020-10-01 18:10:55.924  INFO 15888 --- [http-nio-8080-exec-8] com.example.demo.AOP.Log.LogAspect       : Rquest ----- ReqeustLog{url='http://localhost:8080/', ip='127.0.0.1', classMethod='com.example.demo.web.IndexController.index', args=[]}
+2020-10-01 18:10:55.924  INFO 15888 --- [http-nio-8080-exec-8] com.example.demo.AOP.Log.LogAspect       : Return ------ admin/blogs_input
+2020-10-01 18:11:44.966  INFO 15888 --- [http-nio-8080-exec-4] com.example.demo.AOP.Log.LogAspect       : Rquest ----- ReqeustLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.example.demo.web.IndexController.index', args=[]}
+2020-10-01 18:11:44.966  INFO 15888 --- [http-nio-8080-exec-4] com.example.demo.AOP.Log.LogAspect       : Return ------ admin/blogs_input
+2020-10-01 18:15:04.523  INFO 15888 --- [http-nio-8080-exec-4] com.example.demo.AOP.Log.LogAspect       : Rquest ----- ReqeustLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.example.demo.web.IndexController.index', args=[]}
+2020-10-01 18:15:04.523  INFO 15888 --- [http-nio-8080-exec-4] com.example.demo.AOP.Log.LogAspect       : Return ------ admin/blogs_input
+2020-10-01 18:22:35.996  INFO 12124 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Starting SpringKotlinBlogServerApplicationKt on DESKTOP-9A1DSE9 with PID 12124 (D:\Program\Spring\spring_blog\SpringKotlinBlogServer\target\classes started by roy in D:\Program\Spring\spring_blog\SpringKotlinBlogServer)
+2020-10-01 18:22:35.999 DEBUG 12124 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-10-01 18:22:35.999  INFO 12124 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : No active profile set, falling back to default profiles: default
+2020-10-01 18:22:36.086  INFO 12124 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-10-01 18:22:36.087  INFO 12124 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-10-01 18:22:37.054  INFO 12124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 18:22:37.054  INFO 12124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-10-01 18:22:37.087  INFO 12124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21ms. Found 0 JPA repository interfaces.
+2020-10-01 18:22:37.104  INFO 12124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 18:22:37.104  INFO 12124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-10-01 18:22:37.135  INFO 12124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4ms. Found 0 Redis repository interfaces.
+2020-10-01 18:22:38.197  INFO 12124 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-10-01 18:22:38.208  INFO 12124 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-01 18:22:38.208  INFO 12124 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-10-01 18:22:38.420  INFO 12124 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-01 18:22:38.420  INFO 12124 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2333 ms
+2020-10-01 18:22:38.507  INFO 12124 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-01 18:22:38.635  INFO 12124 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-01 18:22:38.641  INFO 12124 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:./data/sample'
+2020-10-01 18:22:38.758  INFO 12124 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-01 18:22:38.799  INFO 12124 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-01 18:22:38.838  INFO 12124 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-10-01 18:22:38.890  WARN 12124 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-01 18:22:38.934  INFO 12124 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-01 18:22:39.018  INFO 12124 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-10-01 18:22:39.235  INFO 12124 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-10-01 18:22:39.650  INFO 12124 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-10-01 18:22:39.660  INFO 12124 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-10-01 18:22:39.752  INFO 12124 --- [task-2] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-10-01 18:22:40.087  INFO 12124 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-10-01 18:22:40.087  INFO 12124 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-10-01 18:22:40.087  INFO 12124 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-10-01 18:22:40.103  INFO 12124 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Started SpringKotlinBlogServerApplicationKt in 4.567 seconds (JVM running for 6.633)
+2020-10-01 18:22:43.598  INFO 12124 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-10-01 18:22:43.598  INFO 12124 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-10-01 18:22:43.607  INFO 12124 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2020-10-01 18:22:43.668  INFO 12124 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Rquest ----- ReqeustLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.example.demo.web.IndexController.index', args=[]}
+2020-10-01 18:22:43.673  INFO 12124 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Return ------ admin/blogs_input
+2020-10-01 18:25:45.538  INFO 18704 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Starting SpringKotlinBlogServerApplicationKt on DESKTOP-9A1DSE9 with PID 18704 (D:\Program\Spring\spring_blog\SpringKotlinBlogServer\target\classes started by roy in D:\Program\Spring\spring_blog\SpringKotlinBlogServer)
+2020-10-01 18:25:45.542 DEBUG 18704 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-10-01 18:25:45.543  INFO 18704 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : No active profile set, falling back to default profiles: default
+2020-10-01 18:25:45.615  INFO 18704 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-10-01 18:25:45.615  INFO 18704 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-10-01 18:25:46.430  INFO 18704 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 18:25:46.430  INFO 18704 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-10-01 18:25:46.454  INFO 18704 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15ms. Found 0 JPA repository interfaces.
+2020-10-01 18:25:46.470  INFO 18704 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 18:25:46.471  INFO 18704 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-10-01 18:25:46.483  INFO 18704 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2ms. Found 0 Redis repository interfaces.
+2020-10-01 18:25:47.519  INFO 18704 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-10-01 18:25:47.531  INFO 18704 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-01 18:25:47.531  INFO 18704 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-10-01 18:25:47.708  INFO 18704 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-01 18:25:47.708  INFO 18704 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2093 ms
+2020-10-01 18:25:47.770  INFO 18704 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-01 18:25:47.893  INFO 18704 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-01 18:25:47.898  INFO 18704 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:./data/sample'
+2020-10-01 18:25:48.009  INFO 18704 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-01 18:25:48.049  INFO 18704 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-01 18:25:48.086  INFO 18704 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-10-01 18:25:48.134  WARN 18704 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-01 18:25:48.175  INFO 18704 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-01 18:25:48.263  INFO 18704 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-10-01 18:25:48.457  INFO 18704 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-10-01 18:25:48.895  INFO 18704 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-10-01 18:25:48.902  INFO 18704 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-10-01 18:25:48.954  INFO 18704 --- [task-2] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-10-01 18:25:49.267  INFO 18704 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-10-01 18:25:49.268  INFO 18704 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-10-01 18:25:49.268  INFO 18704 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-10-01 18:25:49.278  INFO 18704 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Started SpringKotlinBlogServerApplicationKt in 4.151 seconds (JVM running for 5.843)
+2020-10-01 18:25:52.926  INFO 18704 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-10-01 18:25:52.926  INFO 18704 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-10-01 18:25:52.937  INFO 18704 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2020-10-01 18:25:52.994  INFO 18704 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Rquest ----- ReqeustLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.example.demo.web.IndexController.index', args=[]}
+2020-10-01 18:25:52.998  INFO 18704 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Return ------ admin/blogs_input
+2020-10-01 18:26:22.717  INFO 19068 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Starting SpringKotlinBlogServerApplicationKt on DESKTOP-9A1DSE9 with PID 19068 (D:\Program\Spring\spring_blog\SpringKotlinBlogServer\target\classes started by roy in D:\Program\Spring\spring_blog\SpringKotlinBlogServer)
+2020-10-01 18:26:22.720 DEBUG 19068 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-10-01 18:26:22.721  INFO 19068 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : No active profile set, falling back to default profiles: default
+2020-10-01 18:26:22.814  INFO 19068 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-10-01 18:26:22.814  INFO 19068 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-10-01 18:26:24.147  INFO 19068 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 18:26:24.147  INFO 19068 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-10-01 18:26:24.193  INFO 19068 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27ms. Found 0 JPA repository interfaces.
+2020-10-01 18:26:24.220  INFO 19068 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 18:26:24.221  INFO 19068 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-10-01 18:26:24.238  INFO 19068 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4ms. Found 0 Redis repository interfaces.
+2020-10-01 18:26:25.517  INFO 19068 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-10-01 18:26:25.528  INFO 19068 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-01 18:26:25.529  INFO 19068 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-10-01 18:26:25.711  INFO 19068 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-01 18:26:25.711  INFO 19068 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2897 ms
+2020-10-01 18:26:25.797  INFO 19068 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-01 18:26:25.937  INFO 19068 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-01 18:26:25.942  INFO 19068 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:./data/sample'
+2020-10-01 18:26:26.045  INFO 19068 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-01 18:26:26.097  INFO 19068 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-01 18:26:26.139  INFO 19068 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-10-01 18:26:26.189  WARN 19068 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-01 18:26:26.230  INFO 19068 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-01 18:26:26.322  INFO 19068 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-10-01 18:26:26.527  INFO 19068 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-10-01 18:26:26.985  INFO 19068 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-10-01 18:26:26.993  INFO 19068 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-10-01 18:26:27.077  INFO 19068 --- [task-2] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-10-01 18:26:27.381  INFO 19068 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-10-01 18:26:27.382  INFO 19068 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-10-01 18:26:27.383  INFO 19068 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-10-01 18:26:27.392  INFO 19068 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Started SpringKotlinBlogServerApplicationKt in 5.121 seconds (JVM running for 7.163)
+2020-10-01 18:26:30.665  INFO 19068 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-10-01 18:26:30.666  INFO 19068 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-10-01 18:26:30.673  INFO 19068 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2020-10-01 18:26:30.730  INFO 19068 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Rquest ----- ReqeustLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.example.demo.web.IndexController.index', args=[]}
+2020-10-01 18:26:30.733  INFO 19068 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Return ------ admin/blogs_input
+2020-10-01 18:26:55.248  INFO 19068 --- [http-nio-8080-exec-2] com.example.demo.AOP.Log.LogAspect       : Rquest ----- ReqeustLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.example.demo.web.IndexController.index', args=[]}
+2020-10-01 18:26:55.249  INFO 19068 --- [http-nio-8080-exec-2] com.example.demo.AOP.Log.LogAspect       : Return ------ admin/blogs_input
+2020-10-01 18:27:22.633  INFO 8800 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Starting SpringKotlinBlogServerApplicationKt on DESKTOP-9A1DSE9 with PID 8800 (D:\Program\Spring\spring_blog\SpringKotlinBlogServer\target\classes started by roy in D:\Program\Spring\spring_blog\SpringKotlinBlogServer)
+2020-10-01 18:27:22.636 DEBUG 8800 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-10-01 18:27:22.638  INFO 8800 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : No active profile set, falling back to default profiles: default
+2020-10-01 18:27:22.735  INFO 8800 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-10-01 18:27:22.735  INFO 8800 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-10-01 18:27:24.008  INFO 8800 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 18:27:24.009  INFO 8800 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-10-01 18:27:24.057  INFO 8800 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29ms. Found 0 JPA repository interfaces.
+2020-10-01 18:27:24.093  INFO 8800 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 18:27:24.096  INFO 8800 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-10-01 18:27:24.118  INFO 8800 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6ms. Found 0 Redis repository interfaces.
+2020-10-01 18:27:25.752  INFO 8800 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-10-01 18:27:25.764  INFO 8800 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-01 18:27:25.764  INFO 8800 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-10-01 18:27:26.050  INFO 8800 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-01 18:27:26.050  INFO 8800 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3314 ms
+2020-10-01 18:27:26.166  INFO 8800 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-01 18:27:26.312  INFO 8800 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-01 18:27:26.319  INFO 8800 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:./data/sample'
+2020-10-01 18:27:26.431  INFO 8800 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-01 18:27:26.481  INFO 8800 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-01 18:27:26.534  INFO 8800 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-10-01 18:27:26.602  WARN 8800 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-01 18:27:26.637  INFO 8800 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-01 18:27:26.747  INFO 8800 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-10-01 18:27:27.010  INFO 8800 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-10-01 18:27:27.514  INFO 8800 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-10-01 18:27:27.522  INFO 8800 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-10-01 18:27:27.617  INFO 8800 --- [task-2] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-10-01 18:27:27.906  INFO 8800 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-10-01 18:27:27.907  INFO 8800 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-10-01 18:27:27.907  INFO 8800 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-10-01 18:27:27.917  INFO 8800 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Started SpringKotlinBlogServerApplicationKt in 5.678 seconds (JVM running for 7.41)
+2020-10-01 18:27:29.976  INFO 8800 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-10-01 18:27:29.976  INFO 8800 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-10-01 18:27:29.986  INFO 8800 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2020-10-01 18:27:30.039  INFO 8800 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Rquest ----- ReqeustLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.example.demo.web.IndexController.index', args=[]}
+2020-10-01 18:27:30.043  INFO 8800 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Return ------ admin/blogs_input
+2020-10-01 18:27:53.576  INFO 15688 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Starting SpringKotlinBlogServerApplicationKt on DESKTOP-9A1DSE9 with PID 15688 (D:\Program\Spring\spring_blog\SpringKotlinBlogServer\target\classes started by roy in D:\Program\Spring\spring_blog\SpringKotlinBlogServer)
+2020-10-01 18:27:53.580 DEBUG 15688 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-10-01 18:27:53.581  INFO 15688 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : No active profile set, falling back to default profiles: default
+2020-10-01 18:27:53.669  INFO 15688 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-10-01 18:27:53.670  INFO 15688 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-10-01 18:27:54.559  INFO 15688 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 18:27:54.580  INFO 15688 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-10-01 18:27:54.620  INFO 15688 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25ms. Found 0 JPA repository interfaces.
+2020-10-01 18:27:54.634  INFO 15688 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 18:27:54.634  INFO 15688 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-10-01 18:27:54.656  INFO 15688 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3ms. Found 0 Redis repository interfaces.
+2020-10-01 18:27:55.744  INFO 15688 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-10-01 18:27:55.744  INFO 15688 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-01 18:27:55.744  INFO 15688 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-10-01 18:27:55.969  INFO 15688 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-01 18:27:55.969  INFO 15688 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2299 ms
+2020-10-01 18:27:56.115  INFO 15688 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-01 18:27:56.396  INFO 15688 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-01 18:27:56.409  INFO 15688 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:./data/sample'
+2020-10-01 18:27:56.670  INFO 15688 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-01 18:27:56.769  INFO 15688 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-01 18:27:56.845  INFO 15688 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-10-01 18:27:56.848  WARN 15688 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-01 18:27:57.031  INFO 15688 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-01 18:27:57.191  INFO 15688 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-10-01 18:27:58.038  INFO 15688 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-10-01 18:27:58.047  INFO 15688 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-10-01 18:27:58.081  INFO 15688 --- [task-2] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-10-01 18:27:58.541  INFO 15688 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-10-01 18:27:58.542  INFO 15688 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-10-01 18:27:58.543  INFO 15688 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-10-01 18:27:58.554  INFO 15688 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Started SpringKotlinBlogServerApplicationKt in 5.485 seconds (JVM running for 7.292)
+2020-10-01 18:28:01.546  INFO 15688 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-10-01 18:28:01.546  INFO 15688 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-10-01 18:28:01.554  INFO 15688 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2020-10-01 18:28:01.609  INFO 15688 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Rquest ----- ReqeustLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.example.demo.web.IndexController.index', args=[]}
+2020-10-01 18:28:01.614  INFO 15688 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Return ------ admin/blogs_input
+2020-10-01 18:28:01.994  WARN 15688 --- [http-nio-8080-exec-3] o.s.web.servlet.PageNotFound             : No mapping for GET /css/my_css.css
+2020-10-01 18:28:01.995  WARN 15688 --- [http-nio-8080-exec-2] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/editormd/css/editormd.min.css
+2020-10-01 18:28:02.083  WARN 15688 --- [http-nio-8080-exec-4] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/prism/prism.js
+2020-10-01 18:28:02.095  WARN 15688 --- [http-nio-8080-exec-5] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/editormd/editormd.js
+2020-10-01 18:28:02.239  WARN 15688 --- [http-nio-8080-exec-8] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/prism/prism.js
+2020-10-01 18:28:02.256  WARN 15688 --- [http-nio-8080-exec-7] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/prism/prism.js
+2020-10-01 18:28:02.266  WARN 15688 --- [http-nio-8080-exec-6] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/editormd/editormd.js
+2020-10-01 18:28:48.034  INFO 12812 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Starting SpringKotlinBlogServerApplicationKt on DESKTOP-9A1DSE9 with PID 12812 (D:\Program\Spring\spring_blog\SpringKotlinBlogServer\target\classes started by roy in D:\Program\Spring\spring_blog\SpringKotlinBlogServer)
+2020-10-01 18:28:48.034 DEBUG 12812 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-10-01 18:28:48.034  INFO 12812 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : No active profile set, falling back to default profiles: default
+2020-10-01 18:28:48.131  INFO 12812 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-10-01 18:28:48.132  INFO 12812 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-10-01 18:28:49.211  INFO 12812 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 18:28:49.212  INFO 12812 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-10-01 18:28:49.249  INFO 12812 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21ms. Found 0 JPA repository interfaces.
+2020-10-01 18:28:49.268  INFO 12812 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 18:28:49.268  INFO 12812 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-10-01 18:28:49.284  INFO 12812 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4ms. Found 0 Redis repository interfaces.
+2020-10-01 18:28:50.295  INFO 12812 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-10-01 18:28:50.295  INFO 12812 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-01 18:28:50.295  INFO 12812 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-10-01 18:28:50.511  INFO 12812 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-01 18:28:50.511  INFO 12812 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2379 ms
+2020-10-01 18:28:50.592  INFO 12812 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-01 18:28:50.719  INFO 12812 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-01 18:28:50.719  INFO 12812 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:./data/sample'
+2020-10-01 18:28:50.843  INFO 12812 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-01 18:28:50.876  INFO 12812 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-01 18:28:50.923  INFO 12812 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-10-01 18:28:50.970  WARN 12812 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-01 18:28:51.017  INFO 12812 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-01 18:28:51.102  INFO 12812 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-10-01 18:28:51.287  INFO 12812 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-10-01 18:28:51.675  INFO 12812 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-10-01 18:28:51.691  INFO 12812 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-10-01 18:28:51.772  INFO 12812 --- [task-2] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-10-01 18:28:52.092  INFO 12812 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-10-01 18:28:52.093  INFO 12812 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-10-01 18:28:52.094  INFO 12812 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-10-01 18:28:52.104  INFO 12812 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Started SpringKotlinBlogServerApplicationKt in 4.619 seconds (JVM running for 6.633)
+2020-10-01 18:28:54.203  INFO 12812 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-10-01 18:28:54.203  INFO 12812 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-10-01 18:28:54.211  INFO 12812 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2020-10-01 18:28:54.266  INFO 12812 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Rquest ----- ReqeustLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.example.demo.web.IndexController.index', args=[]}
+2020-10-01 18:28:54.271  INFO 12812 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Return ------ admin/blogs_input
+2020-10-01 18:29:53.072  INFO 9004 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Starting SpringKotlinBlogServerApplicationKt on DESKTOP-9A1DSE9 with PID 9004 (D:\Program\Spring\spring_blog\SpringKotlinBlogServer\target\classes started by roy in D:\Program\Spring\spring_blog\SpringKotlinBlogServer)
+2020-10-01 18:29:53.072 DEBUG 9004 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-10-01 18:29:53.072  INFO 9004 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : No active profile set, falling back to default profiles: default
+2020-10-01 18:29:53.174  INFO 9004 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-10-01 18:29:53.175  INFO 9004 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-10-01 18:29:54.180  INFO 9004 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 18:29:54.180  INFO 9004 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-10-01 18:29:54.215  INFO 9004 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18ms. Found 0 JPA repository interfaces.
+2020-10-01 18:29:54.234  INFO 9004 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 18:29:54.234  INFO 9004 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-10-01 18:29:54.263  INFO 9004 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3ms. Found 0 Redis repository interfaces.
+2020-10-01 18:29:55.314  INFO 9004 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-10-01 18:29:55.323  INFO 9004 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-01 18:29:55.323  INFO 9004 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-10-01 18:29:55.486  INFO 9004 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-01 18:29:55.486  INFO 9004 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2311 ms
+2020-10-01 18:29:55.540  INFO 9004 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-01 18:29:55.662  INFO 9004 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-01 18:29:55.667  INFO 9004 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:./data/sample'
+2020-10-01 18:29:55.744  INFO 9004 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-01 18:29:55.796  INFO 9004 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-01 18:29:55.834  INFO 9004 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-10-01 18:29:55.834  WARN 9004 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-01 18:29:55.927  INFO 9004 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-01 18:29:56.008  INFO 9004 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-10-01 18:29:56.645  INFO 9004 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-10-01 18:29:56.653  INFO 9004 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-10-01 18:29:56.673  INFO 9004 --- [task-2] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-10-01 18:29:57.039  INFO 9004 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-10-01 18:29:57.040  INFO 9004 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-10-01 18:29:57.040  INFO 9004 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-10-01 18:29:57.040  INFO 9004 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Started SpringKotlinBlogServerApplicationKt in 4.418 seconds (JVM running for 6.623)
+2020-10-01 18:29:59.383  INFO 9004 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-10-01 18:29:59.383  INFO 9004 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-10-01 18:29:59.392  INFO 9004 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2020-10-01 18:29:59.444  INFO 9004 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Rquest ----- ReqeustLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.example.demo.web.IndexController.index', args=[]}
+2020-10-01 18:29:59.448  INFO 9004 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Return ------ admin/blogs_input
+2020-10-01 18:29:59.800  WARN 9004 --- [http-nio-8080-exec-3] o.s.web.servlet.PageNotFound             : No mapping for GET /css/my_css.css
+2020-10-01 18:29:59.802  WARN 9004 --- [http-nio-8080-exec-2] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/editormd/css/editormd.min.css
+2020-10-01 18:29:59.876  WARN 9004 --- [http-nio-8080-exec-7] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/editormd/editormd.js
+2020-10-01 18:29:59.877  WARN 9004 --- [http-nio-8080-exec-4] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/prism/prism.js
+2020-10-01 18:29:59.985  WARN 9004 --- [http-nio-8080-exec-6] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/prism/prism.js
+2020-10-01 18:29:59.995  WARN 9004 --- [http-nio-8080-exec-5] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/prism/prism.js
+2020-10-01 18:30:00.008  WARN 9004 --- [http-nio-8080-exec-8] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/editormd/editormd.js
+2020-10-01 18:30:02.704  WARN 9004 --- [http-nio-8080-exec-9] o.s.web.servlet.PageNotFound             : No mapping for GET /css/my_css.css
+2020-10-01 18:30:02.704  WARN 9004 --- [http-nio-8080-exec-10] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/editormd/css/editormd.min.css
+2020-10-01 18:30:44.787  WARN 9004 --- [http-nio-8080-exec-1] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/prism/prism.js
+2020-10-01 18:30:44.856  WARN 9004 --- [http-nio-8080-exec-3] o.s.web.servlet.PageNotFound             : No mapping for GET /css/my_css.css
+2020-10-01 18:30:44.861  WARN 9004 --- [http-nio-8080-exec-4] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/editormd/css/editormd.min.css
+2020-10-01 18:30:44.901  WARN 9004 --- [http-nio-8080-exec-7] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/prism/images/qr.png
+2020-10-01 18:30:44.901  WARN 9004 --- [http-nio-8080-exec-2] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/prism/prism.js
+2020-10-01 18:30:45.052  WARN 9004 --- [http-nio-8080-exec-6] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/prism/prism.js
+2020-10-01 18:31:50.138  INFO 12356 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Starting SpringKotlinBlogServerApplicationKt on DESKTOP-9A1DSE9 with PID 12356 (D:\Program\Spring\spring_blog\SpringKotlinBlogServer\target\classes started by roy in D:\Program\Spring\spring_blog\SpringKotlinBlogServer)
+2020-10-01 18:31:50.143 DEBUG 12356 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-10-01 18:31:50.144  INFO 12356 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : No active profile set, falling back to default profiles: default
+2020-10-01 18:31:50.235  INFO 12356 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-10-01 18:31:50.236  INFO 12356 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-10-01 18:31:51.248  INFO 12356 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 18:31:51.265  INFO 12356 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-10-01 18:31:51.298  INFO 12356 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19ms. Found 0 JPA repository interfaces.
+2020-10-01 18:31:51.315  INFO 12356 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 18:31:51.315  INFO 12356 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-10-01 18:31:51.339  INFO 12356 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3ms. Found 0 Redis repository interfaces.
+2020-10-01 18:31:52.560  INFO 12356 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-10-01 18:31:52.560  INFO 12356 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-01 18:31:52.560  INFO 12356 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-10-01 18:31:52.794  INFO 12356 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-01 18:31:52.794  INFO 12356 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2558 ms
+2020-10-01 18:31:52.857  INFO 12356 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-01 18:31:52.981  INFO 12356 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-01 18:31:52.981  INFO 12356 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:./data/sample'
+2020-10-01 18:31:53.093  INFO 12356 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-01 18:31:53.144  INFO 12356 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-01 18:31:53.183  INFO 12356 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-10-01 18:31:53.186  WARN 12356 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-01 18:31:53.275  INFO 12356 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-01 18:31:53.383  INFO 12356 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-10-01 18:31:54.063  INFO 12356 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-10-01 18:31:54.063  INFO 12356 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-10-01 18:31:54.096  INFO 12356 --- [task-2] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-10-01 18:31:54.439  INFO 12356 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-10-01 18:31:54.440  INFO 12356 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-10-01 18:31:54.441  INFO 12356 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-10-01 18:31:54.450  INFO 12356 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Started SpringKotlinBlogServerApplicationKt in 4.734 seconds (JVM running for 6.499)
+2020-10-01 18:31:59.129  INFO 12356 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-10-01 18:31:59.129  INFO 12356 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-10-01 18:31:59.137  INFO 12356 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2020-10-01 18:31:59.192  INFO 12356 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Rquest ----- ReqeustLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.example.demo.web.IndexController.index', args=[]}
+2020-10-01 18:31:59.196  INFO 12356 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Return ------ admin/blogs_input
+2020-10-01 18:31:59.555  WARN 12356 --- [http-nio-8080-exec-3] o.s.web.servlet.PageNotFound             : No mapping for GET /css/my_css.css
+2020-10-01 18:31:59.555  WARN 12356 --- [http-nio-8080-exec-2] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/editormd/css/editormd.min.css
+2020-10-01 18:31:59.633  WARN 12356 --- [http-nio-8080-exec-4] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/prism/prism.js
+2020-10-01 18:31:59.649  WARN 12356 --- [http-nio-8080-exec-7] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/editormd/editormd.js
+2020-10-01 18:31:59.767  WARN 12356 --- [http-nio-8080-exec-6] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/prism/prism.js
+2020-10-01 18:31:59.780  WARN 12356 --- [http-nio-8080-exec-8] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/prism/prism.js
+2020-10-01 18:31:59.789  WARN 12356 --- [http-nio-8080-exec-5] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/editormd/editormd.js
+2020-10-01 18:35:53.024  INFO 9504 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Starting SpringKotlinBlogServerApplicationKt on DESKTOP-9A1DSE9 with PID 9504 (D:\Program\Spring\spring_blog\SpringKotlinBlogServer\target\classes started by roy in D:\Program\Spring\spring_blog\SpringKotlinBlogServer)
+2020-10-01 18:35:53.024 DEBUG 9504 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-10-01 18:35:53.024  INFO 9504 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : No active profile set, falling back to default profiles: default
+2020-10-01 18:35:53.109  INFO 9504 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-10-01 18:35:53.109  INFO 9504 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-10-01 18:35:54.162  INFO 9504 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 18:35:54.162  INFO 9504 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-10-01 18:35:54.199  INFO 9504 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21ms. Found 0 JPA repository interfaces.
+2020-10-01 18:35:54.220  INFO 9504 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 18:35:54.222  INFO 9504 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-10-01 18:35:54.236  INFO 9504 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2ms. Found 0 Redis repository interfaces.
+2020-10-01 18:35:55.415  INFO 9504 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-10-01 18:35:55.426  INFO 9504 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-01 18:35:55.427  INFO 9504 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-10-01 18:35:55.606  INFO 9504 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-01 18:35:55.606  INFO 9504 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2497 ms
+2020-10-01 18:35:55.668  INFO 9504 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-01 18:35:55.786  INFO 9504 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-01 18:35:55.791  INFO 9504 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:./data/sample'
+2020-10-01 18:35:55.884  INFO 9504 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-01 18:35:55.928  INFO 9504 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-01 18:35:55.964  INFO 9504 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-10-01 18:35:55.965  WARN 9504 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-01 18:35:56.051  INFO 9504 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-01 18:35:56.140  INFO 9504 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-10-01 18:35:56.788  INFO 9504 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-10-01 18:35:56.795  INFO 9504 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-10-01 18:35:56.905  INFO 9504 --- [task-2] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-10-01 18:35:57.193  INFO 9504 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-10-01 18:35:57.195  INFO 9504 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-10-01 18:35:57.195  INFO 9504 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-10-01 18:35:57.205  INFO 9504 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Started SpringKotlinBlogServerApplicationKt in 4.62 seconds (JVM running for 6.649)
+2020-10-01 18:36:00.068  INFO 9504 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-10-01 18:36:00.069  INFO 9504 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-10-01 18:36:00.078  INFO 9504 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2020-10-01 18:36:00.137  INFO 9504 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Rquest ----- ReqeustLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.example.demo.web.IndexController.index', args=[]}
+2020-10-01 18:36:00.141  INFO 9504 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Return ------ admin/blogs_input
+2020-10-01 18:36:00.485  WARN 9504 --- [http-nio-8080-exec-2] o.s.web.servlet.PageNotFound             : No mapping for GET /css/my_css.css
+2020-10-01 18:36:00.485  WARN 9504 --- [http-nio-8080-exec-3] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/editormd/css/editormd.min.css
+2020-10-01 18:36:00.560  WARN 9504 --- [http-nio-8080-exec-4] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/prism/prism.js
+2020-10-01 18:36:00.563  WARN 9504 --- [http-nio-8080-exec-5] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/editormd/editormd.js
+2020-10-01 18:36:00.718  WARN 9504 --- [http-nio-8080-exec-6] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/prism/prism.js
+2020-10-01 18:36:00.728  WARN 9504 --- [http-nio-8080-exec-7] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/prism/prism.js
+2020-10-01 18:36:00.737  WARN 9504 --- [http-nio-8080-exec-8] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/editormd/editormd.js
+2020-10-01 18:36:01.831  INFO 9504 --- [http-nio-8080-exec-9] com.example.demo.AOP.Log.LogAspect       : Rquest ----- ReqeustLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.example.demo.web.IndexController.index', args=[]}
+2020-10-01 18:36:01.832  INFO 9504 --- [http-nio-8080-exec-9] com.example.demo.AOP.Log.LogAspect       : Return ------ admin/blogs_input
+2020-10-01 18:36:01.881  WARN 9504 --- [http-nio-8080-exec-1] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/editormd/css/editormd.min.css
+2020-10-01 18:36:01.881  WARN 9504 --- [http-nio-8080-exec-10] o.s.web.servlet.PageNotFound             : No mapping for GET /css/my_css.css
+2020-10-01 18:36:01.912  WARN 9504 --- [http-nio-8080-exec-5] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/prism/prism.js
+2020-10-01 18:36:01.912  WARN 9504 --- [http-nio-8080-exec-4] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/editormd/editormd.js
+2020-10-01 18:36:01.985  WARN 9504 --- [http-nio-8080-exec-2] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/prism/prism.js
+2020-10-01 18:36:01.998  WARN 9504 --- [http-nio-8080-exec-3] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/prism/prism.js
+2020-10-01 18:36:02.005  WARN 9504 --- [http-nio-8080-exec-6] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/editormd/editormd.js
+2020-10-01 18:38:24.801  INFO 11276 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Starting SpringKotlinBlogServerApplicationKt on DESKTOP-9A1DSE9 with PID 11276 (D:\Program\Spring\spring_blog\SpringKotlinBlogServer\target\classes started by roy in D:\Program\Spring\spring_blog\SpringKotlinBlogServer)
+2020-10-01 18:38:24.804 DEBUG 11276 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-10-01 18:38:24.805  INFO 11276 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : No active profile set, falling back to default profiles: default
+2020-10-01 18:38:24.886  INFO 11276 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-10-01 18:38:24.887  INFO 11276 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-10-01 18:38:25.623  INFO 11276 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 18:38:25.624  INFO 11276 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-10-01 18:38:25.647  INFO 11276 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14ms. Found 0 JPA repository interfaces.
+2020-10-01 18:38:25.661  INFO 11276 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 18:38:25.663  INFO 11276 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-10-01 18:38:25.673  INFO 11276 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2ms. Found 0 Redis repository interfaces.
+2020-10-01 18:38:26.619  INFO 11276 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-10-01 18:38:26.631  INFO 11276 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-01 18:38:26.632  INFO 11276 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-10-01 18:38:26.768  INFO 11276 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-01 18:38:26.768  INFO 11276 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1881 ms
+2020-10-01 18:38:26.813  INFO 11276 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-01 18:38:26.911  INFO 11276 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-01 18:38:26.916  INFO 11276 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:./data/sample'
+2020-10-01 18:38:27.005  INFO 11276 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-01 18:38:27.040  INFO 11276 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-01 18:38:27.071  INFO 11276 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-10-01 18:38:27.111  WARN 11276 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-01 18:38:27.148  INFO 11276 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-01 18:38:27.229  INFO 11276 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-10-01 18:38:27.412  INFO 11276 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-10-01 18:38:27.731  INFO 11276 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-10-01 18:38:27.737  INFO 11276 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-10-01 18:38:27.804  INFO 11276 --- [task-2] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-10-01 18:38:28.040  INFO 11276 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-10-01 18:38:28.041  INFO 11276 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-10-01 18:38:28.042  INFO 11276 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-10-01 18:38:28.050  INFO 11276 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Started SpringKotlinBlogServerApplicationKt in 3.668 seconds (JVM running for 5.143)
+2020-10-01 18:38:33.570  INFO 11276 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-10-01 18:38:33.571  INFO 11276 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-10-01 18:38:33.580  INFO 11276 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2020-10-01 18:38:36.147  INFO 11276 --- [http-nio-8080-exec-3] com.example.demo.AOP.Log.LogAspect       : Rquest ----- ReqeustLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.example.demo.web.IndexController.index', args=[]}
+2020-10-01 18:38:36.151  INFO 11276 --- [http-nio-8080-exec-3] com.example.demo.AOP.Log.LogAspect       : Return ------ admin/blogs_input
+2020-10-01 18:45:28.920  INFO 18520 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Starting SpringKotlinBlogServerApplicationKt on DESKTOP-9A1DSE9 with PID 18520 (D:\Program\Spring\spring_blog\SpringKotlinBlogServer\target\classes started by roy in D:\Program\Spring\spring_blog\SpringKotlinBlogServer)
+2020-10-01 18:45:28.920 DEBUG 18520 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-10-01 18:45:28.920  INFO 18520 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : No active profile set, falling back to default profiles: default
+2020-10-01 18:45:28.997  INFO 18520 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-10-01 18:45:28.997  INFO 18520 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-10-01 18:45:29.719  INFO 18520 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 18:45:29.719  INFO 18520 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-10-01 18:45:29.756  INFO 18520 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15ms. Found 0 JPA repository interfaces.
+2020-10-01 18:45:29.773  INFO 18520 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 18:45:29.773  INFO 18520 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-10-01 18:45:29.789  INFO 18520 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2ms. Found 0 Redis repository interfaces.
+2020-10-01 18:45:30.552  INFO 18520 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-10-01 18:45:30.552  INFO 18520 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-01 18:45:30.552  INFO 18520 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-10-01 18:45:30.744  INFO 18520 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-01 18:45:30.744  INFO 18520 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1747 ms
+2020-10-01 18:45:30.802  INFO 18520 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-01 18:45:30.910  INFO 18520 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-01 18:45:30.916  INFO 18520 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:./data/sample'
+2020-10-01 18:45:30.997  INFO 18520 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-01 18:45:31.025  INFO 18520 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-01 18:45:31.057  INFO 18520 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-10-01 18:45:31.057  WARN 18520 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-01 18:45:31.154  INFO 18520 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-01 18:45:31.230  INFO 18520 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-10-01 18:45:31.748  INFO 18520 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-10-01 18:45:31.764  INFO 18520 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-10-01 18:45:31.813  INFO 18520 --- [task-2] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-10-01 18:45:32.035  INFO 18520 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-10-01 18:45:32.035  INFO 18520 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-10-01 18:45:32.035  INFO 18520 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-10-01 18:45:32.052  INFO 18520 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Started SpringKotlinBlogServerApplicationKt in 3.472 seconds (JVM running for 4.887)
+2020-10-01 18:45:39.858  INFO 18520 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-10-01 18:45:39.859  INFO 18520 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-10-01 18:45:39.868  INFO 18520 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2020-10-01 18:45:39.924  INFO 18520 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Rquest ----- ReqeustLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.example.demo.web.IndexController.index', args=[]}
+2020-10-01 18:45:39.928  INFO 18520 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Return ------ admin/blogs_input
+2020-10-01 18:45:40.292  WARN 18520 --- [http-nio-8080-exec-2] o.s.web.servlet.PageNotFound             : No mapping for GET /css/my_css.css
+2020-10-01 18:45:40.294  WARN 18520 --- [http-nio-8080-exec-3] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/editormd/css/editormd.min.css
+2020-10-01 18:45:40.378  WARN 18520 --- [http-nio-8080-exec-4] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/prism/prism.js
+2020-10-01 18:45:40.384  WARN 18520 --- [http-nio-8080-exec-5] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/editormd/editormd.js
+2020-10-01 18:45:40.499  WARN 18520 --- [http-nio-8080-exec-6] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/prism/prism.js
+2020-10-01 18:45:40.516  WARN 18520 --- [http-nio-8080-exec-7] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/prism/prism.js
+2020-10-01 18:45:40.523  WARN 18520 --- [http-nio-8080-exec-8] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/editormd/editormd.js
+2020-10-01 18:47:26.368  INFO 5692 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Starting SpringKotlinBlogServerApplicationKt on DESKTOP-9A1DSE9 with PID 5692 (D:\Program\Spring\spring_blog\SpringKotlinBlogServer\target\classes started by roy in D:\Program\Spring\spring_blog\SpringKotlinBlogServer)
+2020-10-01 18:47:26.371 DEBUG 5692 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-10-01 18:47:26.372  INFO 5692 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : No active profile set, falling back to default profiles: default
+2020-10-01 18:47:26.462  INFO 5692 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-10-01 18:47:26.462  INFO 5692 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-10-01 18:47:27.462  INFO 5692 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 18:47:27.480  INFO 5692 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-10-01 18:47:27.516  INFO 5692 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23ms. Found 0 JPA repository interfaces.
+2020-10-01 18:47:27.545  INFO 5692 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 18:47:27.547  INFO 5692 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-10-01 18:47:27.565  INFO 5692 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4ms. Found 0 Redis repository interfaces.
+2020-10-01 18:47:28.713  INFO 5692 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-10-01 18:47:28.729  INFO 5692 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-01 18:47:28.729  INFO 5692 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-10-01 18:47:28.926  INFO 5692 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-01 18:47:28.926  INFO 5692 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2464 ms
+2020-10-01 18:47:29.018  INFO 5692 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-01 18:47:29.173  INFO 5692 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-01 18:47:29.182  INFO 5692 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:./data/sample'
+2020-10-01 18:47:29.335  INFO 5692 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-01 18:47:29.392  INFO 5692 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-01 18:47:29.443  INFO 5692 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-10-01 18:47:29.447  WARN 5692 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-01 18:47:29.561  INFO 5692 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-01 18:47:29.671  INFO 5692 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-10-01 18:47:30.651  INFO 5692 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-10-01 18:47:30.659  INFO 5692 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-10-01 18:47:30.682  INFO 5692 --- [task-2] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-10-01 18:47:31.126  INFO 5692 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-10-01 18:47:31.126  INFO 5692 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-10-01 18:47:31.126  INFO 5692 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-10-01 18:47:31.126  INFO 5692 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Started SpringKotlinBlogServerApplicationKt in 5.266 seconds (JVM running for 8.452)
+2020-10-01 18:47:32.976  INFO 5692 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-10-01 18:47:32.976  INFO 5692 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-10-01 18:47:32.982  INFO 5692 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2020-10-01 18:47:33.071  INFO 5692 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Rquest ----- ReqeustLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.example.demo.web.IndexController.index', args=[]}
+2020-10-01 18:47:33.077  INFO 5692 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Return ------ admin/blogs_input
+2020-10-01 18:47:33.563  WARN 5692 --- [http-nio-8080-exec-3] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/editormd/css/editormd.min.css
+2020-10-01 18:47:33.638  WARN 5692 --- [http-nio-8080-exec-4] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/prism/prism.js
+2020-10-01 18:47:33.645  WARN 5692 --- [http-nio-8080-exec-5] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/editormd/editormd.js
+2020-10-01 18:47:33.732  WARN 5692 --- [http-nio-8080-exec-6] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/prism/prism.js
+2020-10-01 18:47:33.785  WARN 5692 --- [http-nio-8080-exec-7] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/prism/prism.js
+2020-10-01 18:47:33.798  WARN 5692 --- [http-nio-8080-exec-8] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/editormd/editormd.js
+2020-10-01 18:47:44.438  INFO 5692 --- [http-nio-8080-exec-9] com.example.demo.AOP.Log.LogAspect       : Rquest ----- ReqeustLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.example.demo.web.IndexController.index', args=[]}
+2020-10-01 18:47:44.438  INFO 5692 --- [http-nio-8080-exec-9] com.example.demo.AOP.Log.LogAspect       : Return ------ admin/blogs_input
+2020-10-01 18:47:44.480  WARN 5692 --- [http-nio-8080-exec-1] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/editormd/css/editormd.min.css
+2020-10-01 18:47:44.520  WARN 5692 --- [http-nio-8080-exec-4] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/prism/prism.js
+2020-10-01 18:47:44.520  WARN 5692 --- [http-nio-8080-exec-3] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/editormd/editormd.js
+2020-10-01 18:47:44.575  WARN 5692 --- [http-nio-8080-exec-2] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/prism/prism.js
+2020-10-01 18:47:44.582  WARN 5692 --- [http-nio-8080-exec-5] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/prism/prism.js
+2020-10-01 18:47:44.591  WARN 5692 --- [http-nio-8080-exec-6] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/editormd/editormd.js
+2020-10-01 18:47:48.469  WARN 5692 --- [http-nio-8080-exec-8] o.s.web.servlet.PageNotFound             : No mapping for GET /lib/editormd/css/editormd.min.css
+2020-10-01 18:48:21.046  INFO 16124 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Starting SpringKotlinBlogServerApplicationKt on DESKTOP-9A1DSE9 with PID 16124 (D:\Program\Spring\spring_blog\SpringKotlinBlogServer\target\classes started by roy in D:\Program\Spring\spring_blog\SpringKotlinBlogServer)
+2020-10-01 18:48:21.046 DEBUG 16124 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-10-01 18:48:21.046  INFO 16124 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : No active profile set, falling back to default profiles: default
+2020-10-01 18:48:21.160  INFO 16124 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-10-01 18:48:21.161  INFO 16124 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-10-01 18:48:22.288  INFO 16124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 18:48:22.289  INFO 16124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-10-01 18:48:22.339  INFO 16124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 33ms. Found 0 JPA repository interfaces.
+2020-10-01 18:48:22.368  INFO 16124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 18:48:22.371  INFO 16124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-10-01 18:48:22.389  INFO 16124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4ms. Found 0 Redis repository interfaces.
+2020-10-01 18:48:24.012  INFO 16124 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-10-01 18:48:24.032  INFO 16124 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-01 18:48:24.032  INFO 16124 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-10-01 18:48:24.262  INFO 16124 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-01 18:48:24.262  INFO 16124 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3101 ms
+2020-10-01 18:48:24.328  INFO 16124 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-01 18:48:24.475  INFO 16124 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-01 18:48:24.478  INFO 16124 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:./data/sample'
+2020-10-01 18:48:24.591  INFO 16124 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-01 18:48:24.640  INFO 16124 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-01 18:48:24.671  INFO 16124 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-10-01 18:48:24.729  WARN 16124 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-01 18:48:24.770  INFO 16124 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-01 18:48:24.862  INFO 16124 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-10-01 18:48:25.133  INFO 16124 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-10-01 18:48:25.568  INFO 16124 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-10-01 18:48:25.584  INFO 16124 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-10-01 18:48:25.672  INFO 16124 --- [task-2] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-10-01 18:48:26.129  INFO 16124 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-10-01 18:48:26.129  INFO 16124 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-10-01 18:48:26.129  INFO 16124 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-10-01 18:48:26.145  INFO 16124 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Started SpringKotlinBlogServerApplicationKt in 5.576 seconds (JVM running for 7.487)
+2020-10-01 19:02:24.305  INFO 4028 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Starting SpringKotlinBlogServerApplicationKt on DESKTOP-9A1DSE9 with PID 4028 (D:\Program\Spring\spring_blog\SpringKotlinBlogServer\target\classes started by roy in D:\Program\Spring\spring_blog\SpringKotlinBlogServer)
+2020-10-01 19:02:24.309 DEBUG 4028 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-10-01 19:02:24.310  INFO 4028 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : No active profile set, falling back to default profiles: default
+2020-10-01 19:02:24.398  INFO 4028 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-10-01 19:02:24.399  INFO 4028 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-10-01 19:02:25.366  INFO 4028 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 19:02:25.366  INFO 4028 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-10-01 19:02:25.399  INFO 4028 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21ms. Found 0 JPA repository interfaces.
+2020-10-01 19:02:25.417  INFO 4028 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 19:02:25.417  INFO 4028 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-10-01 19:02:25.433  INFO 4028 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2ms. Found 0 Redis repository interfaces.
+2020-10-01 19:02:26.559  INFO 4028 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-10-01 19:02:26.575  INFO 4028 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-01 19:02:26.575  INFO 4028 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-10-01 19:02:26.750  INFO 4028 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-01 19:02:26.765  INFO 4028 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2366 ms
+2020-10-01 19:02:26.815  INFO 4028 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-01 19:02:26.956  INFO 4028 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-01 19:02:26.956  INFO 4028 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:./data/sample'
+2020-10-01 19:02:27.085  INFO 4028 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-01 19:02:27.141  INFO 4028 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-01 19:02:27.186  INFO 4028 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-10-01 19:02:27.258  WARN 4028 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-01 19:02:27.273  INFO 4028 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-01 19:02:27.399  INFO 4028 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-10-01 19:02:27.640  INFO 4028 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-10-01 19:02:28.040  INFO 4028 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-10-01 19:02:28.060  INFO 4028 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-10-01 19:02:28.154  INFO 4028 --- [task-2] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-10-01 19:02:28.497  INFO 4028 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-10-01 19:02:28.498  INFO 4028 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-10-01 19:02:28.499  INFO 4028 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-10-01 19:02:28.509  INFO 4028 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Started SpringKotlinBlogServerApplicationKt in 4.685 seconds (JVM running for 7.161)
+2020-10-01 19:02:32.388  INFO 4028 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-10-01 19:02:32.388  INFO 4028 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-10-01 19:02:32.397  INFO 4028 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2020-10-01 19:02:32.456  INFO 4028 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Rquest ----- ReqeustLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.example.demo.web.IndexController.index', args=[]}
+2020-10-01 19:02:32.460  INFO 4028 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Return ------ admin/blogs_input
+2020-10-01 19:02:54.396  INFO 6716 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Starting SpringKotlinBlogServerApplicationKt on DESKTOP-9A1DSE9 with PID 6716 (D:\Program\Spring\spring_blog\SpringKotlinBlogServer\target\classes started by roy in D:\Program\Spring\spring_blog\SpringKotlinBlogServer)
+2020-10-01 19:02:54.399 DEBUG 6716 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-10-01 19:02:54.399  INFO 6716 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : No active profile set, falling back to default profiles: default
+2020-10-01 19:02:54.510  INFO 6716 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-10-01 19:02:54.510  INFO 6716 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-10-01 19:02:55.659  INFO 6716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 19:02:55.661  INFO 6716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-10-01 19:02:55.679  INFO 6716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17ms. Found 0 JPA repository interfaces.
+2020-10-01 19:02:55.708  INFO 6716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 19:02:55.710  INFO 6716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-10-01 19:02:55.724  INFO 6716 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2ms. Found 0 Redis repository interfaces.
+2020-10-01 19:02:56.773  INFO 6716 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-10-01 19:02:56.781  INFO 6716 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-01 19:02:56.781  INFO 6716 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-10-01 19:02:56.998  INFO 6716 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-01 19:02:56.999  INFO 6716 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2489 ms
+2020-10-01 19:02:57.066  INFO 6716 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-01 19:02:57.186  INFO 6716 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-01 19:02:57.186  INFO 6716 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:./data/sample'
+2020-10-01 19:02:57.299  INFO 6716 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-01 19:02:57.350  INFO 6716 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-01 19:02:57.382  INFO 6716 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-10-01 19:02:57.451  WARN 6716 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-01 19:02:57.487  INFO 6716 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-01 19:02:57.579  INFO 6716 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-10-01 19:02:57.809  INFO 6716 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-10-01 19:02:58.277  INFO 6716 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-10-01 19:02:58.286  INFO 6716 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-10-01 19:02:58.380  INFO 6716 --- [task-2] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-10-01 19:02:58.714  INFO 6716 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-10-01 19:02:58.714  INFO 6716 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-10-01 19:02:58.714  INFO 6716 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-10-01 19:02:58.731  INFO 6716 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Started SpringKotlinBlogServerApplicationKt in 4.987 seconds (JVM running for 7.567)
+2020-10-01 19:03:01.897  INFO 6716 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-10-01 19:03:01.897  INFO 6716 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-10-01 19:03:01.908  INFO 6716 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2020-10-01 19:03:01.968  INFO 6716 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Rquest ----- ReqeustLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.example.demo.web.IndexController.index', args=[]}
+2020-10-01 19:03:01.974  INFO 6716 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Return ------ admin/blogs_input
+2020-10-01 19:03:30.133  INFO 908 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Starting SpringKotlinBlogServerApplicationKt on DESKTOP-9A1DSE9 with PID 908 (D:\Program\Spring\spring_blog\SpringKotlinBlogServer\target\classes started by roy in D:\Program\Spring\spring_blog\SpringKotlinBlogServer)
+2020-10-01 19:03:30.137 DEBUG 908 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-10-01 19:03:30.138  INFO 908 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : No active profile set, falling back to default profiles: default
+2020-10-01 19:03:30.229  INFO 908 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-10-01 19:03:30.229  INFO 908 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-10-01 19:03:31.314  INFO 908 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 19:03:31.315  INFO 908 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-10-01 19:03:31.341  INFO 908 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21ms. Found 0 JPA repository interfaces.
+2020-10-01 19:03:31.366  INFO 908 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 19:03:31.368  INFO 908 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-10-01 19:03:31.382  INFO 908 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2ms. Found 0 Redis repository interfaces.
+2020-10-01 19:03:32.326  INFO 908 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-10-01 19:03:32.335  INFO 908 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-01 19:03:32.335  INFO 908 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-10-01 19:03:32.465  INFO 908 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-01 19:03:32.465  INFO 908 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2236 ms
+2020-10-01 19:03:32.535  INFO 908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-01 19:03:32.686  INFO 908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-01 19:03:32.686  INFO 908 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:./data/sample'
+2020-10-01 19:03:32.824  INFO 908 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-01 19:03:32.873  INFO 908 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-01 19:03:32.910  INFO 908 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-10-01 19:03:32.983  WARN 908 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-01 19:03:33.019  INFO 908 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-01 19:03:33.170  INFO 908 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-10-01 19:03:36.315  INFO 908 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-10-01 19:03:36.792  INFO 908 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-10-01 19:03:36.800  INFO 908 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-10-01 19:03:36.888  INFO 908 --- [task-2] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-10-01 19:03:37.294  INFO 908 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-10-01 19:03:37.296  INFO 908 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-10-01 19:03:37.296  INFO 908 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-10-01 19:03:37.309  INFO 908 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Started SpringKotlinBlogServerApplicationKt in 7.803 seconds (JVM running for 12.22)
+2020-10-01 19:03:38.588  INFO 908 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-10-01 19:03:38.589  INFO 908 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-10-01 19:03:38.602  INFO 908 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 13 ms
+2020-10-01 19:03:38.697  INFO 908 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Rquest ----- ReqeustLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.example.demo.web.IndexController.index', args=[]}
+2020-10-01 19:03:38.705  INFO 908 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Return ------ admin/blogs_input
+2020-10-01 19:04:02.772  INFO 908 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-10-01 19:04:02.775  INFO 908 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-10-01 19:04:02.777  INFO 908 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-10-01 19:04:02.784  INFO 908 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-10-01 19:04:11.942  INFO 19208 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Starting SpringKotlinBlogServerApplicationKt on DESKTOP-9A1DSE9 with PID 19208 (D:\Program\Spring\spring_blog\SpringKotlinBlogServer\target\classes started by roy in D:\Program\Spring\spring_blog\SpringKotlinBlogServer)
+2020-10-01 19:04:11.946 DEBUG 19208 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-10-01 19:04:11.947  INFO 19208 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : No active profile set, falling back to default profiles: default
+2020-10-01 19:04:12.050  INFO 19208 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-10-01 19:04:12.051  INFO 19208 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-10-01 19:04:13.141  INFO 19208 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 19:04:13.142  INFO 19208 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-10-01 19:04:13.175  INFO 19208 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23ms. Found 0 JPA repository interfaces.
+2020-10-01 19:04:13.196  INFO 19208 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 19:04:13.197  INFO 19208 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-10-01 19:04:13.209  INFO 19208 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2ms. Found 0 Redis repository interfaces.
+2020-10-01 19:04:14.750  INFO 19208 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-10-01 19:04:14.763  INFO 19208 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-01 19:04:14.764  INFO 19208 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-10-01 19:04:15.006  INFO 19208 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-01 19:04:15.006  INFO 19208 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2954 ms
+2020-10-01 19:04:15.087  INFO 19208 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-01 19:04:15.239  INFO 19208 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-01 19:04:15.246  INFO 19208 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:./data/sample'
+2020-10-01 19:04:15.389  INFO 19208 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-01 19:04:15.437  INFO 19208 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-01 19:04:15.483  INFO 19208 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-10-01 19:04:15.547  WARN 19208 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-01 19:04:15.584  INFO 19208 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-01 19:04:15.671  INFO 19208 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-10-01 19:04:15.889  INFO 19208 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-10-01 19:04:16.384  INFO 19208 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-10-01 19:04:16.392  INFO 19208 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-10-01 19:04:16.455  INFO 19208 --- [task-2] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-10-01 19:04:16.849  INFO 19208 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-10-01 19:04:16.850  INFO 19208 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-10-01 19:04:16.851  INFO 19208 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-10-01 19:04:16.862  INFO 19208 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Started SpringKotlinBlogServerApplicationKt in 5.391 seconds (JVM running for 7.532)
+2020-10-01 19:04:22.987  INFO 19208 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-10-01 19:04:22.987  INFO 19208 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-10-01 19:04:22.997  INFO 19208 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2020-10-01 19:04:23.007  WARN 19208 --- [http-nio-8080-exec-1] c.e.d.I.StaticResourceInterceptor        : http://localhost:8080/
+2020-10-01 19:04:23.055  INFO 19208 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Rquest ----- ReqeustLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.example.demo.web.IndexController.index', args=[]}
+2020-10-01 19:04:23.059  INFO 19208 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Return ------ admin/blogs_input
+2020-10-01 19:04:57.434  INFO 17128 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Starting SpringKotlinBlogServerApplicationKt on DESKTOP-9A1DSE9 with PID 17128 (D:\Program\Spring\spring_blog\SpringKotlinBlogServer\target\classes started by roy in D:\Program\Spring\spring_blog\SpringKotlinBlogServer)
+2020-10-01 19:04:57.438 DEBUG 17128 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-10-01 19:04:57.439  INFO 17128 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : No active profile set, falling back to default profiles: default
+2020-10-01 19:04:57.562  INFO 17128 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-10-01 19:04:57.562  INFO 17128 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-10-01 19:04:58.834  INFO 17128 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 19:04:58.835  INFO 17128 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-10-01 19:04:58.863  INFO 17128 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18ms. Found 0 JPA repository interfaces.
+2020-10-01 19:04:58.881  INFO 17128 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 19:04:58.882  INFO 17128 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-10-01 19:04:58.894  INFO 17128 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2ms. Found 0 Redis repository interfaces.
+2020-10-01 19:04:59.978  INFO 17128 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-10-01 19:04:59.989  INFO 17128 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-01 19:04:59.990  INFO 17128 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-10-01 19:05:00.154  INFO 17128 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-01 19:05:00.154  INFO 17128 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2591 ms
+2020-10-01 19:05:00.247  INFO 17128 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-01 19:05:00.394  INFO 17128 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-01 19:05:00.399  INFO 17128 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:./data/sample'
+2020-10-01 19:05:00.532  INFO 17128 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-01 19:05:00.579  INFO 17128 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-01 19:05:00.625  INFO 17128 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-10-01 19:05:00.699  WARN 17128 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-01 19:05:00.731  INFO 17128 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-01 19:05:00.863  INFO 17128 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-10-01 19:05:04.347  INFO 17128 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-10-01 19:05:04.961  INFO 17128 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-10-01 19:05:04.974  INFO 17128 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-10-01 19:05:05.000  INFO 17128 --- [task-2] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-10-01 19:05:05.641  INFO 17128 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-10-01 19:05:05.642  INFO 17128 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-10-01 19:05:05.643  INFO 17128 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-10-01 19:05:05.659  INFO 17128 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Started SpringKotlinBlogServerApplicationKt in 8.976 seconds (JVM running for 11.776)
+2020-10-01 19:05:07.997  INFO 17128 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-10-01 19:05:07.997  INFO 17128 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-10-01 19:05:08.009  INFO 17128 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2020-10-01 19:05:08.022  WARN 17128 --- [http-nio-8080-exec-1] c.e.d.I.StaticResourceInterceptor        : http://localhost:8080/secret
+2020-10-01 19:05:28.805  INFO 17128 --- [http-nio-8080-exec-6] com.example.demo.AOP.Log.LogAspect       : Rquest ----- ReqeustLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.example.demo.web.IndexController.index', args=[]}
+2020-10-01 19:05:28.811  INFO 17128 --- [http-nio-8080-exec-6] com.example.demo.AOP.Log.LogAspect       : Return ------ admin/blogs_input
+2020-10-01 19:06:45.323  INFO 17128 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-10-01 19:06:45.323  INFO 17128 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-10-01 19:06:45.326  INFO 17128 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-10-01 19:06:45.328  INFO 17128 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-10-01 19:06:51.885  INFO 6432 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Starting SpringKotlinBlogServerApplicationKt on DESKTOP-9A1DSE9 with PID 6432 (D:\Program\Spring\spring_blog\SpringKotlinBlogServer\target\classes started by roy in D:\Program\Spring\spring_blog\SpringKotlinBlogServer)
+2020-10-01 19:06:51.900 DEBUG 6432 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-10-01 19:06:51.902  INFO 6432 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : No active profile set, falling back to default profiles: default
+2020-10-01 19:06:52.016  INFO 6432 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-10-01 19:06:52.017  INFO 6432 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-10-01 19:06:53.537  INFO 6432 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 19:06:53.537  INFO 6432 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-10-01 19:06:53.571  INFO 6432 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20ms. Found 0 JPA repository interfaces.
+2020-10-01 19:06:53.591  INFO 6432 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 19:06:53.605  INFO 6432 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-10-01 19:06:53.605  INFO 6432 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2ms. Found 0 Redis repository interfaces.
+2020-10-01 19:06:54.657  INFO 6432 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-10-01 19:06:54.674  INFO 6432 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-01 19:06:54.674  INFO 6432 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-10-01 19:06:54.804  INFO 6432 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-01 19:06:54.804  INFO 6432 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2787 ms
+2020-10-01 19:06:54.868  INFO 6432 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-01 19:06:54.990  INFO 6432 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-01 19:06:55.006  INFO 6432 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:./data/sample'
+2020-10-01 19:06:55.145  INFO 6432 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-01 19:06:55.192  INFO 6432 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-01 19:06:55.241  INFO 6432 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-10-01 19:06:55.311  WARN 6432 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-01 19:06:55.347  INFO 6432 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-01 19:06:55.473  INFO 6432 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-10-01 19:06:57.546  INFO 6432 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-10-01 19:06:58.220  INFO 6432 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-10-01 19:06:58.220  INFO 6432 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-10-01 19:06:58.314  INFO 6432 --- [task-2] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-10-01 19:06:58.730  INFO 6432 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-10-01 19:06:58.730  INFO 6432 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-10-01 19:06:58.730  INFO 6432 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-10-01 19:06:58.746  INFO 6432 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Started SpringKotlinBlogServerApplicationKt in 7.625 seconds (JVM running for 9.971)
+2020-10-01 19:07:03.218  INFO 6432 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-10-01 19:07:03.218  INFO 6432 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-10-01 19:07:03.228  INFO 6432 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2020-10-01 19:07:03.315  INFO 6432 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Rquest ----- ReqeustLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.example.demo.web.IndexController.index', args=[]}
+2020-10-01 19:07:03.320  INFO 6432 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Return ------ admin/blogs_input
+2020-10-01 19:07:04.283  WARN 6432 --- [http-nio-8080-exec-8] c.e.d.I.StaticResourceInterceptor        : http://localhost:8080/static/lib/editormd/lib/codemirror/addon/dialog/dialog.css
+2020-10-01 19:07:04.283  WARN 6432 --- [http-nio-8080-exec-7] c.e.d.I.StaticResourceInterceptor        : http://localhost:8080/static/lib/editormd/lib/codemirror/codemirror.min.css
+2020-10-01 19:07:11.333  WARN 6432 --- [http-nio-8080-exec-9] c.e.d.I.StaticResourceInterceptor        : http://localhost:8080/static/lib/editormd/lib/codemirror/addon/search/matchesonscrollbar.css
+2020-10-01 19:07:11.333  WARN 6432 --- [http-nio-8080-exec-10] c.e.d.I.StaticResourceInterceptor        : http://localhost:8080/static/lib/editormd/lib/codemirror/codemirror.min.js
+2020-10-01 19:07:23.104  INFO 6432 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-10-01 19:07:23.106  INFO 6432 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-10-01 19:07:23.107  INFO 6432 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-10-01 19:07:23.111  INFO 6432 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-10-01 19:07:27.984  INFO 14288 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Starting SpringKotlinBlogServerApplicationKt on DESKTOP-9A1DSE9 with PID 14288 (D:\Program\Spring\spring_blog\SpringKotlinBlogServer\target\classes started by roy in D:\Program\Spring\spring_blog\SpringKotlinBlogServer)
+2020-10-01 19:07:27.984 DEBUG 14288 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-10-01 19:07:27.984  INFO 14288 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : No active profile set, falling back to default profiles: default
+2020-10-01 19:07:28.105  INFO 14288 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-10-01 19:07:28.106  INFO 14288 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-10-01 19:07:29.172  INFO 14288 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 19:07:29.176  INFO 14288 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-10-01 19:07:29.199  INFO 14288 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17ms. Found 0 JPA repository interfaces.
+2020-10-01 19:07:29.217  INFO 14288 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 19:07:29.217  INFO 14288 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-10-01 19:07:29.235  INFO 14288 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4ms. Found 0 Redis repository interfaces.
+2020-10-01 19:07:30.324  INFO 14288 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-10-01 19:07:30.337  INFO 14288 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-01 19:07:30.337  INFO 14288 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-10-01 19:07:30.523  INFO 14288 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-01 19:07:30.523  INFO 14288 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2417 ms
+2020-10-01 19:07:30.591  INFO 14288 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-01 19:07:30.727  INFO 14288 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-01 19:07:30.727  INFO 14288 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:./data/sample'
+2020-10-01 19:07:30.860  INFO 14288 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-01 19:07:30.907  INFO 14288 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-01 19:07:30.950  INFO 14288 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-10-01 19:07:31.043  WARN 14288 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-01 19:07:31.098  INFO 14288 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-01 19:07:31.225  INFO 14288 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-10-01 19:07:31.491  INFO 14288 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-10-01 19:07:31.960  INFO 14288 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-10-01 19:07:31.968  INFO 14288 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-10-01 19:07:32.072  INFO 14288 --- [task-2] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-10-01 19:07:32.367  INFO 14288 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-10-01 19:07:32.368  INFO 14288 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-10-01 19:07:32.369  INFO 14288 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-10-01 19:07:32.379  INFO 14288 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Started SpringKotlinBlogServerApplicationKt in 4.862 seconds (JVM running for 7.265)
+2020-10-01 19:07:36.769  INFO 14288 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-10-01 19:07:36.769  INFO 14288 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-10-01 19:07:36.779  INFO 14288 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2020-10-01 19:07:36.833  INFO 14288 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Rquest ----- ReqeustLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.example.demo.web.IndexController.index', args=[]}
+2020-10-01 19:07:36.837  INFO 14288 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Return ------ admin/blogs_input
+2020-10-01 19:07:37.800  WARN 14288 --- [http-nio-8080-exec-10] c.e.d.I.StaticResourceInterceptor        : http://localhost:8080/static/lib/editormd/lib/codemirror/codemirror.min.css
+2020-10-01 19:07:37.800  WARN 14288 --- [http-nio-8080-exec-8] c.e.d.I.StaticResourceInterceptor        : http://localhost:8080/static/lib/editormd/lib/codemirror/addon/dialog/dialog.css
+2020-10-01 19:07:37.801  WARN 14288 --- [http-nio-8080-exec-6] c.e.d.I.StaticResourceInterceptor        : http://localhost:8080/static/lib/editormd/lib/codemirror/addon/search/matchesonscrollbar.css
+2020-10-01 19:07:37.802  WARN 14288 --- [http-nio-8080-exec-5] c.e.d.I.StaticResourceInterceptor        : http://localhost:8080/static/lib/editormd/lib/codemirror/codemirror.min.js
+2020-10-01 19:09:22.828  INFO 15052 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Starting SpringKotlinBlogServerApplicationKt on DESKTOP-9A1DSE9 with PID 15052 (D:\Program\Spring\spring_blog\SpringKotlinBlogServer\target\classes started by roy in D:\Program\Spring\spring_blog\SpringKotlinBlogServer)
+2020-10-01 19:09:22.828 DEBUG 15052 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-10-01 19:09:22.828  INFO 15052 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : No active profile set, falling back to default profiles: default
+2020-10-01 19:09:22.919  INFO 15052 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-10-01 19:09:22.919  INFO 15052 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-10-01 19:09:23.948  INFO 15052 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 19:09:23.949  INFO 15052 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-10-01 19:09:23.982  INFO 15052 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21ms. Found 0 JPA repository interfaces.
+2020-10-01 19:09:24.001  INFO 15052 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 19:09:24.003  INFO 15052 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-10-01 19:09:24.015  INFO 15052 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2ms. Found 0 Redis repository interfaces.
+2020-10-01 19:09:25.256  INFO 15052 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-10-01 19:09:25.277  INFO 15052 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-01 19:09:25.277  INFO 15052 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-10-01 19:09:25.474  INFO 15052 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-01 19:09:25.474  INFO 15052 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2555 ms
+2020-10-01 19:09:25.551  INFO 15052 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-01 19:09:25.689  INFO 15052 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-01 19:09:25.695  INFO 15052 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:./data/sample'
+2020-10-01 19:09:25.827  INFO 15052 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-01 19:09:25.877  INFO 15052 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-01 19:09:25.920  INFO 15052 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-10-01 19:09:26.013  WARN 15052 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-01 19:09:26.047  INFO 15052 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-01 19:09:26.185  INFO 15052 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-10-01 19:09:26.437  INFO 15052 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-10-01 19:09:26.871  INFO 15052 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-10-01 19:09:26.871  INFO 15052 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-10-01 19:09:26.993  INFO 15052 --- [task-2] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-10-01 19:09:27.351  INFO 15052 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-10-01 19:09:27.352  INFO 15052 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-10-01 19:09:27.352  INFO 15052 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-10-01 19:09:27.371  INFO 15052 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Started SpringKotlinBlogServerApplicationKt in 5.026 seconds (JVM running for 7.055)
+2020-10-01 19:09:36.686  INFO 15052 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-10-01 19:09:36.686  INFO 15052 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-10-01 19:09:36.696  INFO 15052 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2020-10-01 19:09:36.752  INFO 15052 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Rquest ----- ReqeustLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.example.demo.web.IndexController.index', args=[]}
+2020-10-01 19:09:36.756  INFO 15052 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Return ------ admin/blogs_input
+2020-10-01 19:09:37.707  WARN 15052 --- [http-nio-8080-exec-7] c.e.d.I.StaticResourceInterceptor        : http://localhost:8080/static/lib/editormd/lib/codemirror/codemirror.min.css
+2020-10-01 19:09:37.707  WARN 15052 --- [http-nio-8080-exec-8] c.e.d.I.StaticResourceInterceptor        : http://localhost:8080/static/lib/editormd/lib/codemirror/addon/dialog/dialog.css
+2020-10-01 19:09:37.710  WARN 15052 --- [http-nio-8080-exec-9] c.e.d.I.StaticResourceInterceptor        : http://localhost:8080/static/lib/editormd/lib/codemirror/addon/search/matchesonscrollbar.css
+2020-10-01 19:09:37.710  WARN 15052 --- [http-nio-8080-exec-10] c.e.d.I.StaticResourceInterceptor        : http://localhost:8080/static/lib/editormd/lib/codemirror/codemirror.min.js
+2020-10-01 19:09:37.711  WARN 15052 --- [http-nio-8080-exec-7] c.e.d.I.StaticResourceInterceptor        : http://localhost:8080/lib/editormd/lib/codemirror/codemirror.min.css
+2020-10-01 19:09:37.711  WARN 15052 --- [http-nio-8080-exec-8] c.e.d.I.StaticResourceInterceptor        : http://localhost:8080/lib/editormd/lib/codemirror/addon/dialog/dialog.css
+2020-10-01 19:09:37.711  WARN 15052 --- [http-nio-8080-exec-10] c.e.d.I.StaticResourceInterceptor        : http://localhost:8080/lib/editormd/lib/codemirror/codemirror.min.js
+2020-10-01 19:09:37.711  WARN 15052 --- [http-nio-8080-exec-9] c.e.d.I.StaticResourceInterceptor        : http://localhost:8080/lib/editormd/lib/codemirror/addon/search/matchesonscrollbar.css
+2020-10-01 19:11:14.259  INFO 5840 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Starting SpringKotlinBlogServerApplicationKt on DESKTOP-9A1DSE9 with PID 5840 (D:\Program\Spring\spring_blog\SpringKotlinBlogServer\target\classes started by roy in D:\Program\Spring\spring_blog\SpringKotlinBlogServer)
+2020-10-01 19:11:14.263 DEBUG 5840 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-10-01 19:11:14.264  INFO 5840 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : No active profile set, falling back to default profiles: default
+2020-10-01 19:11:14.360  INFO 5840 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-10-01 19:11:14.361  INFO 5840 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-10-01 19:11:15.398  INFO 5840 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 19:11:15.399  INFO 5840 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-10-01 19:11:15.430  INFO 5840 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21ms. Found 0 JPA repository interfaces.
+2020-10-01 19:11:15.451  INFO 5840 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-01 19:11:15.453  INFO 5840 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-10-01 19:11:15.465  INFO 5840 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2ms. Found 0 Redis repository interfaces.
+2020-10-01 19:11:16.498  INFO 5840 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-10-01 19:11:16.513  INFO 5840 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-01 19:11:16.513  INFO 5840 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-10-01 19:11:16.717  INFO 5840 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-01 19:11:16.717  INFO 5840 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2354 ms
+2020-10-01 19:11:16.782  INFO 5840 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-01 19:11:16.925  INFO 5840 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-01 19:11:16.933  INFO 5840 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:file:./data/sample'
+2020-10-01 19:11:17.056  INFO 5840 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-01 19:11:17.099  INFO 5840 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-01 19:11:17.147  INFO 5840 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-10-01 19:11:17.217  WARN 5840 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-01 19:11:17.267  INFO 5840 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-01 19:11:17.377  INFO 5840 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-10-01 19:11:17.765  INFO 5840 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-10-01 19:11:18.300  INFO 5840 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-10-01 19:11:18.309  INFO 5840 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-10-01 19:11:18.410  INFO 5840 --- [task-2] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-10-01 19:11:18.796  INFO 5840 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-10-01 19:11:18.798  INFO 5840 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-10-01 19:11:18.799  INFO 5840 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-10-01 19:11:18.812  INFO 5840 --- [restartedMain] .e.d.SpringKotlinBlogServerApplicationKt : Started SpringKotlinBlogServerApplicationKt in 4.985 seconds (JVM running for 6.896)
+2020-10-01 19:11:22.176  INFO 5840 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-10-01 19:11:22.176  INFO 5840 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-10-01 19:11:22.185  INFO 5840 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2020-10-01 19:11:22.241  INFO 5840 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Rquest ----- ReqeustLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.example.demo.web.IndexController.index', args=[]}
+2020-10-01 19:11:22.246  INFO 5840 --- [http-nio-8080-exec-1] com.example.demo.AOP.Log.LogAspect       : Return ------ admin/blogs_input

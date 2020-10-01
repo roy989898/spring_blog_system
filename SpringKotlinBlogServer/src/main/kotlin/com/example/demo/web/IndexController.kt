@@ -14,6 +14,6 @@ class IndexController {
          if (blog == null) {
              throw NotFoundException("Blog not found")
          }*/
-        return "admin/blogs_admin"
+        return "admin/blogs_input"
     }
 }
