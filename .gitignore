@@ -34,3 +34,4 @@ build/
 .vscode/
 SpringKotlinBlogServer/.mvn/wrapper/maven-wrapper.jar
 SpringKotlinBlogServer/data/sample.mv.db
+SpringKotlinBlogServer/log/blog.log
