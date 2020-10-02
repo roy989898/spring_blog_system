@@ -25,6 +25,10 @@ class TypeServiceImp(val typeRepository: TypeRepository) : TypeService {
         return typeRepository.findById(id).unwrap()
     }
 
+    override fun getTypeNyName(name: String): Type? {
+        return typeRepository.findByName(name).unwrap()
+    }
+
     override fun listType(pageable: Pageable): Page<Type> {
 
 

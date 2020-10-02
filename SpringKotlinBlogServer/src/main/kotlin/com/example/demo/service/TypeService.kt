@@ -10,6 +10,7 @@ interface TypeService {
     fun save(type: Type): Type
 
     fun getType(id: Long): Type?
+    fun getTypeNyName(name: String): Type?
 
     fun listType(pageable: Pageable): Page<Type>
 

@@ -17,6 +17,6 @@ class IndexController {
     fun index2(): String {
 
 
-        return "admin/types-input"
+        return "admin/types_input"
     }
 }

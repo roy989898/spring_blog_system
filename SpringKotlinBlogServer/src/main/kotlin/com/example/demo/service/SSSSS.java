@@ -1,9 +1,12 @@
 package com.example.demo.service;
 
+import com.example.demo.po.Type;
 import com.example.demo.po.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-/*public interface SSSSS extends JpaRepository<User,Long> {
+import java.util.Optional;
 
-    User findByUsernameAndPassword(String username,String password);
-}*/
+public interface SSSSS extends JpaRepository<Type, Long> {
+
+   /* Optional<Type> findByName(String name);*/
+}
