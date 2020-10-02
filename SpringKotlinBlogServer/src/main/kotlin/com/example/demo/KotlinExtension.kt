@@ -1,6 +1,7 @@
 package com.example.demo
 
 import com.example.demo.po.User
+import com.example.demo.utility.MD5
 import java.util.*
 import javax.servlet.http.HttpSession
 
@@ -17,4 +18,8 @@ fun HttpSession.saveSessionUser(user: User) {
 
 fun HttpSession.removeSessionUser() {
     this.removeAttribute("user")
+}
+
+fun String.toMD5(): String? {
+    return MD5.getMd5(this)
 }

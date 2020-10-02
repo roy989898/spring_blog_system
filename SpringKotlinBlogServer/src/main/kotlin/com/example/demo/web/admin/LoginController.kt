@@ -3,6 +3,7 @@ package com.example.demo.web.admin
 import com.example.demo.removeSessionUser
 import com.example.demo.saveSessionUser
 import com.example.demo.service.UserService
+import com.example.demo.toMD5
 import com.example.demo.unwrap
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.GetMapping
@@ -27,7 +28,7 @@ class LoginController(val userService: UserService) {
     fun login(@RequestParam username: String, @RequestParam password: String, session: HttpSession,
               redirectAttributes: RedirectAttributes): String {
 
-        val user = userService.checkUser(username, password).unwrap()
+        val user = userService.checkUser(username, password.toMD5() ?: "").unwrap()
         return if (user != null) {
             user.password = ""
             session.saveSessionUser(user)
