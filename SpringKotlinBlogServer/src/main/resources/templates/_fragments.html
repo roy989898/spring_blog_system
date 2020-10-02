@@ -32,7 +32,7 @@
         <ul class="navbar-nav mr-auto">
             <li class="nav-item " th:classappend="${i}==0?'active':''">
 
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="#" th:href="@{/admin/blogs}">
                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-shop" fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd"
@@ -41,7 +41,7 @@
                     Blog </a>
             </li>
             <li class="nav-item" th:classappend="${i}==1?'active':''">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="#" th:href="@{/admin/types}">
                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-gem" fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd"

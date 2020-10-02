@@ -6,7 +6,9 @@ import com.example.demo.po.Type
 import com.example.demo.unwrap
 import org.springframework.beans.BeanUtils
 import org.springframework.data.domain.Page
+import org.springframework.data.domain.PageRequest
 import org.springframework.data.domain.Pageable
+import org.springframework.data.domain.Sort
 import org.springframework.stereotype.Service
 import javax.transaction.Transactional
 
@@ -24,6 +26,7 @@ class TypeServiceImp(val typeRepository: TypeRepository) : TypeService {
     }
 
     override fun listType(pageable: Pageable): Page<Type> {
+
 
         return typeRepository.findAll(pageable)
 
