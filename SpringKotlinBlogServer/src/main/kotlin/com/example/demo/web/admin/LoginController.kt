@@ -24,6 +24,12 @@ class LoginController(val userService: UserService) {
 
     }
 
+    @GetMapping("/index")
+    fun index(): String {
+        return "admin/index"
+
+    }
+
     @PostMapping("/login")
     fun login(@RequestParam username: String, @RequestParam password: String, session: HttpSession,
               redirectAttributes: RedirectAttributes): String {
@@ -33,7 +39,7 @@ class LoginController(val userService: UserService) {
             user.password = ""
             session.saveSessionUser(user)
 
-            "admin/index"
+            "redirect:/admin/index"
         } else {
             redirectAttributes.addFlashAttribute("message", "username or password not correct")
 
