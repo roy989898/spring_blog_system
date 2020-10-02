@@ -38,6 +38,14 @@ class TypeController(val typeService: TypeService) {
         return "admin/types_input"
     }
 
+
+    @GetMapping("/types/{id}/input")
+    fun editInput(@PathVariable id: Long, model: Model): String {
+        val type = typeService.getType(id)
+        model.addAttribute("type", type)
+        return "admin/types_input"
+    }
+
     @PostMapping("/types")
     fun saveType(@Valid type: Type, redirectAttributes: RedirectAttributes, bindingResult: BindingResult): String {
 //        LOGGER.info(type)
@@ -56,7 +64,7 @@ class TypeController(val typeService: TypeService) {
 
 
         } else {
-            val aType = Type(null, type.name, emptyList())
+            val aType = Type(type.id, type.name, emptyList())
             typeService.save(aType)
 
             return "redirect:/admin/types"
