@@ -28,7 +28,7 @@ class LoginController(val userService: UserService) {
     fun login(@RequestParam username: String, @RequestParam password: String, session: HttpSession,
               redirectAttributes: RedirectAttributes): String {
 
-        val user = userService.checkUser(username, password.toMD5() ?: "").unwrap()
+        val user = userService.checkUser(username, password).unwrap()
         return if (user != null) {
             user.password = ""
             session.saveSessionUser(user)
