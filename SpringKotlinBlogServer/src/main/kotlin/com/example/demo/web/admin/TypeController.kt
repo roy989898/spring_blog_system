@@ -8,8 +8,11 @@ import org.springframework.data.domain.PageRequest
 import org.springframework.data.domain.Sort
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
+import org.springframework.validation.BindingResult
+import org.springframework.validation.ObjectError
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.servlet.mvc.support.RedirectAttributes
+import javax.validation.Valid
 
 @Controller
 @RequestMapping("/admin")
@@ -20,7 +23,7 @@ class TypeController(val typeService: TypeService) {
     fun list(model: Model, @PathVariable(required = false) page_num: Int?): String {
         val usedPageNUm = page_num ?: 0
         val sort = Sort.by(Sort.Direction.DESC, "id")
-        val pb = PageRequest.of(usedPageNUm, 10, sort)
+        val pb = PageRequest.of(usedPageNUm, 2, sort)
 
         val types = typeService.listType(pb)
         LOGGER.info(types.isFirst.toString())
@@ -36,20 +39,27 @@ class TypeController(val typeService: TypeService) {
     }
 
     @PostMapping("/types")
-    fun saveType(@RequestParam type: String, redirectAttributes: RedirectAttributes): String {
+    fun saveType(@Valid type: Type, redirectAttributes: RedirectAttributes, bindingResult: BindingResult): String {
 //        LOGGER.info(type)
 
-        val findType = typeService.getTypeNyName(type)
+        val findType = typeService.getTypeNyName(type.name)
 
-        if (findType == null) {
-            val aType = Type(null, type, emptyList())
+        if (findType != null) {
+            bindingResult.addError(ObjectError("exist", "already exist"))
+        }
+
+        if (bindingResult.allErrors.size > 0) {
+            //            TODO
+            val errors = bindingResult.allErrors
+            redirectAttributes.addFlashAttribute("message", errors[0].defaultMessage)
+            return "redirect:/admin/types/input"
+
+
+        } else {
+            val aType = Type(null, type.name, emptyList())
             typeService.save(aType)
 
             return "redirect:/admin/types"
-        } else {
-//            TODO
-            redirectAttributes.addFlashAttribute("message", "already exist")
-            return "redirect:/admin/types/input"
         }
 
 
