@@ -1,15 +1,19 @@
 package com.example.demo.web.admin
 
+import com.example.demo.removeSessionUser
+import com.example.demo.saveSessionUser
 import com.example.demo.service.UserService
 import com.example.demo.unwrap
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.servlet.mvc.support.RedirectAttributes
 import javax.servlet.http.HttpSession
 
-@Controller("/admin")
+@Controller
+@RequestMapping("/admin")
 class LoginController(val userService: UserService) {
 
 
@@ -26,7 +30,7 @@ class LoginController(val userService: UserService) {
         val user = userService.checkUser(username, password).unwrap()
         return if (user != null) {
             user.password = ""
-            session.setAttribute("user", user)
+            session.saveSessionUser(user)
 
             "admin/index"
         } else {
@@ -40,7 +44,7 @@ class LoginController(val userService: UserService) {
 
     @GetMapping("/logout")
     fun logout(session: HttpSession): String {
-        session.removeAttribute("user")
+        session.removeSessionUser()
 
         return "redirect:/admin"
     }
