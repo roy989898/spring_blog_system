@@ -46,6 +46,13 @@ class TypeController(val typeService: TypeService) {
         return "admin/types_input"
     }
 
+
+    @GetMapping("/types/{id}/delete")
+    fun delete(@PathVariable id: Long, model: Model): String {
+        typeService.deleteType(id)
+        return "redirect:/admin/types"
+    }
+
     @PostMapping("/types")
     fun saveType(@Valid type: Type, redirectAttributes: RedirectAttributes, bindingResult: BindingResult): String {
 //        LOGGER.info(type)
