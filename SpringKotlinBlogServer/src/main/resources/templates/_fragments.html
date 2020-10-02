@@ -18,9 +18,10 @@
 </head>
 <body>
 
-<div class="btn-group" role="group" aria-label="Basic example" th:fragment="admin_post_list_button(i)">
-    <button type="button" class="btn btn-secondary " th:classappend="${i}==0?'active':''">Post</button>
-    <button type="button" class="btn btn-secondary " th:classappend="${i}==1?'active':''">List</button>
+<div class="btn-group" role="group" aria-label="Basic example"
+     th:fragment="admin_post_list_button(i,post_link,list_link)">
+    <a type="button" class="btn btn-secondary " th:classappend="${i}==0?'active':''" th:href="${post_link}">Post</a>
+    <a type="button" class="btn btn-secondary " th:classappend="${i}==1?'active':''" th:href="${list_link}">List</a>
 </div>
 <nav class="navbar navbar-expand-lg navbar-light bg-light " th:fragment="admin_nav(i)">
     <a class="navbar-brand" href="#">Admin</a>

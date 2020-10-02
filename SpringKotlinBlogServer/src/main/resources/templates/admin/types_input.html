@@ -16,7 +16,7 @@
      </div>-->
 
 
-    <div th:replace="_fragments.html::admin_post_list_button(0)"></div>
+    <div th:replace="_fragments.html::admin_post_list_button(0,'/admin/types/input','/admin/types')"></div>
 
 </div>
 <!-- contect-->
@@ -24,13 +24,13 @@
     <form method="post" th:action="@{/admin/types}">
 
         <input type="hidden" name="id"
-               th:value="${type.getId()}">
+               th:value="${type?.getId()}">
         <div class="input-group mt-3">
             <div class="input-group-prepend">
                 <div class="input-group-text">Type</div>
             </div>
             <input type="text" class="form-control" placeholder="type name" name="name" id="type_input"
-                   th:classappend="${message!=null} ?'is-invalid' : ''" th:value="${type.getName()}">
+                   th:classappend="${message!=null} ?'is-invalid' : ''" th:value="${type?.getName()}">
             <div class="invalid-feedback" id="typeInputError" th:text="${message}">
 
             </div>
