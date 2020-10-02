@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+<head th:replace="_fragments.html::head(title='Blog input Page')">
+<body>
+
+<!-- Nav-->
+
+<div th:replace="_fragments.html::admin_nav(1)"></div>
+
+<div class="container text-right">
+    <!-- <div class="btn-group" role="group" aria-label="Basic example">
+         <button type="button" class="btn btn-secondary active">Post</button>
+         <button type="button" class="btn btn-secondary ">List</button>
+     </div>-->
+
+
+    <div th:replace="_fragments.html::admin_post_list_button(0)"></div>
+
+</div>
+
+<!-- contect-->
+<div class="container pt-3">
+    <form>
+
+
+        <div class="input-group mt-3">
+            <div class="input-group-prepend">
+                <div class="input-group-text">Tag</div>
+            </div>
+            <input type="text" class="form-control" placeholder="image address">
+        </div>
+
+
+        <div class="mt-2">
+            <div class="btn btn-primary" id="back_button">Back</div>
+            <div class="btn btn-primary">Save</div>
+        </div>
+    </form>
+
+</div>
+
+
+<!-- footer-->
+
+
+<div th:replace="_fragments.html::script"></div>
+
+
+<script>
+    $(document).ready(function () {
+
+        $("#back_button").click(function () {
+            window.history.back();
+        })
+
+    });
+
+</script>
+
+</body>
+</html>

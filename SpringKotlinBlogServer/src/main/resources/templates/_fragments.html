@@ -18,7 +18,10 @@
 </head>
 <body>
 
-
+<div class="btn-group" role="group" aria-label="Basic example" th:fragment="admin_post_list_button(i)">
+    <button type="button" class="btn btn-secondary " th:classappend="${i}==0?'active':''">Post</button>
+    <button type="button" class="btn btn-secondary " th:classappend="${i}==1?'active':''">List</button>
+</div>
 <nav class="navbar navbar-expand-lg navbar-light bg-light " th:fragment="admin_nav(i)">
     <a class="navbar-brand" href="#">Admin</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
