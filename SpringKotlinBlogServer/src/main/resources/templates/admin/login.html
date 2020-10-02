@@ -45,41 +45,46 @@
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <div th:replace="_fragments.html::script"></div>
 <script>
-    $('form').submit(function () {
-        let usernameInput = $('#usernameInput')
-        let passwordInput = $('#exampleInputPassword1')
 
 
-        let username = $.trim(usernameInput.val())
-        let password = $.trim(passwordInput.val())
-        let isUsernameEmpty = username === ''
-        let isPasswordEmpty = password === ''
+    $(document).ready(function () {
+        $('form').submit(function () {
+            let usernameInput = $('#usernameInput')
+            let passwordInput = $('#exampleInputPassword1')
 
-        if (isUsernameEmpty || isPasswordEmpty) {
-            // console.log('isUsernameEmpty||isPasswordEmpty')
-            //TODO add the invalid class
-            if (isUsernameEmpty) {
-                usernameInput.addClass('is-invalid')
-                let usernameInputError = $('#usernameInputError')
-                usernameInputError.text("username should not empty")
+
+            let username = $.trim(usernameInput.val())
+            let password = $.trim(passwordInput.val())
+            let isUsernameEmpty = username === ''
+            let isPasswordEmpty = password === ''
+
+            if (isUsernameEmpty || isPasswordEmpty) {
+                // console.log('isUsernameEmpty||isPasswordEmpty')
+                //TODO add the invalid class
+                if (isUsernameEmpty) {
+                    usernameInput.addClass('is-invalid')
+                    let usernameInputError = $('#usernameInputError')
+                    usernameInputError.text("username should not empty")
+                } else {
+                    usernameInput.removeClass('is-invalid')
+                }
+                if (isPasswordEmpty) {
+                    passwordInput.addClass('is-invalid')
+                    let passwordInputError = $('#passwordInputError')
+                    passwordInputError.text("password should not empty")
+                } else {
+                    passwordInput.removeClass('is-invalid')
+                }
+
+                return false
             } else {
-                usernameInput.removeClass('is-invalid')
-            }
-            if (isPasswordEmpty) {
-                passwordInput.addClass('is-invalid')
-                let passwordInputError = $('#passwordInputError')
-                passwordInputError.text("password should not empty")
-            } else {
-                passwordInput.removeClass('is-invalid')
+                return true
             }
 
-            return false
-        } else {
-            return true
-        }
 
+        })
+    });
 
-    })
 </script>
 </body>
 </html>
