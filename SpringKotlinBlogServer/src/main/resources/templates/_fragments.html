@@ -18,8 +18,8 @@
 </head>
 <body>
 
-<div class="btn-group" role="group" aria-label="Basic example"
-     th:fragment="admin_post_list_button(i,post_link,list_link)">
+<div th:fragment="admin_post_list_button(i,post_link,list_link)" class="btn-group" role="group"
+     aria-label="Basic example">
     <a type="button" class="btn btn-secondary " th:classappend="${i}==0?'active':''" th:href="${post_link}">Post</a>
     <a type="button" class="btn btn-secondary " th:classappend="${i}==1?'active':''" th:href="${list_link}">List</a>
 </div>

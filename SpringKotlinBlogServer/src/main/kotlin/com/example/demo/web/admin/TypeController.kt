@@ -26,8 +26,8 @@ class TypeController(val typeService: TypeService) {
         val pb = PageRequest.of(usedPageNUm, 2, sort)
 
         val types = typeService.listType(pb)
-        LOGGER.info(types.isFirst.toString())
-        LOGGER.info(types.isLast.toString())
+/*        LOGGER.info(types.isFirst.toString())
+        LOGGER.info(types.isLast.toString())*/
         model.addAttribute("types", types)
         return "admin/types"
 
