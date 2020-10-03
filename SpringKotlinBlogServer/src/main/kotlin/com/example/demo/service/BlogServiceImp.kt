@@ -24,7 +24,7 @@ class BlogServiceImp(val blogRepository: BlogRepository) : BlogService {
     }
 
     override fun listBlog(pageable: Pageable, blogForm: BlogSearchForm): Page<Blog> {
-        blogRepository.findAll(Specification { root: Root<Blog>, criteriaQuery: CriteriaQuery<*>, criteriaBuilder: CriteriaBuilder ->
+        return blogRepository.findAll(Specification { root: Root<Blog>, criteriaQuery: CriteriaQuery<*>, criteriaBuilder: CriteriaBuilder ->
             val predicates = mutableListOf<Predicate>()
 
 
@@ -35,7 +35,7 @@ class BlogServiceImp(val blogRepository: BlogRepository) : BlogService {
             if (blogForm.type?.id != null) {
                 predicates.add(criteriaBuilder.equal(root.get<Type?>("type").get<Long?>("id"), blogForm.type?.id ?: 0))
             }
-            if (blogForm.recommend) {
+            if (blogForm.recommend == true) {
                 predicates.add(criteriaBuilder.equal(root.get<Boolean>("recommend"), blogForm.recommend))
             }
 
@@ -44,7 +44,6 @@ class BlogServiceImp(val blogRepository: BlogRepository) : BlogService {
             return@Specification null
 
         }, pageable)
-        TODO("Not yet implemented")
     }
 
     override fun saveBlog(blog: Blog): Blog {

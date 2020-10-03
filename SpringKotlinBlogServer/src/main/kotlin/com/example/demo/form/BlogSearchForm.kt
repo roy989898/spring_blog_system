@@ -6,5 +6,5 @@ data class BlogSearchForm(
 
         var title: String?,
         var type: Type?,
-        var recommend: Boolean
+        var recommend: Boolean?
 )
