@@ -32,8 +32,8 @@ class BlogServiceImp(val blogRepository: BlogRepository) : BlogService {
                 predicates.add(criteriaBuilder.like(root.get<String>("title"), "%" + blogForm.title + "%"))
             }
 
-            if (blogForm.type?.id != null) {
-                predicates.add(criteriaBuilder.equal(root.get<Type?>("type").get<Long?>("id"), blogForm.type?.id ?: 0))
+            if (blogForm.typeId != null) {
+                predicates.add(criteriaBuilder.equal(root.get<Type?>("type").get<Long?>("id"), blogForm.typeId ?: 0))
             }
             if (blogForm.recommend == true) {
                 predicates.add(criteriaBuilder.equal(root.get<Boolean>("recommend"), blogForm.recommend))
