@@ -1,7 +1,9 @@
 package com.example.demo.web.admin
 
 import com.example.demo.form.BlogSearchForm
+import com.example.demo.po.Type
 import com.example.demo.service.BlogService
+import com.example.demo.service.TypeService
 import org.springframework.data.domain.PageRequest
 import org.springframework.data.domain.Sort
 import org.springframework.stereotype.Controller
@@ -12,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping
 
 @Controller
 @RequestMapping("/admin")
-class BlogController(val blogService: BlogService) {
+class BlogController(val blogService: BlogService, val typeService: TypeService) {
 
 
     @GetMapping("/blogs", "/blogs/{page_num}")
@@ -23,7 +25,11 @@ class BlogController(val blogService: BlogService) {
 
 
         val blogs = blogService.listBlog(pb, blogSearchForm)
+        val types = typeService.listType().toMutableList()
+        val emptyType = Type(null, "", null)
+        types.add(0, emptyType)
         model.addAttribute("page", blogs)
+        model.addAttribute("types", types)
         return "admin/blogs"
 
     }

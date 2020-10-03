@@ -33,8 +33,13 @@
                     </div>
                     <div class="col-6 col-sm-4">
                         <select class="form-control" name="typeId">
-                            <option value="0">Default Category 1</option>
-                            <option value="1">Default Category 2</option>
+
+                            <th:block th:each="type:${types}">
+                                <option th:value="${type.getId()}" th:text="${type.getName()}">Default Category 1
+                                </option>
+                            </th:block>
+
+
                         </select>
                     </div>
 

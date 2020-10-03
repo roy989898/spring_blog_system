@@ -13,7 +13,7 @@ interface TypeService {
     fun getTypeNyName(name: String): Type?
 
     fun listType(pageable: Pageable): Page<Type>
-
+    fun listType(): List<Type>
     fun updateType(id: Long, type: Type)
 
     fun deleteType(id: Long)

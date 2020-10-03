@@ -36,6 +36,10 @@ class TypeServiceImp(val typeRepository: TypeRepository) : TypeService {
 
     }
 
+    override fun listType(): List<Type> {
+        return typeRepository.findAll()
+    }
+
     @Transactional
     override fun updateType(id: Long, type: Type) {
         val foundType = typeRepository.findById(id).unwrap()
