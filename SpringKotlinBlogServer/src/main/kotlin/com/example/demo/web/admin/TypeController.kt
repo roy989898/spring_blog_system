@@ -54,7 +54,7 @@ class TypeController(val typeService: TypeService) {
     }
 
     @PostMapping("/types")
-    fun saveType(@Valid type: Type, redirectAttributes: RedirectAttributes, bindingResult: BindingResult): String {
+    fun saveType(@Valid type: Type, bindingResult: BindingResult, redirectAttributes: RedirectAttributes): String {
 //        LOGGER.info(type)
 
         val findType = typeService.getTypeNyName(type.name)

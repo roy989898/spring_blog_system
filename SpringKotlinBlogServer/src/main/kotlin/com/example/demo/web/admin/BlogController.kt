@@ -9,9 +9,12 @@ import org.springframework.data.domain.PageRequest
 import org.springframework.data.domain.Sort
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
+import org.springframework.validation.BindingResult
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.servlet.mvc.support.RedirectAttributes
+import javax.validation.Valid
 
 @Controller
 @RequestMapping("/admin")
@@ -36,10 +39,24 @@ class BlogController(val blogService: BlogService, val typeService: TypeService)
     }
 
     @PostMapping("/blogs")
-    fun blogInput(blogInputForm: BlogInputForm, model: Model): String {
+    fun blogInput(@Valid blogInputForm: BlogInputForm, bindingResult: BindingResult, redirectAttributes: RedirectAttributes, model: Model): String {
 
 //        TODO
-        return "admin/blogs_input"
+
+        if (bindingResult.allErrors.size > 0) {
+            val errorFields = bindingResult.fieldErrors
+            val errors = HashMap<String, String>()
+            errorFields.forEach {
+                errors[it.field] = it.defaultMessage ?: ""
+            }
+//            model.addAttribute("errors", errors)
+            redirectAttributes.addFlashAttribute("errors", errors)
+            return "redirect:/admin/blogs/input"
+        } else {
+//            TODO save
+            return "redirect:/admin/blogs"
+        }
+
 
     }
 
