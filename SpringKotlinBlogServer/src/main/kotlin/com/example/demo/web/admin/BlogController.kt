@@ -1,5 +1,6 @@
 package com.example.demo.web.admin
 
+import com.example.demo.form.BlogInputForm
 import com.example.demo.form.BlogSearchForm
 import com.example.demo.po.Type
 import com.example.demo.service.BlogService
@@ -34,8 +35,22 @@ class BlogController(val blogService: BlogService, val typeService: TypeService)
 
     }
 
+    @PostMapping("/blogs")
+    fun blogInput(blogInputForm: BlogInputForm, model: Model): String {
+
+//        TODO
+        return "admin/blogs_input"
+
+    }
+
     @GetMapping("/blogs/input")
-    fun blogCreate(): String {
+    fun blogCreate(model: Model): String {
+
+        val types = typeService.listType().toMutableList()
+
+
+        model.addAttribute("types", types)
+
         return "admin/blogs_input"
     }
 

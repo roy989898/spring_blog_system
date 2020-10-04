@@ -6,11 +6,11 @@ data class BlogInputForm(
         var firstPicture: String?,
         var flag: String?,
         var typeId: Long?,
-        var image: String?,
-        var recommend: Boolean,
-        var shareStatement: Boolean,
-        var appreciation: Boolean,
-        var commentabled: Boolean
+        var recommend: Boolean?,
+        var shareStatement: Boolean?,
+        var appreciation: Boolean?,
+        var commentabled: Boolean?,
+        var published: Boolean?
 
 
 )
