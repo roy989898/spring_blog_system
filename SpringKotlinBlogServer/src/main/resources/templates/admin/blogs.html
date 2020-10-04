@@ -61,6 +61,8 @@
 
 
     <!--    the list-->
+
+
     <div class="card mt-2" id="tableContainer">
         <table class="table" th:fragment="blogList">
             <thead>
@@ -94,15 +96,19 @@
         </table>
     </div>
 
-    <div class="d-flex flex-wrap mt-2" th:if="${page.getTotalPages()>1}">
-        <a class="btn btn-primary mr-1 " onclick="page(this)"
-           th:attr="data-page=${page.getNumber()-1}"
-           th:classappend="${page.isFirst()?'disabled':''}">Up</a>
-        <a class="btn btn-primary  mr-auto" onclick="page(this)"
-           th:attr="data-page=${page.getNumber()+1}"
-           th:classappend="${page.isLast()?'disabled':''}">Next</a>
-        <a class="btn btn-primary  ml-1" th:href="@{/admin/blogs/input}">Add</a>
+
+    <div id="upNextBtContainer">
+        <div class="d-flex flex-wrap mt-2" th:fragment="blogButton">
+            <a class="btn btn-primary mr-1 " onclick="page(this)"
+               th:attr="data-page=${page.getNumber()-1}"
+               th:classappend="${page.isFirst()?'disabled':''}">Up</a>
+            <a class="btn btn-primary  " onclick="page(this)"
+               th:attr="data-page=${page.getNumber()+1}"
+               th:classappend="${page.isLast()?'disabled':''}">Next</a>
+            <a class="btn btn-primary ml-auto" th:href="@{/admin/blogs/input}">Add</a>
+        </div>
     </div>
+
 </div>
 
 
@@ -119,7 +125,9 @@
 
         // jQuery methods go here...
         $("#searchForm").submit(function (event) {
+            $("[name='page']").val(0);
             loadData()
+            loadButtonData()
             return false
         });
     });
@@ -134,8 +142,19 @@
 
 
     function loadData() {
-        console.log("loadData")
+
         $("#tableContainer").load("/admin/blogs/search", {
+            page: $("[name='page']").val(),
+            title: $("[name='title']").val(),
+            typeId: $("[name='typeId']").val(),
+            recommend: $("[name='recommend']").val(),
+        })
+
+    }
+
+    function loadButtonData() {
+
+        $("#upNextBtContainer").load("/admin/blogs/searchButton", {
             page: $("[name='page']").val(),
             title: $("[name='title']").val(),
             typeId: $("[name='typeId']").val(),

@@ -36,8 +36,8 @@ class BlogController(val blogService: BlogService, val typeService: TypeService)
 
 
     @PostMapping("/blogs/search")
-    fun search(model: Model, page_num: Int?, blogSearchForm: BlogSearchForm): String {
-        val usedPageNUm = page_num ?: 0
+    fun search(model: Model, blogSearchForm: BlogSearchForm): String {
+        val usedPageNUm = 0
         val sort = Sort.by(Sort.Direction.ASC, "id")
         val pb = PageRequest.of(usedPageNUm, 10, sort)
 
@@ -45,6 +45,19 @@ class BlogController(val blogService: BlogService, val typeService: TypeService)
         val blogs = blogService.listBlog(pb, blogSearchForm)
         model.addAttribute("page", blogs)
         return "admin/blogs::blogList"
+
+    }
+
+    @PostMapping("/blogs/searchButton")
+    fun searchButtonPart(model: Model, blogSearchForm: BlogSearchForm): String {
+        val usedPageNUm = 0
+        val sort = Sort.by(Sort.Direction.ASC, "id")
+        val pb = PageRequest.of(usedPageNUm, 10, sort)
+
+
+        val blogs = blogService.listBlog(pb, blogSearchForm)
+        model.addAttribute("page", blogs)
+        return "admin/blogs::blogButton"
 
     }
 }
