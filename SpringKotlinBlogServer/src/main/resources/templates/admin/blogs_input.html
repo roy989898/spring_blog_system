@@ -35,15 +35,15 @@
 
                 </div>
             </div>
-            <input type="text" class="form-control is-invalid" placeholder="Title" name="title">
-            <div class="invalid-feedback">
+            <input type="text" class="form-control" placeholder="Title" name="title">
+            <div class="invalid-feedback" id="titleError">
                 Please input title
             </div>
         </div>
 
         <div class="form-group">
             <div id="test-editor">
-                <textarea rows="3" style="display:none;" name="content"> </textarea>
+                <textarea rows="3" style="display:none;" name="content">dfgfdgfdg</textarea>
             </div>
 
         </div>
@@ -177,8 +177,32 @@
             }
 
 
-            //TODO need to check the form
-            return true
+            //TODO need to check the form title content require
+            let titleInput = $('[name ="title"]')
+            let titleError = $('#titleError')
+            let content = $('[name ="content"]')
+            let titleInputIsEmpty = $.trim(titleInput.val()) === ''
+            let contentIsEmpty = $.trim(content.text()) === ''
+            console.log(titleInput.val())
+            console.log(content.text())
+            console.log(titleInputIsEmpty)
+            console.log(contentIsEmpty)
+            if (titleInputIsEmpty || contentIsEmpty) {
+                if (titleInputIsEmpty) {
+                    titleInput.addClass('is-invalid')
+                    titleError.text("title should not empty")
+                }
+                if (contentIsEmpty) {
+                    content.text("please input something")
+                }
+
+
+                return false
+            } else {
+
+                return true
+            }
+
 
         })
 
