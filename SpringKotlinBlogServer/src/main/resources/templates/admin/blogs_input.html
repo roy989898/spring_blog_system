@@ -84,7 +84,8 @@
             <div class="input-group-prepend">
                 <div class="input-group-text">Image</div>
             </div>
-            <input type="text" class="form-control" placeholder="image address" name="firstPicture">
+            <input type="hidden" class="form-control" placeholder="image address" name="firstPicture">
+            <input type="file" id="myFile" name="filename" accept="image/x-png,image/gif,image/jpeg">
         </div>
 
         <div class="mt-3">
@@ -224,7 +225,37 @@
 
     });
 
+    // Check for the File API support.
+    if (window.File && window.FileReader && window.FileList && window.Blob) {
+        // document.getElementById('myFile').addEventListener('change', handleFileSelect, false);
+        $('#myFile').on("change", handleFileSelect
+        );
+    } else {
+        alert('The File APIs are not fully supported in this browser.');
+    }
 
+    function handleFileSelect(evt) {
+        var f = evt.target.files[0]; // FileList object
+        var reader = new FileReader();
+        // Closure to capture the file information.
+        reader.onload = (function (theFile) {
+            return function (e) {
+                var binaryData = e.target.result;
+                //Converting Binary Data to base 64
+                var base64String = window.btoa(binaryData);
+
+                let firstPicture = $('[name ="firstPicture"]')
+                firstPicture.val(base64String)
+                //showing file converted to base64
+                /*      document.getElementById('base64').value = base64String;*/
+
+                console.log(base64String)
+                // alert('File converted to base64 successfuly!\nCheck in Textarea');
+            };
+        })(f);
+        // Read in the image file as a data URL.
+        reader.readAsBinaryString(f);
+    }
 </script>
 </body>
 </html>
