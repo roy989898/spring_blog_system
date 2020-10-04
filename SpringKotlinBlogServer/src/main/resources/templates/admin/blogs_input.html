@@ -162,8 +162,17 @@
             $("#flag").val(text)
         });
 
+        let testEditor;
+        testEditor = editormd("test-editor", {
+            width: "100%",
+            height: 640,
+            syncScrolling: "single",
+            path: "../static/lib/editormd/lib/"
+        });
 
         $('form').submit(function () {
+
+           
             let clickedBtId = $(document.activeElement).attr('id')
 
             let published = $("#published")
@@ -207,27 +216,6 @@
         })
 
 
-    });
-
-    let testEditor;
-
-    $(function () {
-        testEditor = editormd("test-editor", {
-            width: "100%",
-            height: 640,
-            syncScrolling: "single",
-            path: "../static/lib/editormd/lib/"
-        });
-
-        /*
-        // or
-        testEditor = editormd({
-            id      : "test-editormd",
-            width   : "90%",
-            height  : 640,
-            path    : "../lib/"
-        });
-        */
     });
 
 
