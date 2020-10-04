@@ -82,6 +82,7 @@
 <!-- contect-->
 <div class="container pt-3">
     <form>
+        <input type="hidden" name="flag" id="flag"/>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <button class="btn btn-outline-secondary dropdown-toggle" id="drop_down_button_before_title"
@@ -94,7 +95,7 @@
 
                 </div>
             </div>
-            <input type="text" class="form-control is-invalid" placeholder="Title">
+            <input type="text" class="form-control is-invalid" placeholder="Title" name="title">
             <div class="invalid-feedback">
                 Please input title
             </div>
@@ -102,7 +103,7 @@
 
         <div class="form-group">
             <div id="test-editor">
-                <textarea rows="3" style="display:none;"> please input </textarea>
+                <textarea rows="3" style="display:none;" name="content"> </textarea>
             </div>
 
         </div>
@@ -110,51 +111,52 @@
         <div class="form-row">
             <div class="input-group col">
                 <div class="input-group-prepend">
-                    <div class="input-group-text">Category</div>
+                    <div class="input-group-text">Type</div>
                 </div>
-                <select class="custom-select">
+                <select class="custom-select" name="typeId">
                     <option selected>1</option>
                     <option value="2">One</option>
                     <option value="3">Two</option>
                     <option value="4">Three</option>
                 </select>
             </div>
-            <div class="input-group col">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">Tag</div>
-                </div>
-                <select class="custom-select ">
-                    <option selected>1</option>
-                    <option value="2">One</option>
-                    <option value="3">Two</option>
-                    <option value="4">Three</option>
-                </select>
-            </div>
+            <!--            TODO Tags-->
+            <!-- <div class="input-group col">
+                 <div class="input-group-prepend">
+                     <div class="input-group-text">Tag</div>
+                 </div>
+                 <select class="custom-select ">
+                     <option selected>1</option>
+                     <option value="2">One</option>
+                     <option value="3">Two</option>
+                     <option value="4">Three</option>
+                 </select>
+             </div>-->
         </div>
 
         <div class="input-group mt-3">
             <div class="input-group-prepend">
-                <div class="input-group-text">Tag</div>
+                <div class="input-group-text">Image</div>
             </div>
-            <input type="text" class="form-control" placeholder="image address">
+            <input type="text" class="form-control" placeholder="image address" name="image">
         </div>
 
         <div class="mt-3">
             <div class="custom-control custom-checkbox m_inline_block">
-                <input type="checkbox" class="custom-control-input">
+                <input type="checkbox" class="custom-control-input" name="recommend">
                 <label class="custom-control-label">recommend</label>
             </div>
             <div class="custom-control custom-checkbox m_inline_block">
-                <input type="checkbox" class="custom-control-input">
+                <input type="checkbox" class="custom-control-input" name="shareStatement">
                 <label class="custom-control-label">from other people</label>
             </div>
             <div class="custom-control custom-checkbox m_inline_block">
-                <input type="checkbox" class="custom-control-input">
+                <input type="checkbox" class="custom-control-input" name="appreciation">
                 <label class="custom-control-label">like</label>
             </div>
             <div class="custom-control custom-checkbox m_inline_block">
-                <input type="checkbox" class="custom-control-input">
-                <label class="custom-control-label">comment</label>
+                <input type="checkbox" class="custom-control-input" name="commentabled">
+                <label class="custom-control-label">commentable</label>
             </div>
         </div>
 
@@ -179,11 +181,25 @@
 <script th:src="@{/lib/editormd/editormd.js}"></script>
 <script>
     $(document).ready(function () {
-        $(".dropdown-item_before_title").click(function () {
+
+        let dropdown_item_before_title = $(".dropdown-item_before_title")
+        let dropdown_item_before_title_values = []
+        dropdown_item_before_title.each(function () {
+
+            dropdown_item_before_title_values.push($(this).text())
+        })
+        console.log(dropdown_item_before_title_values)
+        if (dropdown_item_before_title_values.length > 0) {
+            let t = dropdown_item_before_title_values[0]
+            $("#drop_down_button_before_title").text(t)
+            $("#flag").val(t)
+        }
+
+        dropdown_item_before_title.click(function () {
             //TODO here to change the select text
             let text = $(this).text()
             $("#drop_down_button_before_title").text(text)
-
+            $("#flag").val(text)
         });
 
 
