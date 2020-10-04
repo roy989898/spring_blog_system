@@ -43,7 +43,7 @@
 
         <div class="form-group">
             <div id="test-editor">
-                <textarea rows="3" style="display:none;" name="content">dfgfdgfdg</textarea>
+                <textarea rows="3" style="display:none;" name="content"></textarea>
             </div>
 
         </div>
@@ -170,9 +170,10 @@
             path: "../static/lib/editormd/lib/"
         });
 
+
         $('form').submit(function () {
 
-           
+
             let clickedBtId = $(document.activeElement).attr('id')
 
             let published = $("#published")
@@ -202,7 +203,8 @@
                     titleError.text("title should not empty")
                 }
                 if (contentIsEmpty) {
-                    content.text("please input something")
+                    // content.text("please input something")
+                    testEditor.setMarkdown("please input something")
                 }
 
 
