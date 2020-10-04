@@ -34,6 +34,11 @@ class BlogController(val blogService: BlogService, val typeService: TypeService)
 
     }
 
+    @GetMapping("/blogs/input")
+    fun blogCreate(): String {
+        return "admin/blogs_input"
+    }
+
 
     @PostMapping("/blogs/search")
     fun search(model: Model, blogSearchForm: BlogSearchForm): String {

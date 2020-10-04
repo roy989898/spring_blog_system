@@ -14,9 +14,15 @@ class StaticResourceInterceptor : HandlerInterceptor {
     private val LOGGER = LoggerFactory.getLogger(StaticResourceInterceptor::class.java)
     override fun preHandle(request: HttpServletRequest, response: HttpServletResponse, handler: Any): Boolean {
         val url = getFullURL(request)
+
 //        LOGGER.warn(url)
         if (url.contains("static/lib/")) {
-            val newUrl = url.replace("static/", "")
+//            val newUrl = url.replace("static/", "")
+            val indexOfLibString = url.indexOf("static/") + "static/".length
+            val subString = url.substring(indexOfLibString, url.length)
+            val newUrl = request.getScheme() + "://" +   // "http" + "://
+                    request.getServerName() +       // "myhost"
+                    ":" + request.getServerPort() + "/" + subString // ":" + "8080"
             response.sendRedirect(newUrl)
             return false
         }

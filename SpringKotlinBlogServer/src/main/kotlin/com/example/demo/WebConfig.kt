@@ -14,7 +14,7 @@ class WebConfig(val staticResourceInterceptor: StaticResourceInterceptor, val lo
     override fun addInterceptors(registry: InterceptorRegistry) {
         super.addInterceptors(registry)
         registry.addInterceptor(staticResourceInterceptor)
-                .addPathPatterns("/static/lib/**")
+//                .addPathPatterns("/static/lib/**")
 
         registry.addInterceptor(loginInterceptor)
                 .addPathPatterns("/admin/**")
