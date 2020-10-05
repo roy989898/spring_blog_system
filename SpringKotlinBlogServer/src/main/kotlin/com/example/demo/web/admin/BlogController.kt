@@ -46,7 +46,7 @@ class BlogController(val blogService: BlogService, val typeService: TypeService,
 
     }
 
-//    @Transactional
+    //    @Transactional
     @PostMapping("/blogs")
     fun blogInput(@Valid blogInputForm: BlogInputForm, bindingResult: BindingResult, redirectAttributes: RedirectAttributes, model: Model, httpSession: HttpSession): String {
 
@@ -63,19 +63,17 @@ class BlogController(val blogService: BlogService, val typeService: TypeService,
         } else {
 //            TODO save
             val userInSession = httpSession.getSessionUser()
-            val dbUser = userInSession?.id?.let {
+        /*    val dbUser = userInSession?.id?.let {
                 return@let userService.getUser(it).unwrap()
-            }
+            }*/
 
-            if (dbUser != null) {
-//                way1 save 2 time
+            if (userInSession != null) {
+
                 val newBlog = blogInputForm.toBlog()
-//                newBlog.user = dbUser
-                newBlog.user = dbUser
 
-
+                newBlog.user = userInSession
                 blogService.saveBlog(newBlog)
-//                TODO connect to the user
+
                 "redirect:/admin/blogs"
             } else {
                 "redirect:/admin/blogs/input"
