@@ -78,7 +78,7 @@ class BlogController(val blogService: BlogService, val typeService: TypeService,
 
                 newBlog.user = userInSession
                 type?.let {
-                    newBlog.type=it
+                    newBlog.type = it
                 }
                 blogService.saveBlog(newBlog)
 
@@ -122,6 +122,19 @@ class BlogController(val blogService: BlogService, val typeService: TypeService,
 
     }
 
+    @GetMapping("/blogs/{blogId}/delete")
+    fun blogDelete(@PathVariable blogId: Long, model: Model, httpSession: HttpSession): String {
+
+        val blog = blogService.getBlog(blogId)
+        blog?.let {
+            if (httpSession.getSessionUser()?.id == it.user?.id) {
+                blogService.deleteBlog(blogId)
+            }
+
+        }
+
+        return "redirect:/admin/blogs"
+    }
 
     @PostMapping("/blogs/search")
     fun search(model: Model, blogSearchForm: BlogSearchForm): String {
