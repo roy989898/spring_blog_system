@@ -22,13 +22,14 @@ data class BlogInputForm(
         var shareStatement: Boolean?,
         var appreciation: Boolean?,
         var commentabled: Boolean?,
-        var published: Boolean?
+        var published: Boolean?,
+        var id: Long?
 
 
 ) {
     fun toBlog(): Blog {
 
-        val newBlog = Blog(null, title ?: "", content ?: "", firstPicture, flag, 0, appreciation
+        val newBlog = Blog(id, title ?: "", content ?: "", firstPicture, flag, 0, appreciation
                 ?: false, shareStatement ?: false, commentabled ?: false, published ?: false, recommend
                 ?: false, Date(), Date(), null, emptyList(), null, emptyList()
 

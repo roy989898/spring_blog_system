@@ -21,7 +21,8 @@
 <!-- contect-->
 <div class="container pt-3">
     <form method="post" th:action="@{/admin/blogs}">
-        <input type="hidden" name="flag" id="flag"/>
+        <input type="hidden" name="id" id="id" th:value="${blog?.id}"/>
+        <input type="hidden" name="flag" id="flag" th:value="${blog?.flag}"/>
         <input type="hidden" name="published" id="published"/>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -95,7 +96,8 @@
         <div class="mt-3">
 
             <div class="custom-control custom-checkbox m_inline_block">
-                <input class="form-check-input " type="checkbox" name="recommend" th:checked="${blog?.recommend}?'checked'">
+                <input class="form-check-input " type="checkbox" name="recommend"
+                       th:checked="${blog?.recommend}?'checked'">
                 <label class="form-check-label">
                     recommend
                 </label>
@@ -104,14 +106,16 @@
             <div class="custom-control custom-checkbox m_inline_block">
 
 
-                <input class="form-check-input " type="checkbox" name="shareStatement" th:checked="${blog?.shareStatement}?'checked'">
+                <input class="form-check-input " type="checkbox" name="shareStatement"
+                       th:checked="${blog?.shareStatement}?'checked'">
                 <label class="form-check-label">
                     from other people
                 </label>
             </div>
             <div class="custom-control custom-checkbox m_inline_block">
 
-                <input class="form-check-input " type="checkbox" name="appreciation" th:checked="${blog?.appreciation}?'checked'">
+                <input class="form-check-input " type="checkbox" name="appreciation"
+                       th:checked="${blog?.appreciation}?'checked'">
                 <label class="form-check-label">
                     like
                 </label>
@@ -119,7 +123,8 @@
             <div class="custom-control custom-checkbox m_inline_block">
 
 
-                <input class="form-check-input " type="checkbox" name="commentabled" th:checked="${blog?.commentabled}?'checked'">
+                <input class="form-check-input " type="checkbox" name="commentabled"
+                       th:checked="${blog?.commentabled}?'checked'">
                 <label class="form-check-label">
                     commentable
                 </label>
