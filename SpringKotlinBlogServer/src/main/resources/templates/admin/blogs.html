@@ -70,6 +70,7 @@
                 <th scope="col">Title</th>
                 <th scope="col">Category</th>
                 <th scope="col">Recommend</th>
+                <th scope="col">Published</th>
                 <th scope="col">Update time</th>
                 <th scope="col">Operation</th>
             </tr>
@@ -79,6 +80,7 @@
                 <th scope="row" th:text="${blog.getTitle()}">my title</th>
                 <td th:text="${blog.getType()?.getName()}">Study notes</td>
                 <td th:text="${blog.getRecommend()?'Yes':'No'}">2020-10-12 18:40:00</td>
+                <td th:text="${blog.published?'Yes':'No'}">2020-10-12 18:40:00</td>
                 <td th:text="${blog.getUpdateTime()}">2020-10-12 18:40:00</td>
                 <td>
                     <div class="row pr-2">
