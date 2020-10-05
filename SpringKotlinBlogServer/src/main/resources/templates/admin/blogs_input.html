@@ -10,11 +10,7 @@
 <div th:replace="_fragments.html::admin_nav(0)"></div>
 
 <div class="container text-right">
-    <div class="btn-group" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-secondary ">Post</button>
-        <button type="button" class="btn btn-secondary active">List</button>
-    </div>
-
+    <div th:replace="_fragments.html::admin_post_list_button(0,'/admin/blogs/input','/admin/blogs')"></div>
 
 </div>
 

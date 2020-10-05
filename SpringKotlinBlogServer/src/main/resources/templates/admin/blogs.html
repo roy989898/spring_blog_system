@@ -10,10 +10,12 @@
 
 
 <div class="container text-right">
-    <div class="btn-group" role="group" aria-label="Basic example">
+  <!--  <div class="btn-group" role="group" aria-label="Basic example">
         <a type="button" class="btn btn-secondary " th:href="@{/admin/blogs/input}">Post</a>
         <button type="button" class="btn btn-secondary active">List</button>
-    </div>
+    </div>-->
+
+    <div th:replace="_fragments.html::admin_post_list_button(1,'/admin/blogs/input','/admin/blogs')"></div>
 
 
 </div>
