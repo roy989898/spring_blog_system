@@ -1,5 +1,7 @@
 package com.example.demo.form
 
+import com.example.demo.po.Blog
+import java.util.*
 import javax.validation.constraints.NotBlank
 import javax.validation.constraints.NotNull
 
@@ -23,4 +25,18 @@ data class BlogInputForm(
         var published: Boolean?
 
 
-)
+) {
+    fun toBlog(): Blog {
+
+        val newBlog = Blog(null, title ?: "", content ?: "", firstPicture, flag, 0, appreciation
+                ?: false, shareStatement ?: false, commentabled ?: false, published ?: false, recommend
+                ?: false, Date(), Date(), null, emptyList(), null, emptyList()
+
+        )
+
+
+        return newBlog
+
+
+    }
+}

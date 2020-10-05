@@ -6,4 +6,6 @@ import java.util.*
 
 interface UserService {
   fun checkUser(username:String,password:String): Optional<User>
+
+  fun getUser(id:Long): Optional<User>
 }

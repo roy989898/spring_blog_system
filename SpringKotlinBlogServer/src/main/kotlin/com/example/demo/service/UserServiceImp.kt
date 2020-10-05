@@ -13,4 +13,8 @@ class UserServiceImp(val userRepository: UserRepository) : UserService {
         val user = userRepository.findByUsernameAndPassword(username, password.toMD5() ?: "")
         return user
     }
+
+    override fun getUser(id: Long): Optional<User> {
+        return userRepository.findById(id)
+    }
 }

@@ -11,7 +11,7 @@ data class Blog(
         var id: Long?,
         var title: String,
         var content: String,
-        var firstPicture: String,
+        var firstPicture: String?,
         var flag: String,
         var vies: Int,
         var appreciation: Boolean,
@@ -32,8 +32,8 @@ data class Blog(
         @OneToMany(mappedBy = "blog", cascade = [CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE, CascadeType.REFRESH])
         var comments: List<Comment>,
 
-        @ManyToOne(cascade = [CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH])
-        var user: User,
+        @ManyToOne(cascade = [])
+        var user: User?,
         @ManyToMany
         var tags: List<Tag>
 )

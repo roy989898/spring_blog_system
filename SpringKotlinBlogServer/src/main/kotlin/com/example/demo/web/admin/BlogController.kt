@@ -2,9 +2,12 @@ package com.example.demo.web.admin
 
 import com.example.demo.form.BlogInputForm
 import com.example.demo.form.BlogSearchForm
+import com.example.demo.getSessionUser
 import com.example.demo.po.Type
 import com.example.demo.service.BlogService
 import com.example.demo.service.TypeService
+import com.example.demo.service.UserService
+import com.example.demo.unwrap
 import org.springframework.data.domain.PageRequest
 import org.springframework.data.domain.Sort
 import org.springframework.stereotype.Controller
@@ -14,12 +17,17 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.servlet.mvc.support.RedirectAttributes
+import javax.servlet.http.HttpSession
+import javax.transaction.Transactional
 import javax.validation.Valid
 
 @Controller
 @RequestMapping("/admin")
-class BlogController(val blogService: BlogService, val typeService: TypeService) {
+class BlogController(val blogService: BlogService, val typeService: TypeService, val userService: UserService) {
 
+    companion object {
+//       const val link = "foo"
+    }
 
     @GetMapping("/blogs", "/blogs/{page_num}")
     fun blogs(model: Model, page_num: Int?, blogSearchForm: BlogSearchForm): String {
@@ -38,12 +46,12 @@ class BlogController(val blogService: BlogService, val typeService: TypeService)
 
     }
 
+//    @Transactional
     @PostMapping("/blogs")
-    fun blogInput(@Valid blogInputForm: BlogInputForm, bindingResult: BindingResult, redirectAttributes: RedirectAttributes, model: Model): String {
+    fun blogInput(@Valid blogInputForm: BlogInputForm, bindingResult: BindingResult, redirectAttributes: RedirectAttributes, model: Model, httpSession: HttpSession): String {
 
-//        TODO
 
-        if (bindingResult.allErrors.size > 0) {
+        return if (bindingResult.allErrors.size > 0) {
             val errorFields = bindingResult.fieldErrors
             val errors = HashMap<String, String>()
             errorFields.forEach {
@@ -51,10 +59,29 @@ class BlogController(val blogService: BlogService, val typeService: TypeService)
             }
 //            model.addAttribute("errors", errors)
             redirectAttributes.addFlashAttribute("errors", errors)
-            return "redirect:/admin/blogs/input"
+            "redirect:/admin/blogs/input"
         } else {
 //            TODO save
-            return "redirect:/admin/blogs"
+            val userInSession = httpSession.getSessionUser()
+            val dbUser = userInSession?.id?.let {
+                return@let userService.getUser(it).unwrap()
+            }
+
+            if (dbUser != null) {
+//                way1 save 2 time
+                val newBlog = blogInputForm.toBlog()
+//                newBlog.user = dbUser
+                newBlog.user = dbUser
+
+
+                blogService.saveBlog(newBlog)
+//                TODO connect to the user
+                "redirect:/admin/blogs"
+            } else {
+                "redirect:/admin/blogs/input"
+            }
+
+
         }
 
 

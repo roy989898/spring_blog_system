@@ -15,6 +15,7 @@ import javax.persistence.criteria.CriteriaBuilder
 import javax.persistence.criteria.CriteriaQuery
 import javax.persistence.criteria.Predicate
 import javax.persistence.criteria.Root
+import javax.transaction.Transactional
 
 
 @Service
@@ -46,10 +47,12 @@ class BlogServiceImp(val blogRepository: BlogRepository) : BlogService {
         }, pageable)
     }
 
+    @Transactional
     override fun saveBlog(blog: Blog): Blog {
         return blogRepository.save(blog)
     }
 
+    @Transactional
     override fun updateBlog(id: Long, blog: Blog): Blog {
         val findBlog = blogRepository.findById(id).unwrap()
         if (findBlog == null) {
@@ -64,6 +67,7 @@ class BlogServiceImp(val blogRepository: BlogRepository) : BlogService {
         }
     }
 
+    @Transactional
     override fun deleteBlog(id: Long) {
         blogRepository.deleteById(id)
     }
