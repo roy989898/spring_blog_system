@@ -11,6 +11,8 @@ data class Blog(
         var id: Long?,
         var title: String,
         var content: String,
+        @Lob
+        @Column(columnDefinition = "TEXT")
         var firstPicture: String?,
         var flag: String,
         var vies: Int,

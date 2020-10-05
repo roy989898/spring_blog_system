@@ -1,5 +1,6 @@
 package com.example.demo.web.admin
 
+import com.example.demo.NotFoundException
 import com.example.demo.form.BlogInputForm
 import com.example.demo.form.BlogSearchForm
 import com.example.demo.getSessionUser
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.validation.BindingResult
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.servlet.mvc.support.RedirectAttributes
@@ -63,15 +65,21 @@ class BlogController(val blogService: BlogService, val typeService: TypeService,
         } else {
 //            TODO save
             val userInSession = httpSession.getSessionUser()
-        /*    val dbUser = userInSession?.id?.let {
-                return@let userService.getUser(it).unwrap()
-            }*/
+            /*    val dbUser = userInSession?.id?.let {
+                    return@let userService.getUser(it).unwrap()
+                }*/
+            val type = blogInputForm.typeId?.let {
+                typeService.getType(it)
+            }
 
             if (userInSession != null) {
 
                 val newBlog = blogInputForm.toBlog()
 
                 newBlog.user = userInSession
+                type?.let {
+                    newBlog.type=it
+                }
                 blogService.saveBlog(newBlog)
 
                 "redirect:/admin/blogs"
@@ -94,6 +102,24 @@ class BlogController(val blogService: BlogService, val typeService: TypeService,
         model.addAttribute("types", types)
 
         return "admin/blogs_input"
+    }
+
+    @GetMapping("/blogs/{blogId}/input")
+    fun blogEdit(@PathVariable blogId: Long, model: Model): String {
+
+        val types = typeService.listType().toMutableList()
+
+        val blog = blogService.getBlog(blogId)
+        if (blog != null) {
+            model.addAttribute("types", types)
+            model.addAttribute("blog", blog)
+
+            return "admin/blogs_input"
+        } else {
+            throw NotFoundException("Blog not found")
+        }
+
+
     }
 
 

@@ -28,14 +28,14 @@
                 <button class="btn btn-outline-secondary dropdown-toggle" id="drop_down_button_before_title"
                         type="button"
                         data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">Dropdown
+                        aria-haspopup="true" aria-expanded="false" th:text="${blog?.flag}">Dropdown
                 </button>
                 <div class="dropdown-menu">
                     <a class="dropdown-item dropdown-item_before_title" href="#">Original</a>
 
                 </div>
             </div>
-            <input type="text" class="form-control " placeholder="Title" name="title"
+            <input type="text" class="form-control " placeholder="Title" name="title" th:value="${blog?.title}"
                    th:classappend="${errors?.get('title')!=null}?'is-invalid':''">
             <div class="invalid-feedback" id="titleError" th:text="${errors?.get('title')}">
                 Please input title
@@ -44,7 +44,8 @@
 
         <div class="form-group">
             <div id="test-editor">
-                <textarea rows="3" style="display:none;" name="content" th:text="${errors?.get('content')}">
+                <textarea rows="3" style="display:none;" name="content"
+                          th:text="${errors}==null?${blog?.content}:${errors?.get('content')}">
 
                 </textarea>
             </div>
@@ -56,7 +57,7 @@
                 <div class="input-group-prepend">
                     <div class="input-group-text">Type</div>
                 </div>
-                <select class="form-control" name="typeId">
+                <select class="form-control" name="typeId" th:value="${blog?.type?.id}">
 
                     <th:block th:each="type:${types}">
                         <option th:value="${type.getId()}" th:text="${type.getName()}">Default Category 1
@@ -80,11 +81,14 @@
              </div>-->
         </div>
 
+        <img alt="" style="max-height: 100px; margin-top: 10px" id="imageDisplay"
+             th:src="'data:image/jpeg;base64,'+${blog?.firstPicture}">
         <div class="input-group mt-3">
             <div class="input-group-prepend">
                 <div class="input-group-text">Image</div>
             </div>
             <input type="hidden" class="form-control" placeholder="image address" name="firstPicture">
+
             <input type="file" id="myFile" name="filename" accept="image/x-png,image/gif,image/jpeg">
         </div>
 
@@ -143,7 +147,11 @@
 <!--<script src="../../static/lib/editormd/editormd.js"></script>-->
 <script th:src="@{/lib/prism/prism.js}"></script>
 <script th:src="@{/lib/editormd/editormd.js}"></script>
-<script>
+<script th:inline="javascript">
+
+    // TODO set the default flag
+    let needToSetTheDefaultFlag = /*[[${blog} == null ? true : false]]*/;
+
     $(document).ready(function () {
 
         let dropdown_item_before_title = $(".dropdown-item_before_title")
@@ -152,8 +160,9 @@
 
             dropdown_item_before_title_values.push($(this).text())
         })
+
         console.log(dropdown_item_before_title_values)
-        if (dropdown_item_before_title_values.length > 0) {
+        if (needToSetTheDefaultFlag && dropdown_item_before_title_values.length > 0) {
             let t = dropdown_item_before_title_values[0]
             $("#drop_down_button_before_title").text(t)
             $("#flag").val(t)
@@ -250,6 +259,7 @@
                 /*      document.getElementById('base64').value = base64String;*/
 
                 console.log(base64String)
+                $("#imageDisplay").attr('src', "data:image/jpeg;base64," + base64String)
                 // alert('File converted to base64 successfuly!\nCheck in Textarea');
             };
         })(f);
