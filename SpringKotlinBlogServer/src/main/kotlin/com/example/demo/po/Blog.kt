@@ -10,6 +10,7 @@ data class Blog(
         @GeneratedValue
         var id: Long?,
         var title: String,
+        @Column(columnDefinition = "TEXT")
         var content: String,
         @Lob
         @Column(columnDefinition = "TEXT")
