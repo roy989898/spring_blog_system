@@ -266,9 +266,16 @@
 
             let url = "/admin/tags/" + text
             console.log(url)
-            //    todo get the tags
-            $.getJSON(url, function (data) {
-                console.log(data)
+
+            $.getJSON(url, function (tags) {
+
+                /*let tagnames = tags.map(function (tag) {
+                    return tag.name
+                })
+                $("#tag_input").autocomplete({
+                    source: tagnames
+                });*/
+
             })
         });
     });
