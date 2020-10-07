@@ -76,7 +76,23 @@
                      <option value="4">Three</option>
                  </select>
              </div>-->
+
+
         </div>
+
+        <div class="row">
+            <div class="input-group my-3 col">
+                <div class="flex-grow-1 d-flex flex-wrap" id="tag_holder">
+                    <span class="badge badge-secondary d-flex align-items-center tag_item">New1</span>
+
+                    <input type="text" class=" flex-grow-1 tag_item tag_item-input" placeholder="input tag at here"
+                           id="tag_input">
+                </div>
+
+
+            </div>
+        </div>
+
 
         <img alt="" style="max-height: 100px; margin-top: 10px" id="imageDisplay"
              th:src="'data:image/jpeg;base64,'+${blog?.firstPicture}">
@@ -233,6 +249,17 @@
 
         })
 
+        $('#tag_input').keypress(function (e) {
+            //enter click
+            let tag_input = $('#tag_input')
+            if (e.which == 13 && (tag_input.val().trim() !== '')) {
+
+                // alert('You pressed enter!');
+                tag_input.before(" <span class=\"badge badge-secondary d-flex align-items-center tag_item\">" + tag_input.val() +
+                    "</span>")
+                tag_input.val('')
+            }
+        });
     });
 
     // Check for the File API support.

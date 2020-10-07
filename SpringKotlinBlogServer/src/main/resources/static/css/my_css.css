@@ -3,12 +3,13 @@ body {
 }
 
 
-.transparent{
+.transparent {
     color: #1d1d1d;
-    opacity: 0; !important;
+    opacity: 0;
+!important;
 }
 
-.blog_text_color{
+.blog_text_color {
     color: #4a4a4a;
 }
 
@@ -58,7 +59,6 @@ a:active {
 }
 
 
-
 .blog_inf_small_text {
     color: #2a2e32;
 
@@ -96,7 +96,7 @@ img.small_img_icon_rounded {
   Post Contents CSS
   ==================================================*/
 
-.post-content{
+.post-content {
     background: #f8f8f8;
     border-radius: 4px;
     width: 100%;
@@ -106,49 +106,49 @@ img.small_img_icon_rounded {
     position: relative;
 }
 
-.post-content img.post-image, video.post-video, .google-maps{
+.post-content img.post-image, video.post-video, .google-maps {
     width: 100%;
     height: auto;
 }
 
-.post-content .google-maps .map{
+.post-content .google-maps .map {
     height: 300px;
 }
 
-.post-content .post-container{
+.post-content .post-container {
     padding: 20px;
 }
 
-.post-content .post-container .post-detail{
+.post-content .post-container .post-detail {
     margin-left: 65px;
     position: relative;
 }
 
-.post-content .post-container .post-detail .post-text{
+.post-content .post-container .post-detail .post-text {
     line-height: 24px;
     margin: 0;
 }
 
-.post-content .post-container .post-detail .reaction{
+.post-content .post-container .post-detail .reaction {
     position: absolute;
     right: 0;
     top: 0;
 }
 
-.post-content .post-container .post-detail .post-comment{
+.post-content .post-container .post-detail .post-comment {
     display: inline-flex;
     margin: 10px auto;
     width: 100%;
 }
 
-.post-content .post-container .post-detail .post-comment img.profile-photo-sm{
+.post-content .post-container .post-detail .post-comment img.profile-photo-sm {
     margin-right: 10px;
 }
 
-.post-content .post-container .post-detail .post-comment .form-control{
+.post-content .post-container .post-detail .post-comment .form-control {
     height: 30px;
     border: 1px solid #ccc;
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
     margin: 7px 0;
     min-width: 0;
 }
@@ -180,7 +180,25 @@ img.profile-photo-sm {
 }
 
 
-.time_line_item:hover{
+.time_line_item:hover {
     background-color: #e5e5e5;
+
+}
+
+
+.tag_item {
+    margin-left: 10px;
+    margin-top: 10px;
+
+}
+
+.tag_item-input {
+    border-width: 0 !important;
+    min-width: 300px;
+
+}
+
+.tag_item-input:focus {
+    outline: none;
 
 }

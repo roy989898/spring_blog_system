@@ -63,7 +63,6 @@ class BlogController(val blogService: BlogService, val typeService: TypeService,
             redirectAttributes.addFlashAttribute("errors", errors)
             "redirect:/admin/blogs/input"
         } else {
-//            TODO save
             val userInSession = httpSession.getSessionUser()
             /*    val dbUser = userInSession?.id?.let {
                     return@let userService.getUser(it).unwrap()
