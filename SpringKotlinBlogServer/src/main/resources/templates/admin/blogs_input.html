@@ -261,9 +261,15 @@
             }
         });
 
-        $("#tag_input").bind("change paste keyup", function() {
-            let text=$(this).val()
-           console.log(text)
+        $("#tag_input").bind("change paste keyup", function () {
+            let text = $(this).val()
+
+            let url = "/admin/tags/" + text
+            console.log(url)
+            //    todo get the tags
+            $.getJSON(url, function (data) {
+                console.log(data)
+            })
         });
     });
 
