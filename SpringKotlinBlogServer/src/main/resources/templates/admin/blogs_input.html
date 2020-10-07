@@ -260,6 +260,11 @@
                 tag_input.val('')
             }
         });
+
+        $("#tag_input").bind("change paste keyup", function() {
+            let text=$(this).val()
+           console.log(text)
+        });
     });
 
     // Check for the File API support.
