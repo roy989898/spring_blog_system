@@ -37,6 +37,6 @@ data class Blog(
 
         @ManyToOne(cascade = [])
         var user: User?,
-        @ManyToMany
+        @ManyToMany(cascade = [CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH])
         var tags: List<Tag>
 )

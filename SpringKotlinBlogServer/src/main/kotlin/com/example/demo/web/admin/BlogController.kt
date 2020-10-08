@@ -4,6 +4,7 @@ import com.example.demo.NotFoundException
 import com.example.demo.form.BlogInputForm
 import com.example.demo.form.BlogSearchForm
 import com.example.demo.getSessionUser
+import com.example.demo.po.Tag
 import com.example.demo.po.Type
 import com.example.demo.service.BlogService
 import com.example.demo.service.TypeService
@@ -74,6 +75,11 @@ class BlogController(val blogService: BlogService, val typeService: TypeService,
             if (userInSession != null) {
 
                 val newBlog = blogInputForm.toBlog()
+                val tagStringArray = blogInputForm.tags?.split('_') ?: emptyList()
+                val tagList = tagStringArray.map {
+                    return@map Tag(null, it, emptyList())
+                }
+                newBlog.tags = tagList
 
                 newBlog.user = userInSession
                 type?.let {
