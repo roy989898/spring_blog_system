@@ -11,6 +11,6 @@ interface TagService {
     fun getTagLike(name: String): ArrayList<Tag>
 
     fun getTag(name: String): Optional<Tag>
-
+    fun deleteTags(tags: List<Tag>)
 
 }

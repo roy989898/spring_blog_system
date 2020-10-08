@@ -20,5 +20,10 @@ class TagServiceImp(private val tagRepository: TagRepository) : TagService {
         return tagRepository.findAllByNameContains(name)
     }
 
+    override fun deleteTags(tags: List<Tag>) {
+        tagRepository.deleteInBatch(tags)
+
+    }
+
 
 }
