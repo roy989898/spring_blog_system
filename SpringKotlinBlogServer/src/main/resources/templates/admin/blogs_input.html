@@ -239,49 +239,59 @@
 
         })
 
-           $('#tag_input').keypress(function (e) {
-               //enter click
-               let tag_input = $('#tag_input')
-               if (e.which == 13 && (tag_input.val().trim() !== '')) {
+        $('#tag_input').keypress(function (e) {
+            //enter click
+            let tag_input = $('#tag_input')
+            if (e.which == 13 && (tag_input.val().trim() !== '')) {
 
-                   // alert('You pressed enter!');
-                   tag_input.before(" <span class=\"badge badge-secondary d-flex align-items-center tag_item\">" + tag_input.val() +
-                       "</span>")
-                   tag_input.val('')
-               }
-           });
+                // alert('You pressed enter!');
+                tag_input.before(" <span class=\"badge badge-secondary d-flex align-items-center tag_item\">" + tag_input.val() +
+                    "</span>")
+                tag_input.val('')
+            }
+        });
 
-        /*   $("#tag_input").bind("change paste keyup", function () {
-               let text = $(this).val()
+        /*$("#tag_input").bind("change paste keyup", function () {
+            let text = $(this).val()
 
-               let url = "/admin/tags/" + text
-               console.log(url)
+            let url = "/admin/tags/" + text
+            console.log(url)
 
-               $.getJSON(url, function (tags) {
+            $.getJSON(url, function (tags) {
 
-                   /!*let tagnames = tags.map(function (tag) {
-                       return tag.name
-                   })
-                   $("#tag_input").autocomplete({
-                       source: tagnames
-                   });*!/
+                let tagnames = tags.map(function (tag) {
+                    return tag.name
+                })
+                $("#tag_input").autocomplete({
+                    source: tagnames
+                });
 
-               })
-           });*/
+            })
+        });*/
 
         new autoComplete({
             selector: '#tag_input',
             minChars: 1,
-            source: function (term, suggest) {
+            source: function (term, response) {
                 term = term.toLowerCase();
-                console.log(term)
+                /*console.log(term)
                 var choices = ['ActionScript', 'AppleScript', 'Asp', 'ActionScript', 'AppleScript', 'Asp', 'ActionScript', 'AppleScript', 'Asp', 'ActionScript', 'AppleScript', 'Asp', 'ActionScript', 'AppleScript', 'Asp'];
                 var matches = [];
                 for (i = 0; i < choices.length; i++)
                     if (~choices[i].toLowerCase().indexOf(term)) matches.push(choices[i]);
 
                 console.log(matches)
-                suggest(matches);
+                suggest(matches);*/
+                let url = "/admin/tags/" + term
+                $.getJSON(url, function (tags) {
+                    console.log(tags)
+                    let tagnames = tags.map(function (tag) {
+                        return tag.name
+                    })
+
+                    response(tagnames)
+                })
+
             }
         });
     });
