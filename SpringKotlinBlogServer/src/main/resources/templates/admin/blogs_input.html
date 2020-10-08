@@ -239,7 +239,7 @@
 
         })
 
-        /*   $('#tag_input').keypress(function (e) {
+           $('#tag_input').keypress(function (e) {
                //enter click
                let tag_input = $('#tag_input')
                if (e.which == 13 && (tag_input.val().trim() !== '')) {
@@ -251,7 +251,7 @@
                }
            });
 
-           $("#tag_input").bind("change paste keyup", function () {
+        /*   $("#tag_input").bind("change paste keyup", function () {
                let text = $(this).val()
 
                let url = "/admin/tags/" + text
@@ -271,13 +271,16 @@
 
         new autoComplete({
             selector: '#tag_input',
-            minChars: 2,
+            minChars: 1,
             source: function (term, suggest) {
                 term = term.toLowerCase();
-                var choices = ['ActionScript', 'AppleScript', 'Asp'];
+                console.log(term)
+                var choices = ['ActionScript', 'AppleScript', 'Asp', 'ActionScript', 'AppleScript', 'Asp', 'ActionScript', 'AppleScript', 'Asp', 'ActionScript', 'AppleScript', 'Asp', 'ActionScript', 'AppleScript', 'Asp'];
                 var matches = [];
                 for (i = 0; i < choices.length; i++)
                     if (~choices[i].toLowerCase().indexOf(term)) matches.push(choices[i]);
+
+                console.log(matches)
                 suggest(matches);
             }
         });
