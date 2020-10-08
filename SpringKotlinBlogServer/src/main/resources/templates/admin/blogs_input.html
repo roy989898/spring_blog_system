@@ -20,6 +20,7 @@
         <input type="hidden" name="id" id="id" th:value="${blog?.id}"/>
         <input type="hidden" name="flag" id="flag" th:value="${blog?.flag}"/>
         <input type="hidden" name="published" id="published"/>
+        <input type="hidden" name="tags"/>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <button class="btn btn-outline-secondary dropdown-toggle" id="drop_down_button_before_title"
@@ -282,7 +283,10 @@
                 return $(this).text().trim()
 
             }).get();
-            console.log(tags)
+            let tagsString = tags.join('_')
+            console.log(tagsString)
+            let tagsInputField = $("[name ='tags']")
+            tagsInputField.val(tagsString)
         });
     });
 

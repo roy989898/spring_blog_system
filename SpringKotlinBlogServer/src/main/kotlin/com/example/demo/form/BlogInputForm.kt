@@ -23,7 +23,8 @@ data class BlogInputForm(
         var appreciation: Boolean?,
         var commentabled: Boolean?,
         var published: Boolean?,
-        var id: Long?
+        var id: Long?,
+        var tags: String?
 
 
 ) {
