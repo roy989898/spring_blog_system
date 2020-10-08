@@ -11,6 +11,7 @@ import com.example.demo.service.TagService
 import com.example.demo.service.TypeService
 import com.example.demo.service.UserService
 import com.example.demo.unwrap
+import org.slf4j.LoggerFactory
 import org.springframework.data.domain.PageRequest
 import org.springframework.data.domain.Sort
 import org.springframework.stereotype.Controller
@@ -28,6 +29,7 @@ import javax.validation.Valid
 @Controller
 @RequestMapping("/admin")
 class BlogController(val tagService: TagService, val blogService: BlogService, val typeService: TypeService, val userService: UserService) {
+    private val LOGGER = LoggerFactory.getLogger(BlogController::class.java)
 
     companion object {
 //       const val link = "foo"
@@ -127,6 +129,7 @@ class BlogController(val tagService: TagService, val blogService: BlogService, v
             model.addAttribute("types", types)
             model.addAttribute("blog", blog)
 
+//            LOGGER.info(blog.getTagsString())
             return "admin/blogs_input"
         } else {
             throw NotFoundException("Blog not found")
