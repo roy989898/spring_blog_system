@@ -7,6 +7,7 @@ import com.example.demo.getSessionUser
 import com.example.demo.po.Tag
 import com.example.demo.po.Type
 import com.example.demo.service.BlogService
+import com.example.demo.service.TagService
 import com.example.demo.service.TypeService
 import com.example.demo.service.UserService
 import com.example.demo.unwrap
@@ -26,7 +27,7 @@ import javax.validation.Valid
 
 @Controller
 @RequestMapping("/admin")
-class BlogController(val blogService: BlogService, val typeService: TypeService, val userService: UserService) {
+class BlogController(val tagService: TagService, val blogService: BlogService, val typeService: TypeService, val userService: UserService) {
 
     companion object {
 //       const val link = "foo"
@@ -79,7 +80,14 @@ class BlogController(val blogService: BlogService, val typeService: TypeService,
                 val tagList = tagStringArray.map {
                     return@map Tag(null, it, emptyList())
                 }
-                newBlog.tags = tagList
+
+                val vTags = tagList.map {
+                    val gotTag = tagService.getTag(it.name).unwrap()
+
+                    return@map gotTag ?: it
+                }
+//
+                newBlog.tags = vTags
 
                 newBlog.user = userInSession
                 type?.let {

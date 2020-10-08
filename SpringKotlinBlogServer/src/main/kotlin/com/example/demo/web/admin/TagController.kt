@@ -16,7 +16,7 @@ class TagController(private val tagService: TagService) {
     @GetMapping("/tags/{name}")
     @ResponseBody
     fun getTagsByName(@PathVariable name: String): ArrayList<Tag> {
-        val tags = tagService.getTag(name)
+        val tags = tagService.getTagLike(name)
 
         return tags
 

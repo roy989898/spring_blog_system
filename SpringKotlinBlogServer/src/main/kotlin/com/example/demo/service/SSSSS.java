@@ -14,4 +14,5 @@ public interface SSSSS extends JpaRepository<Tag, Long> {
 
     public List<Tag> findAllByNameContains(String name);
 
+    public Optional<Tag> findTagByNameEquals(String name);
 }
