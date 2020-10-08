@@ -17,12 +17,12 @@ class TagController(private val tagService: TagService) {
     @ResponseBody
     fun getTagsByName(@PathVariable name: String): ArrayList<Tag> {
         val tags = tagService.getTagLike(name)
-
+        tags.forEach {
+            it.blogs = emptyList()
+        }
         return tags
 
     }
-
-
 
 
 }
