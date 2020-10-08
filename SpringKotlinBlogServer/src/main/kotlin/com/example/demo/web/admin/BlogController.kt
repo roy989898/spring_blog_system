@@ -78,7 +78,7 @@ class BlogController(val tagService: TagService, val blogService: BlogService, v
             if (userInSession != null) {
 
                 val newBlog = blogInputForm.toBlog()
-                val tagStringArray = blogInputForm.tags?.split('_') ?: emptyList()
+                val tagStringArray = blogInputForm.tags?.split('_')?.toHashSet()?.toList() ?: emptyList()
                 val tagList = tagStringArray.map {
                     return@map Tag(null, it, emptyList())
                 }
