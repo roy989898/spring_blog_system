@@ -71,7 +71,7 @@
         <div class="row">
             <div class="input-group my-3 col">
                 <div class="flex-grow-1 d-flex flex-wrap" id="tag_holder">
-                    <span class="badge badge-secondary d-flex align-items-center tag_item">New1</span>
+
 
                     <input type="text" class=" flex-grow-1 tag_item tag_item-input" placeholder="input tag at here"
                            id="tag_input">
@@ -272,6 +272,17 @@
                 tag_input.val('')
                 return false;
             }
+        });
+
+        $("body").on('DOMSubtreeModified', "#tag_holder", function () {
+            // code here
+            let tagElements = $("#tag_holder").find("span")
+            console.log(tagElements)
+            let tags = tagElements.map(function () {
+                return $(this).text().trim()
+
+            }).get();
+            console.log(tags)
         });
     });
 
