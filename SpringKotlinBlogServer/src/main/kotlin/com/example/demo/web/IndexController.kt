@@ -10,7 +10,7 @@ class IndexController {
     fun index(): String {
 
 
-        return "admin/blogs_input"
+        return "index"
     }
 
     @GetMapping("/try")
