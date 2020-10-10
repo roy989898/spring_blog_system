@@ -94,6 +94,11 @@
             <version>3.16.1</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>com.atlassian.commonmark</groupId>
+            <artifactId>commonmark</artifactId>
+            <version>0.15.2</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -127,6 +132,7 @@
                         <artifactId>kotlin-maven-noarg</artifactId>
                         <version>${kotlin.version}</version>
                     </dependency>
+
                 </dependencies>
             </plugin>
         </plugins>

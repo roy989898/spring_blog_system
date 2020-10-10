@@ -1,5 +1,9 @@
 package com.example.demo.po
 
+import org.commonmark.parser.Parser
+import org.commonmark.renderer.html.HtmlRenderer
+import org.commonmark.renderer.text.TextContentRenderer
+import java.text.SimpleDateFormat
 import java.util.*
 import javax.persistence.*
 
@@ -48,5 +52,19 @@ data class Blog(
         return tags.joinToString("_", transform = {
             return@joinToString it.name
         })
+    }
+
+
+    fun getFormatedUpdateTime(): String {
+        val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd")
+        return simpleDateFormat.format(updateTime)
+    }
+
+    fun contentToHtml(): String {
+        val parser: Parser = Parser.builder().build()
+        val document = parser.parse(content)
+        val renderer = TextContentRenderer .builder().build()
+        return renderer.render(document) // "<p>This is <em>Sparta</em></p>\n"
+
     }
 }
