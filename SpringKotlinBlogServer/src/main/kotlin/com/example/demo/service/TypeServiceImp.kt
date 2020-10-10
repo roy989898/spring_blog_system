@@ -42,9 +42,9 @@ class TypeServiceImp(val typeRepository: TypeRepository) : TypeService {
 
     override fun listTypeTop(size: Int): List<Type> {
         val usedPageNUm = 0
-        val sort = Sort.by(Sort.Direction.ASC, "id")
+        val sort = Sort.by(Sort.Direction.DESC, "blogs.size")
         val pb = PageRequest.of(usedPageNUm, size, sort)
-        return typeRepository.findAll(pb).content
+        return typeRepository.findAllBySQl(pb)
     }
 
     @Transactional

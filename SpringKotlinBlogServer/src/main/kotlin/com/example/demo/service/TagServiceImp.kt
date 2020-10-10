@@ -3,6 +3,7 @@ package com.example.demo.service
 import com.example.demo.dao.TagRepository
 import com.example.demo.po.Tag
 import org.springframework.data.domain.PageRequest
+import org.springframework.data.domain.Pageable
 import org.springframework.data.domain.Sort
 import org.springframework.stereotype.Service
 import java.util.*
@@ -24,9 +25,9 @@ class TagServiceImp(private val tagRepository: TagRepository) : TagService {
 
     override fun getTagsTop(size: Int): List<Tag> {
         val usedPageNUm = 0
-        val sort = Sort.by(Sort.Direction.ASC, "id")
+        val sort = Sort.by(Sort.Direction.DESC, "blogs.size")
         val pb = PageRequest.of(usedPageNUm, size, sort)
-        return tagRepository.findAll(pb).content
+        return tagRepository.findAllBySQl(pb)
 
     }
 

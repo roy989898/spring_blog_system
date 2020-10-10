@@ -3,13 +3,13 @@
 <head th:replace="_fragments.html::head(title='Index Page')">
 
 
-<!--    <title>Index Page</title>-->
+    <!--    <title>Index Page</title>-->
 </head>
 <body>
 
 <!-- Nav-->
 
-<div th:replace="_fragments.html::menu(0)"> </div>
+<div th:replace="_fragments.html::menu(0)"></div>
 
 <!-- contect-->
 <div class="container pt-3">
@@ -23,7 +23,7 @@
                         <div class="col-md text-center text-md-left card-title text-info">Blog</div>
                         <div class="col-md text-center text-md-right">
                             Total
-                            <div class="text-danger h4 m_inline_block">14</div>
+                            <div class="text-danger h4 m_inline_block" th:text="${blogs.size()}">14</div>
                             post
                         </div>
                     </div>

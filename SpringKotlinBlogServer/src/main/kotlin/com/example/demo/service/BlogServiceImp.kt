@@ -8,7 +8,9 @@ import com.example.demo.po.Type
 import com.example.demo.unwrap
 import org.springframework.beans.BeanUtils
 import org.springframework.data.domain.Page
+import org.springframework.data.domain.PageRequest
 import org.springframework.data.domain.Pageable
+import org.springframework.data.domain.Sort
 import org.springframework.data.jpa.domain.Specification
 import org.springframework.stereotype.Service
 import javax.persistence.criteria.CriteriaBuilder
@@ -49,6 +51,13 @@ class BlogServiceImp(val blogRepository: BlogRepository) : BlogService {
 
     override fun listBlog(pageable: Pageable): Page<Blog> {
         return blogRepository.findAll(pageable)
+    }
+
+    override fun listBlogTop(size: Int): List<Blog> {
+        val usedPageNUm = 0
+        val sort = Sort.by(Sort.Direction.ASC, "updateTime")
+        val pb = PageRequest.of(usedPageNUm, size, sort)
+        return blogRepository.findAll(pb).content
     }
 
     @Transactional

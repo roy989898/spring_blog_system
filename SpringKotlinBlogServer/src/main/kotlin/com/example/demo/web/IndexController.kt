@@ -21,10 +21,12 @@ class IndexController(val blogService: BlogService, val tagService: TagService, 
         val page = blogService.listBlog(pb)
         val types = typeService.listTypeTop(6)
         val tags = tagService.getTagsTop(6)
+        val recommendedBlogs = blogService.listBlogTop(8)
         model.addAttribute("page", page)
         model.addAttribute("blogs", page.content)
         model.addAttribute("types", types)
         model.addAttribute("tags", tags)
+        model.addAttribute("recommendedBlogs", recommendedBlogs)
         return "index"
     }
 
