@@ -45,7 +45,7 @@
                                         commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
                                     </div>
 
-                                    <div class="row">
+                                    <div class="row mt-4">
                                         <div class="col-8">
 
                                             <!--  <img src="https://onaliternote.files.wordpress.com/2016/11/wp-1480230666843.jpg"
@@ -164,12 +164,10 @@
 
                 </div>
                 <div style="display:flex;flex-wrap: wrap">
-                    <div class="btn btn-danger btn-sm p-1 m-1">asdas <span>12</span></div>
-                    <div class="btn btn-danger btn-sm p-1 m-1">asdas <span>12</span></div>
-                    <div class="btn btn-danger btn-sm p-1 m-1">asdas <span>12</span></div>
-                    <div class="btn btn-danger btn-sm p-1 m-1">asdas <span>12</span></div>
-                    <div class="btn btn-danger btn-sm p-1 m-1">asdas <span>12</span></div>
-                    <div class="btn btn-danger btn-sm p-1 m-1">asdas <span>12</span></div>
+                    <div class="badge badge-secondary d-flex align-items-center p-1 m-1" th:each="tag:${tags}">
+                        <th:block th:text="${tag.name}"></th:block>
+                        <span th:text="${tag.blogs.size()}">12</span></div>
+
                 </div>
 
 
@@ -192,9 +190,10 @@
                 </div>
 
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Cras justo odio</li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Vestibulum at eros</li>
+                    <li class="list-group-item" th:each="blog:${recommendedBlogs}" th:text="${blog.title}">Cras justo
+                        odio
+                    </li>
+
                 </ul>
 
 
