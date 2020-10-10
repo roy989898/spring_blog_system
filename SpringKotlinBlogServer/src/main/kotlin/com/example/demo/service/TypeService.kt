@@ -14,6 +14,7 @@ interface TypeService {
 
     fun listType(pageable: Pageable): Page<Type>
     fun listType(): List<Type>
+    fun listTypeTop(size:Int): List<Type>
     fun updateType(id: Long, type: Type)
 
     fun deleteType(id: Long)

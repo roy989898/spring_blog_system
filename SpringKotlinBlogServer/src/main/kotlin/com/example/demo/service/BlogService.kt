@@ -12,7 +12,7 @@ interface BlogService {
     fun getBlog(id: Long): Blog?
 
     fun listBlog(pageable: Pageable, blogForm: BlogSearchForm): Page<Blog>
-
+    fun listBlog(pageable: Pageable): Page<Blog>
     fun saveBlog(blog: Blog): Blog
 
     fun updateBlog(id: Long, blog: Blog): Blog

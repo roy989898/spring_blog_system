@@ -47,6 +47,10 @@ class BlogServiceImp(val blogRepository: BlogRepository) : BlogService {
         }, pageable)
     }
 
+    override fun listBlog(pageable: Pageable): Page<Blog> {
+        return blogRepository.findAll(pageable)
+    }
+
     @Transactional
     override fun saveBlog(blog: Blog): Blog {
         return blogRepository.save(blog)

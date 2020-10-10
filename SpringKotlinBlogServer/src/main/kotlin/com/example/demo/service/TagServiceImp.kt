@@ -2,6 +2,8 @@ package com.example.demo.service
 
 import com.example.demo.dao.TagRepository
 import com.example.demo.po.Tag
+import org.springframework.data.domain.PageRequest
+import org.springframework.data.domain.Sort
 import org.springframework.stereotype.Service
 import java.util.*
 import kotlin.collections.ArrayList
@@ -18,6 +20,14 @@ class TagServiceImp(private val tagRepository: TagRepository) : TagService {
 
     override fun getTagLike(name: String): ArrayList<Tag> {
         return tagRepository.findAllByNameContains(name)
+    }
+
+    override fun getTagsTop(size: Int): List<Tag> {
+        val usedPageNUm = 0
+        val sort = Sort.by(Sort.Direction.ASC, "id")
+        val pb = PageRequest.of(usedPageNUm, size, sort)
+        return tagRepository.findAll(pb).content
+
     }
 
     override fun deleteTags(tags: List<Tag>) {
