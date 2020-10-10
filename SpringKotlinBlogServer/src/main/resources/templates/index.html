@@ -99,11 +99,13 @@
                 <div class="card-footer">
                     <div class="row">
                         <div class="col-md text-center text-md-left">
-                            <div class="btn btn-primary">Back</div>
+                            <a class="btn btn-primary mr-1 " th:href="@{/{page}(page=${page.getNumber()-1})}"
+                               th:classappend="${page.isFirst()?'disabled':''}">Up</a>
 
                         </div>
                         <div class="col-md text-center text-md-right pt-md-0 pt-2">
-                            <div class="btn btn-primary">Next</div>
+                            <a class="btn btn-primary  mr-auto" th:href="@{/{page}(page=${page.getNumber()+1})}"
+                               th:classappend="${page.isLast()?'disabled':''}">Next</a>
                         </div>
                     </div>
                 </div>
@@ -217,54 +219,7 @@
 
 <!-- footer-->
 <div th:replace="_fragments.html::footer"></div>
-<!--<footer class="container mt-4">
-    <div class="row">
-        <div class="col-md-2">
 
-            <div class="center_image_container">
-                <img th:src="@{images/qr.png}" class="rounded qr_code  "/>
-            </div>
-
-
-        </div>
-        <div class="col-md-2   ">
-            <h5 class="text-center">
-                The Newest Blog
-            </h5>
-
-
-            <div class="text-center"><a href="*" class="footer_detail_text">User Story 1</a></div>
-            <div class="text-center"><a href="*" class="footer_detail_text">User Story 1</a></div>
-            <div class="text-center"><a href="*" class="footer_detail_text">User Story 1</a></div>
-
-        </div>
-        <div class="col-md-2  ">
-            <h5 class="text-center">
-                Content Me
-            </h5>
-
-
-            <div class="text-center"><a href="*" class="footer_detail_text">23456788</a></div>
-            <div class="text-center"><a href="*" class="footer_detail_text">erwer@gmail.com</a></div>
-        </div>
-        <div class="col-md-6  ">
-            <h5 class="text-center">
-                My Name
-            </h5>
-            <div class="text-center footer_detail_text">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
-                massa. Cum sociis natoque penatibus et
-            </div>
-
-
-        </div>
-    </div>
-
-
-    <div class="text-center mt-3">
-        © 2005-2011 John Doe All Rights Reserved
-    </div>
-</footer>-->
 <!---->
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

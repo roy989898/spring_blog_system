@@ -9,12 +9,13 @@ import org.springframework.data.domain.Sort
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PathVariable
 
 @Controller
 class IndexController(val blogService: BlogService, val tagService: TagService, val typeService: TypeService) {
 
-    @GetMapping("/")
-    fun index(model: Model, page_num: Int?): String {
+    @GetMapping("/", "/{page_num}")
+    fun index(model: Model, @PathVariable(required = false) page_num: Int?): String {
         val usedPageNUm = page_num ?: 0
         val sort = Sort.by(Sort.Direction.ASC, "id")
         val pb = PageRequest.of(usedPageNUm, 10, sort)
