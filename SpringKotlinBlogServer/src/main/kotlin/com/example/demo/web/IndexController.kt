@@ -1,6 +1,7 @@
 package com.example.demo.web
 
 import com.example.demo.form.BlogSearchForm
+import com.example.demo.form.CommentInputForm
 import com.example.demo.service.BlogService
 import com.example.demo.service.TagService
 import com.example.demo.service.TypeService
@@ -52,11 +53,18 @@ class IndexController(val blogService: BlogService, val tagService: TagService, 
     @GetMapping("/blog/{id}")
     fun blog(@PathVariable id: Long, model: Model): String {
         val blog = blogService.getBlog(id)
-        val fakeComments = fakeComments()
-        val comments = createCommentHtmlFullList(fakeComments).render()
+//        val comments = fakeComments()
+        val comments = blog?.comments?.toTypedArray() ?: emptyArray()
+        val commentsDom = createCommentHtmlFullList(comments).render()
         model.addAttribute("blog", blog)
-        model.addAttribute("comments", comments)
+        model.addAttribute("comments", commentsDom)
         return "blog"
+    }
+
+    @PostMapping("/blog/comment")
+    fun addComment(commentInputForm: CommentInputForm): String {
+//        TODO
+        return "redirect:/blog/" + commentInputForm.blogID
     }
 
     @GetMapping("/try")
