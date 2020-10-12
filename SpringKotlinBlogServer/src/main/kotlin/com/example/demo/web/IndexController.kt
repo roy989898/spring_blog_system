@@ -1,12 +1,16 @@
 package com.example.demo.web
 
+import com.example.demo.NotFoundException
 import com.example.demo.form.BlogSearchForm
 import com.example.demo.form.CommentInputForm
+import com.example.demo.po.Comment
 import com.example.demo.service.BlogService
+import com.example.demo.service.CommentService
 import com.example.demo.service.TagService
 import com.example.demo.service.TypeService
 import com.example.demo.utility.createCommentHtmlFullList
 import com.example.demo.utility.fakeComments
+
 import org.springframework.data.domain.PageRequest
 import org.springframework.data.domain.Sort
 import org.springframework.stereotype.Controller
@@ -17,7 +21,7 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestParam
 
 @Controller
-class IndexController(val blogService: BlogService, val tagService: TagService, val typeService: TypeService) {
+class IndexController(val blogService: BlogService, val tagService: TagService, val typeService: TypeService, val commentService: CommentService) {
 
     @GetMapping("/", "/{page_num}")
     fun index(model: Model, @PathVariable(required = false) page_num: Int?): String {
@@ -64,6 +68,16 @@ class IndexController(val blogService: BlogService, val tagService: TagService, 
     @PostMapping("/blog/comment")
     fun addComment(commentInputForm: CommentInputForm): String {
 //        TODO
+        val blog = blogService.getBlog(commentInputForm.blogID ?: 0)
+        if (blog != null) {
+
+
+            val c = commentInputForm.toComment()
+            c.blog = blog
+            commentService.addComment(c)
+        } else {
+            throw NotFoundException("BLog not found")
+        }
         return "redirect:/blog/" + commentInputForm.blogID
     }
 
