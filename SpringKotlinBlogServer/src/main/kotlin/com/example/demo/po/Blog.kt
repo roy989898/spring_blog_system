@@ -60,10 +60,18 @@ data class Blog(
         return simpleDateFormat.format(updateTime)
     }
 
-    fun contentToHtml(): String {
+    fun contentToPlainText(): String {
         val parser: Parser = Parser.builder().build()
         val document = parser.parse(content)
         val renderer = TextContentRenderer .builder().build()
+        return renderer.render(document) // "<p>This is <em>Sparta</em></p>\n"
+
+    }
+
+    fun contentToHtml(): String {
+        val parser: Parser = Parser.builder().build()
+        val document = parser.parse(content)
+        val renderer = HtmlRenderer .builder().build()
         return renderer.render(document) // "<p>This is <em>Sparta</em></p>\n"
 
     }
