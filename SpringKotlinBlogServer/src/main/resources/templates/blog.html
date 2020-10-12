@@ -122,61 +122,7 @@
 
                 <th:block th:utext="${comments}"></th:block>
                 <!--                comment start-->
-                <!--  <div class="container bootstrap snippets bootdey">
-                      <div class="row">
-                          <div class="col-md-12">
-                              <div class="blog-comment">
 
-                                  <ul class="comments">
-                                      <li class="clearfix">
-                                          <img src="https://bootdey.com/img/Content/user_1.jpg" class="avatar" alt="">
-                                          <div class="post-comments">
-                                              <div class="meta"><span>Dec 18, 2014</span> <a href="#">JohnDoe</a> <span>says :</span>
-                                                  <i class="pull-right">
-                                                      <a href="#">
-                                                          <small>Reply</small>
-                                                      </a>
-                                                  </i>
-                                              </div>
-                                              <p>
-                                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                  Etiam a sapien odio, sit amet
-                                              </p>
-                                          </div>
-                                      </li>
-                                      <li class="clearfix">
-                                          <img src="https://bootdey.com/img/Content/user_2.jpg" class="avatar" alt="">
-                                          <div class="post-comments">
-                                              <p class="meta">Dec 19, 2014 <a href="#">JohnDoe</a> says : <i
-                                                      class="pull-right"><a href="#"><small>Reply</small></a></i></p>
-                                              <p>
-                                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                  Etiam a sapien odio, sit amet
-                                              </p>
-                                          </div>
-
-                                          &lt;!&ndash;                                        sub comment&ndash;&gt;
-                                          <ul class="comments">
-                                              <li class="clearfix">
-                                                  <img src="https://bootdey.com/img/Content/user_3.jpg" class="avatar"
-                                                       alt="">
-                                                  <div class="post-comments">
-                                                      <p class="meta">Dec 20, 2014 <a href="#">JohnDoe</a> says : <i
-                                                              class="pull-right"><a href="#"><small>Reply</small></a></i>
-                                                      </p>
-                                                      <p>
-                                                          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                          Etiam a sapien odio, sit amet
-                                                      </p>
-                                                  </div>
-                                              </li>
-                                          </ul>
-                                      </li>
-                                  </ul>
-                              </div>
-                          </div>
-                      </div>
-                  </div>-->
                 <!--comment end-->
             </div>
 
@@ -186,8 +132,11 @@
                            name="blogID" th:value="${blog.id}">
                     <div class="form-group pt-2">
 
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                        <textarea class="form-control " id="messageInput" rows="3"
                                   placeholder="Please input message" name="message"></textarea>
+                        <div class="invalid-feedback" id="messageInvalidFeedback">
+                            Looks good!
+                        </div>
 
                     </div>
 
@@ -196,20 +145,28 @@
                         <div class="col-sm-5">
                             <div class="form-group ">
 
-                                <input type="text" class="form-control"
+                                <input type="text" class="form-control "
                                        placeholder="Name" name="name">
+
+                                <div class="invalid-feedback" id="nameInvalidFeedback">
+                                    Looks good!
+                                </div>
 
                             </div>
                         </div>
                         <div class="col-sm-5">
                             <div class="form-group">
 
-                                <input type="text" class="form-control"
+                                <input type="text" class="form-control "
                                        placeholder="Email" name="email">
+
+                                <div class="invalid-feedback" id="emailInvalidFeedback">
+                                    Looks good!
+                                </div>
                             </div>
                         </div>
                         <div class="col-sm-2">
-                            <button type="submit" class="btn btn-primary">Post</button>
+                            <input type="submit" class="btn btn-primary" value="Post">
                         </div>
                     </div>
 
@@ -231,6 +188,51 @@
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <div th:replace="_fragments.html::script"></div>
+<script>
+    $(document).ready(function () {
+        $('form').submit(function () {
+            let messageTextArea = $("#messageInput")
+            let nameInput = $("input[name='name']")
+            let emailInput = $("input[name='email']")
+
+
+            let message = messageTextArea.val().trim()
+            let name = nameInput.val().trim()
+            let email = emailInput.val().trim()
+            console.log(messageTextArea)
+            console.log(name)
+            console.log(email)
+
+            if (message === '' || name === '' || email === '') {
+                console.log("error")
+
+                if (message === '') {
+                    messageTextArea.addClass('is-invalid')
+                    $("#messageInvalidFeedback").text("should not empty")
+                } else {
+                    messageTextArea.removeClass('is-invalid')
+                }
+
+                if (name === '') {
+                    nameInput.addClass('is-invalid')
+                    $("#nameInvalidFeedback").text("should not empty")
+                } else {
+                    nameInput.removeClass('is-invalid')
+                }
+                if (email === '') {
+                    emailInput.addClass('is-invalid')
+                    $("#emailInvalidFeedback").text("should not empty")
+                } else {
+                    emailInput.removeClass('is-invalid')
+                }
+                return false
+            } else {
+                return true
+            }
+
+        })
+    })
+</script>
 
 
 </body>
