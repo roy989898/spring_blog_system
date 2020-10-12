@@ -6,11 +6,8 @@ import j2html.tags.ContainerTag
 import j2html.tags.DomContent
 import java.util.*
 
-fun createCommentHtmlFullList(): DomContent {
-    val fakeComments = fakeComments()
-/*    val dom = fakeComments.map {
-        createACommentElement(it)
-    }.toTypedArray()*/
+fun createCommentHtmlFullList(comments: Array<Comment>): DomContent {
+
     return div(
             attrs(".container.bootstrap.snippets.bootdey"),
             div(
@@ -19,7 +16,7 @@ fun createCommentHtmlFullList(): DomContent {
                             attrs(".col-md-12"),
                             div(
                                     attrs(".blog-comment"),
-                                    createCommentElements(fakeComments)
+                                    createCommentElements(comments)
                             )
                     )
             )
