@@ -35,6 +35,6 @@ class IndexController(val blogService: BlogService, val tagService: TagService, 
     fun index2(): String {
 
 
-        return "admin/types_input"
+        return "search"
     }
 }
