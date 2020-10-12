@@ -13,6 +13,7 @@ interface BlogService {
 
     fun listBlog(pageable: Pageable, blogForm: BlogSearchForm): Page<Blog>
     fun listBlog(pageable: Pageable): Page<Blog>
+    fun listBlog(key: String, pageable: Pageable): Page<Blog>
     fun listBlogTop(size: Int): List<Blog>
     fun saveBlog(blog: Blog): Blog
 
