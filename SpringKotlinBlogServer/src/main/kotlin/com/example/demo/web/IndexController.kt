@@ -47,10 +47,17 @@ class IndexController(val blogService: BlogService, val tagService: TagService, 
         return "search"
     }
 
+    @GetMapping("/blog/{id}")
+    fun blog(@PathVariable id: Long, model: Model): String {
+        val blog = blogService.getBlog(id)
+        model.addAttribute("blog", blog)
+        return "blog"
+    }
+
     @GetMapping("/try")
     fun index2(): String {
 
 
-        return "search"
+        return "blog"
     }
 }

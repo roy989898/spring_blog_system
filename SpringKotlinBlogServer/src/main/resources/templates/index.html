@@ -37,7 +37,8 @@
                         <li class="list-group-item" th:each="blog:${blogs}">
                             <div class="row">
                                 <div class="col-md-8 ">
-                                    <div class="font-weight-bold" th:text="${blog.title}">I am a title</div>
+                                    <a class="font-weight-bold" th:text="${blog.title}"
+                                       th:href="@{/blog/{id}(id=${blog.id})}">I am a title</a>
                                     <div class="" th:text="${blog.contentToHtml().substring(0,100)}">Lorem ipsum dolor
                                         sit amet,
                                         consectetuer
@@ -135,14 +136,14 @@
                     <!--                    tag list-->
                     <ul class="list-group list-group-flush" th:each="type:${types}">
                         <li class="list-group-item">
-                            <div class="row">
+                            <a class="row">
                                 <div class="col-sm text-md-left text-center" th:text="${type.name}">
                                     Javacript
                                 </div>
                                 <div class="col-sm text-md-right text-center">
                                     <a href="*" class="btn btn-sm btn-secondary" th:text="${type?.blogs.size()}">12</a>
                                 </div>
-                            </div>
+                            </a>
                         </li>
 
                     </ul>
@@ -192,9 +193,10 @@
                 </div>
 
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item" th:each="blog:${recommendedBlogs}" th:text="${blog.title}">Cras justo
+                    <a class="list-group-item" th:each="blog:${recommendedBlogs}" th:text="${blog.title} "
+                       th:href="@{/blog/{id}(id=${blog.id})}">Cras justo
                         odio
-                    </li>
+                    </a>
 
                 </ul>
 
