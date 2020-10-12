@@ -4,6 +4,7 @@ import com.example.demo.form.BlogSearchForm
 import com.example.demo.service.BlogService
 import com.example.demo.service.TagService
 import com.example.demo.service.TypeService
+import com.example.demo.utility.createCommentHtmlFullList
 import org.springframework.data.domain.PageRequest
 import org.springframework.data.domain.Sort
 import org.springframework.stereotype.Controller
@@ -50,7 +51,9 @@ class IndexController(val blogService: BlogService, val tagService: TagService, 
     @GetMapping("/blog/{id}")
     fun blog(@PathVariable id: Long, model: Model): String {
         val blog = blogService.getBlog(id)
+        val comments = createCommentHtmlFullList().render()
         model.addAttribute("blog", blog)
+        model.addAttribute("comments", comments)
         return "blog"
     }
 
