@@ -8,9 +8,9 @@ import java.util.*
 
 fun createCommentHtmlFullList(): DomContent {
     val fakeComments = fakeComments()
-    val dom = fakeComments.map {
-        createCommentElement(it)
-    }.toTypedArray()
+/*    val dom = fakeComments.map {
+        createACommentElement(it)
+    }.toTypedArray()*/
     return div(
             attrs(".container.bootstrap.snippets.bootdey"),
             div(
@@ -19,32 +19,42 @@ fun createCommentHtmlFullList(): DomContent {
                             attrs(".col-md-12"),
                             div(
                                     attrs(".blog-comment"),
-                                    ul(attrs(".comments"), *dom)
+                                    createCommentElements(fakeComments)
                             )
                     )
             )
     )
 }
 
+fun createCommentElements(comment: Array<Comment>): ContainerTag? {
+    val dom = comment.map {
+        createACommentElement(it)
+    }.toTypedArray()
+    return ul(attrs(".comments"), *dom)
 
-fun createCommentElement(comment: Comment): DomContent {
 
+}
+
+fun createACommentElement(comment: Comment): DomContent {
+    val subComment = comment.replyComments.toTypedArray()
     return li(
-            attrs(".clearfix"), img(attrs(".avatar")).withSrc(comment.avatar), div(
-            attrs(".post-comments"),
-            div(attrs(".meta"),
-                    span(comment.createTime.toString()),
-                    a(" " + comment.nickname + " ").withHref("*"),
-                    span("says :"),
-                    i(attrs(".pull-right"),
-                            a(
-                                    small("Reply")
-                            ).withHref("*")
-                    )
-            ),
-            p(comment.content)
+            attrs(".clearfix"), img(attrs(".avatar")).withSrc(comment.avatar),
+            div(attrs(".post-comments"),
+                    div(attrs(".meta"),
+                            span(comment.createTime.toString()),
+                            a(" " + comment.nickname + " ").withHref("*"),
+                            span("says :"),
+                            i(attrs(".pull-right"),
+                                    a(
+                                            small("Reply")
+                                    ).withHref("*")
+                            )
+                    ),
+                    p(comment.content)
 
-    )
+            ),
+            createCommentElements(subComment)
+
     )
 
 }
@@ -55,8 +65,14 @@ fun fakeComments(): Array<Comment> {
 
 fun aFakeComment(): Comment {
     val img = "https://images.theconversation.com/files/350865/original/file-20200803-24-50u91u.jpg?ixlib=rb-1.1.0&rect=37%2C29%2C4955%2C3293&q=45&auto=format&w=926&fit=clip"
-    return Comment(
-            null, "Roy", "dfsdfsdf@adasd.com", "i am content", img, Date(), null, emptyList(), null
+    val replayC = Comment(
+            null, "AA", "dfsdfsdf@adasd.com", "i am reply", img, Date(), null, emptyList(), null
     )
+
+    val fakeC = Comment(
+            null, "Roy", "dfsdfsdf@adasd.com", "i am content", img, Date(), null, listOf(replayC, replayC, replayC), null
+    )
+
+    return fakeC
 }
 
