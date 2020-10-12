@@ -1934,3 +1934,56 @@ org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "        
 2020-10-12 15:54:02 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "                                                                                                   SELECT BLOG0_.ID AS ID1_0_, BLOG0_.APPRECIATION AS APPRECIA2_0_, BLOG0_.COMMENTABLED AS COMMENTA3_0_, BLOG0_.CONTENT AS CONTENT4_0_, BLOG0_.CREATE_TIME AS CREATE_T5_0_, BLOG0_.FIRST_PICTURE AS FIRST_PI6_0_, BLOG0_.FLAG AS FLAG7_0_, BLOG0_.PUBLISHED AS PUBLISHE8_0_, BLOG0_.RECOMMEND AS RECOMMEN9_0_, BLOG0_.SHARE_STATEMENT AS SHARE_S10_0_, BLOG0_.TITLE AS TITLE11_0_, BLOG0_.TYPE_ID AS TYPE_ID14_0_, BLOG0_.UPDATE_TIME AS UPDATE_12_0_, BLOG0_.USER_ID AS USER_ID15_0_, BLOG0_.VIES AS VIES13_0_ FROM T_BLOG BLOG0_ INNER JOIN T_TAG TAG1_ ON WHERE[*] BLOG0_.TITLE LIKE ? OR BLOG0_.CONTENT LIKE ? ORDER BY BLOG0_.ID ASC LIMIT ?"; expected "NOT, EXISTS, INTERSECTS, UNIQUE"; SQL statement:
 /* select b from Blog b join Tag t where b.title like ?1 or b.content like ?1 order by b.id asc */ select blog0_.id as id1_0_, blog0_.appreciation as apprecia2_0_, blog0_.commentabled as commenta3_0_, blog0_.content as content4_0_, blog0_.create_time as create_t5_0_, blog0_.first_picture as first_pi6_0_, blog0_.flag as flag7_0_, blog0_.published as publishe8_0_, blog0_.recommend as recommen9_0_, blog0_.share_statement as share_s10_0_, blog0_.title as title11_0_, blog0_.type_id as type_id14_0_, blog0_.update_time as update_12_0_, blog0_.user_id as user_id15_0_, blog0_.vies as vies13_0_ from t_blog blog0_ inner join t_tag tag1_ on where blog0_.title like ? or blog0_.content like ? order by blog0_.id asc limit ? [42001-200]
+2020-10-12 16:20:21 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:D:/Program/Spring/spring_blog/SpringKotlinBlogServer/data/sample.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.message.DbException.convert(DbException.java:347)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2877)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:481)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:402)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3579)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:170)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:103)
+	at org.h2.engine.Database.getPageStore(Database.java:2659)
+	at org.h2.engine.Database.open(Database.java:675)
+	at org.h2.engine.Database.openDatabase(Database.java:307)
+	at org.h2.engine.Database.<init>(Database.java:301)
+	at org.h2.engine.Engine.openSession(Engine.java:74)
+	at org.h2.engine.Engine.openSession(Engine.java:192)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:171)
+	at org.h2.engine.Engine.createSession(Engine.java:166)
+	at org.h2.engine.Engine.createSession(Engine.java:29)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:340)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:358)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:477)
+	at com.zaxxer.hikari.pool.HikariPool.access$100(HikariPool.java:71)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:725)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:711)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: The file is locked: nio:D:/Program/Spring/spring_blog/SpringKotlinBlogServer/data/sample.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 34 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:D:/Program/Spring/spring_blog/SpringKotlinBlogServer/data/sample.mv.db [1.4.200/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
+	at org.h2.mvstore.FileStore.open(FileStore.java:166)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
+	... 28 more
+Caused by: java.nio.channels.OverlappingFileLockException
+	at sun.nio.ch.SharedFileLockTable.checkList(FileLockTable.java:255)
+	at sun.nio.ch.SharedFileLockTable.add(FileLockTable.java:152)
+	at sun.nio.ch.FileChannelImpl.tryLock(FileChannelImpl.java:1113)
+	at org.h2.store.fs.FileNio.tryLock(FilePathNio.java:121)
+	at java.nio.channels.FileChannel.tryLock(FileChannel.java:1155)
+	at org.h2.mvstore.FileStore.open(FileStore.java:163)
+	... 29 more

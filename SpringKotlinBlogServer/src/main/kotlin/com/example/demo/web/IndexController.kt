@@ -33,6 +33,7 @@ class IndexController(val blogService: BlogService, val tagService: TagService, 
         return "index"
     }
 
+
     @GetMapping("/search", "/search/{page_num}")
     fun search(@RequestParam query: String?, @PathVariable(required = false) page_num: Int?, model: Model): String {
         val key = query ?: ""
