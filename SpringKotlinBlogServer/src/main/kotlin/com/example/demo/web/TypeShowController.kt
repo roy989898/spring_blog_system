@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 
 @Controller
-class TypeShowController(val blogService: BlogService, val typeService: TypeService) {
+class TypeShowController(val typeService: TypeService) {
 
 
     @GetMapping("/types", "/types/{typeId}")
@@ -26,7 +26,7 @@ class TypeShowController(val blogService: BlogService, val typeService: TypeServ
             }
         }
 
-//        TODO blog list
+
         val blogs = type?.blogs ?: emptyList()
 
         model.addAttribute("types", types)
