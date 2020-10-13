@@ -8,7 +8,7 @@
 <body>
 
 <!-- Nav-->
-<div th:replace="_fragments.html::menu(1)"> </div>
+<div th:replace="_fragments.html::menu(1)"></div>
 <!-- contect-->
 <div class="container pt-3">
 
@@ -27,13 +27,16 @@
         <div class="card-body">
             <div class="d-flex  flex-wrap">
                 <!--                category element-->
-                <button type="button" class="btn btn-primary m-2">
-                    Programming <span class="badge badge-light">12</span>
-                </button>
+                <a type="button" class="btn  m-2" th:each="type:${types}"
+                   th:href="@{/types/{id}(id=${type.id})}"
+                   th:classappend="${type.id==typeId?'btn-primary':'btn-secondary'}">
+                    <span th:text="${type.name}">Programming</span> <span class="badge badge-light"
+                                                                          th:text="${type.blogs.size()}">12</span>
+                </a>
 
-                <button type="button" class="btn btn-secondary m-2">
-                    Programming <span class="badge badge-light">12</span>
-                </button>
+                <!--  <button type="button" class="btn btn-secondary m-2">
+                      Programming <span class="badge badge-light">12</span>
+                  </button>-->
             </div>
 
         </div>
