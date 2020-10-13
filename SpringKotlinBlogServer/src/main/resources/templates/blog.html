@@ -133,6 +133,8 @@
                 <form action="*" method="post" th:action="@{/blog/comment}">
                     <input type="hidden" class="form-control"
                            name="blogID" th:value="${blog.id}">
+                    <input type="hidden" class="form-control"
+                           name="parentCommentId">
                     <div class="form-group pt-2">
 
                         <textarea class="form-control " id="messageInput" rows="3"
@@ -205,11 +207,22 @@
         }
     }
 
+
     $(document).ready(function () {
+
+        let messageTextArea = $("#messageInput")
+        let nameInput = $("input[name='name']")
+        let emailInput = $("input[name='email']")
+        let parentCommentIdInput = $("[name='parentCommentId']")
+        let replyClick = function () {
+            let id = $(this).data('id')
+            let name = $(this).data('name')
+            // TODO set the parent id and set at the message
+            console.log(id + name)
+            parentCommentIdInput.val(id)
+            messageTextArea.val("@" + name)
+        }
         $('form').submit(function () {
-            let messageTextArea = $("#messageInput")
-            let nameInput = $("input[name='name']")
-            let emailInput = $("input[name='email']")
 
 
             let message = messageTextArea.val().trim()
@@ -249,16 +262,21 @@
                     message: message,
                     name: name,
                     email: email,
-                    blogID: $("[name='blogID']").val()
+                    blogID: $("[name='blogID']").val(),
+                    parentCommentId: parentCommentIdInput.val()
                 }, function () {
                     messageTextArea.val('')
                     nameInput.val('')
                     emailInput.val('')
+
+                    $('.reply').click(replyClick)
                 })
                 return false
             }
 
         })
+        $('.reply').click(replyClick)
+
     })
 </script>
 

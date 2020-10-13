@@ -3,7 +3,7 @@ package com.example.demo.form
 import com.example.demo.po.Comment
 import java.util.*
 
-data class CommentInputForm(val message: String?, val name: String?,val email: String?,val blogID:Long?) {
+data class CommentInputForm(val message: String?, val name: String?,val email: String?,val blogID:Long?,val parentCommentId:Long?) {
 
 
     fun toComment(): Comment {

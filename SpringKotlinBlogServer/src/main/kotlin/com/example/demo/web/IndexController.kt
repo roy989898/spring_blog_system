@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestParam
+import java.util.*
 
 @Controller
 class IndexController(val blogService: BlogService, val tagService: TagService, val typeService: TypeService, val commentService: CommentService) {
@@ -73,6 +74,9 @@ class IndexController(val blogService: BlogService, val tagService: TagService, 
 
             val c = commentInputForm.toComment()
             c.blog = blog
+            if (commentInputForm.parentCommentId != null) {
+                c.parentComment = Comment(commentInputForm.parentCommentId, "", "", "", "", Date(), null, emptyList(), null)
+            }
             commentService.addComment(c)
 
             val blog = blogService.getBlog(commentInputForm.blogID ?: -1)

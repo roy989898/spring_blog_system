@@ -42,9 +42,10 @@ fun createACommentElement(comment: Comment): DomContent {
                             a(" " + comment.nickname + " ").withHref("*"),
                             span("says :"),
                             i(attrs(".pull-right"),
-                                    a(
+                                    a(attrs(".reply"),
                                             small("Reply")
-                                    ).withHref("*")
+                                    ).attr("data-id", comment.id)
+                                            .attr("data-name", comment.nickname)
                             )
                     ),
                     p(comment.content)
