@@ -66,19 +66,28 @@ class IndexController(val blogService: BlogService, val tagService: TagService, 
     }
 
     @PostMapping("/blog/comment")
-    fun addComment(commentInputForm: CommentInputForm): String {
-//        TODO
-        val blog = blogService.getBlog(commentInputForm.blogID ?: 0)
+    fun addComment(commentInputForm: CommentInputForm, model: Model): String {
+        val blog = blogService.getBlog(commentInputForm.blogID ?: -1)
         if (blog != null) {
 
 
             val c = commentInputForm.toComment()
             c.blog = blog
             commentService.addComment(c)
+
+            val blog = blogService.getBlog(commentInputForm.blogID ?: -1)
+//        val comments = fakeComments()
+            val comments = blog?.comments?.toTypedArray() ?: emptyArray()
+            val commentsDom = createCommentHtmlFullList(comments).render()
+            model.addAttribute("blog", blog)
+            model.addAttribute("comments", commentsDom)
+            return "blog::commentlist"
         } else {
             throw NotFoundException("BLog not found")
         }
-        return "redirect:/blog/" + commentInputForm.blogID
+//        return "redirect:/blog/" + commentInputForm.blogID
+
+
     }
 
     @GetMapping("/try")

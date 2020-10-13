@@ -118,13 +118,16 @@
                 </div>
             </div>
 
-            <div class=" list-group-item">
+            <div class="border-0" id="commentContainer">
+                <div class=" list-group-item" th:fragment="commentlist">
 
-                <th:block th:utext="${comments}"></th:block>
-                <!--                comment start-->
+                    <th:block th:utext="${comments}"></th:block>
+                    <!--                comment start-->
 
-                <!--comment end-->
+                    <!--comment end-->
+                </div>
             </div>
+
 
             <div class=" list-group-item">
                 <form action="*" method="post" th:action="@{/blog/comment}">
@@ -227,7 +230,19 @@
                 }
                 return false
             } else {
-                return true
+                // data class CommentInputForm(val message: String?, val name: String?,val email: String?,val blogID:Long?)
+                //cal ajax
+                $("#commentContainer").load("/blog/comment", {
+                    message: message,
+                    name: name,
+                    email: email,
+                    blogID: $("[name='blogID']").val()
+                }, function () {
+                    messageTextArea.val('')
+                    nameInput.val('')
+                    emailInput.val('')
+                })
+                return false
             }
 
         })
