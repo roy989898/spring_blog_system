@@ -35,7 +35,8 @@
             <li class="list-group-item" th:each="blog:${blogs}">
                 <div class="row">
                     <div class="col-md-8 ">
-                        <div class="font-weight-bold" th:text="${blog.title}">I am a title</div>
+                        <a class="font-weight-bold" th:text="${blog.title}"
+                           th:href="@{/blog/{id}(id=${blog.id})}">I am a title</a>
                         <div class="" th:text="${blog.contentToPlainText().substring(0,100)}">Lorem ipsum dolor
                             sit amet,
                             consectetuer
