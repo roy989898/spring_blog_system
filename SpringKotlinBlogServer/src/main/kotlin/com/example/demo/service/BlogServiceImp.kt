@@ -57,6 +57,10 @@ class BlogServiceImp(val blogRepository: BlogRepository) : BlogService {
         return blogRepository.searchBlog(key, pageable)
     }
 
+    override fun listBlog( sort: Sort): List<Blog> {
+        return blogRepository.findAll(sort)
+    }
+
     override fun listBlogTop(size: Int): List<Blog> {
         val usedPageNUm = 0
         val sort = Sort.by(Sort.Direction.ASC, "updateTime")

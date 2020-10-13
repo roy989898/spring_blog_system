@@ -5,6 +5,7 @@ import com.example.demo.po.Blog
 import com.example.demo.po.Type
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
+import org.springframework.data.domain.Sort
 
 interface BlogService {
 
@@ -14,6 +15,7 @@ interface BlogService {
     fun listBlog(pageable: Pageable, blogForm: BlogSearchForm): Page<Blog>
     fun listBlog(pageable: Pageable): Page<Blog>
     fun listBlog(key: String, pageable: Pageable): Page<Blog>
+    fun listBlog( sort:Sort): List<Blog>
     fun listBlogTop(size: Int): List<Blog>
     fun saveBlog(blog: Blog): Blog
 

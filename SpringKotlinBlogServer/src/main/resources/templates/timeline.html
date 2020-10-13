@@ -8,7 +8,7 @@
 <body>
 
 <!-- Nav-->
-<div th:replace="_fragments.html::menu(3)"> </div>
+<div th:replace="_fragments.html::menu(3)"></div>
 <!-- contect-->
 <div class="container pt-3">
 
@@ -19,7 +19,7 @@
                 <div class="col-md text-center text-md-left card-title text-info">TimeLine</div>
                 <div class="col-md text-center text-md-right">
                     Total
-                    <div class="text-danger h4 m_inline_block">14</div>
+                    <div class="text-danger h4 m_inline_block" th:text="${blogs.size()}">14</div>
                     Blogs
                 </div>
             </div>
@@ -30,41 +30,33 @@
 
 
     <div class="text-center mt-4">
-        <div class="h2 my-4">2017</div>
-        <div class="card ">
+        <th:block th:each="yb:${yearAndBlogSList}">
+            <div class="h2 my-4" th:text="${yb.year}">2017</div>
+            <div class="card " th:each="blog:${yb.blogs}">
 
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item time_line_item">
-                    <div class="row">
-                        <div class="col-8 text-left  ">
-                            <div class="m_inline_block">Topic</div>
-                            <div class="m_inline_block alert alert-info p-1 mb-0 ml-1">02/10/2020</div>
+                <ul class="list-group list-group-flush">
+
+                    <li class="list-group-item time_line_item">
+                        <div class="row">
+                            <a class="m_inline_block" th:text="${blog.title}"
+                               th:href="@{/blog/{id}(id=${blog.getId()})}">Topic</a>
                         </div>
-                        <div class="col-4 text-right ">
-                            <div class="m_inline_block alert alert-danger p-1 mb-0">Tag??Category???</div>
+                        <div class="row">
+                            <div class="m_inline_block alert alert-info p-1 mb-0 ml-1"
+                                 th:text="${#dates.format(blog.createTime, 'dd-MM-yyyy HH:mm')}"
+                            >
+                                02/10/2020
+                            </div>
                         </div>
-                    </div>
 
-                </li>
+                    </li>
 
-            </ul>
+                </ul>
 
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item time_line_item">
-                    <div class="row">
-                        <div class="col-8 text-left  ">
-                            <div class="m_inline_block">Topic</div>
-                            <div class="m_inline_block alert alert-info p-1 mb-0 ml-1">02/10/2020</div>
-                        </div>
-                        <div class="col-4 text-right ">
-                            <div class="m_inline_block alert alert-danger p-1 mb-0">Tag??Category???</div>
-                        </div>
-                    </div>
 
-                </li>
+            </div>
+        </th:block>
 
-            </ul>
-        </div>
     </div>
 
 </div>
