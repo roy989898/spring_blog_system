@@ -18,6 +18,7 @@ data class Comment(
         @ManyToOne()
         var blog: Blog?,
         @OneToMany(mappedBy = "parentComment", cascade = [CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.REMOVE])
+        @OrderBy("createTime Desc")
         var replyComments: List<Comment>,
         @ManyToOne()
         var parentComment: Comment?

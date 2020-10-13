@@ -12,7 +12,7 @@ class CommentServiceImp(val commentRepository: CommentRepository) : CommentServi
     }
 
     override fun listOnlyParentComments(blogId: Long): List<Comment> {
-        return commentRepository.getCommentsByParentCommentIsNullAndBlog_Id(blogId)
+        return commentRepository.getCommentsByParentCommentIsNullAndBlog_IdOrderByCreateTimeDesc(blogId)
 
     }
 }
