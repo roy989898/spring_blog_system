@@ -57,6 +57,7 @@ class IndexController(val blogService: BlogService, val tagService: TagService, 
 
     @GetMapping("/blog/{id}")
     fun blog(@PathVariable id: Long, model: Model): String {
+        blogService.updateBlogVIew(id)
         val blog = blogService.getBlog(id)
 //        val comments = fakeComments()
         val comments = commentService.listOnlyParentComments(blog?.id ?: 0).toTypedArray()

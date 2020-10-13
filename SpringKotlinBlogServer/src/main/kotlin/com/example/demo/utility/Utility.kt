@@ -39,7 +39,7 @@ fun createACommentElement(comment: Comment): DomContent {
             div(attrs(".post-comments"),
                     div(attrs(".meta"),
                             span(comment.createTime.toString()),
-                            a(" " + comment.nickname + " ").withHref("*"),
+                            a(" " + comment.nickname + " "),
                             span("says :"),
                             i(attrs(".pull-right"),
                                     a(attrs(".reply"),

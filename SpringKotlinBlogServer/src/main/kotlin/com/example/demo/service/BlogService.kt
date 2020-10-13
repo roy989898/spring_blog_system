@@ -18,6 +18,6 @@ interface BlogService {
     fun saveBlog(blog: Blog): Blog
 
     fun updateBlog(id: Long, blog: Blog): Blog
-
+    fun updateBlogVIew(id: Long): Int
     fun deleteBlog(id: Long)
 }
