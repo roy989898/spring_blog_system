@@ -130,7 +130,7 @@
 
 
             <div class=" list-group-item">
-                <form action="*" method="post" th:action="@{/blog/comment}">
+                <form action="*" method="post" th:action="@{/blog/comment}" id="commentForm">
                     <input type="hidden" class="form-control"
                            name="blogID" th:value="${blog.id}">
                     <input type="hidden" class="form-control"
@@ -222,7 +222,7 @@
             parentCommentIdInput.val(id)
             messageTextArea.val("@" + name)
         }
-        $('form').submit(function () {
+        $('form#commentForm').submit(function () {
 
 
             let message = messageTextArea.val().trim()
