@@ -10,5 +10,8 @@ import org.springframework.data.jpa.repository.Query
 
 interface CommentRepository : JpaRepository<Comment, Long> {
 
+    //    @Query("select c from Comment c where c.parentComment like ")
+    fun getCommentsByParentCommentIsNullAndBlog_Id(blog_id: Long): List<Comment>
+
 
 }

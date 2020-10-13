@@ -59,7 +59,7 @@ class IndexController(val blogService: BlogService, val tagService: TagService, 
     fun blog(@PathVariable id: Long, model: Model): String {
         val blog = blogService.getBlog(id)
 //        val comments = fakeComments()
-        val comments = blog?.comments?.toTypedArray() ?: emptyArray()
+        val comments = commentService.listOnlyParentComments(blog?.id ?: 0).toTypedArray()
         val commentsDom = createCommentHtmlFullList(comments).render()
         model.addAttribute("blog", blog)
         model.addAttribute("comments", commentsDom)
@@ -81,7 +81,7 @@ class IndexController(val blogService: BlogService, val tagService: TagService, 
 
             val blog = blogService.getBlog(commentInputForm.blogID ?: -1)
 //        val comments = fakeComments()
-            val comments = blog?.comments?.toTypedArray() ?: emptyArray()
+            val comments = commentService.listOnlyParentComments(blog?.id ?: 0).toTypedArray()
             val commentsDom = createCommentHtmlFullList(comments).render()
             model.addAttribute("blog", blog)
             model.addAttribute("comments", commentsDom)

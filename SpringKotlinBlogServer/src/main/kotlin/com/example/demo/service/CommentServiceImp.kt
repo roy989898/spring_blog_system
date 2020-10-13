@@ -10,4 +10,9 @@ class CommentServiceImp(val commentRepository: CommentRepository) : CommentServi
     override fun addComment(comment: Comment): Comment {
         return commentRepository.save(comment)
     }
+
+    override fun listOnlyParentComments(blogId: Long): List<Comment> {
+        return commentRepository.getCommentsByParentCommentIsNullAndBlog_Id(blogId)
+
+    }
 }

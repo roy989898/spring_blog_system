@@ -6,4 +6,6 @@ import javax.transaction.Transactional
 interface CommentService {
     @Transactional
     fun addComment(comment: Comment): Comment
+
+    fun listOnlyParentComments(blogId: Long): List<Comment>
 }
