@@ -43,7 +43,7 @@ class IndexController(val blogService: BlogService, val tagService: TagService, 
 
 
     @GetMapping("/search", "/search/{page_num}")
-    fun search(@RequestParam query: String?, @PathVariable(required = false) page_num: Int?, model: Model): String {
+    fun search(@RequestParam index: Long?, @RequestParam query: String?, @PathVariable(required = false) page_num: Int?, model: Model): String {
         val key = query ?: ""
         val usedPageNUm = page_num ?: 0
         val sort = Sort.by(Sort.Direction.DESC, "updateTime")
@@ -52,6 +52,7 @@ class IndexController(val blogService: BlogService, val tagService: TagService, 
         model.addAttribute("page", page)
         model.addAttribute("blogs", page.content)
         model.addAttribute("key", key)
+        model.addAttribute("index", index)
         return "search"
     }
 
