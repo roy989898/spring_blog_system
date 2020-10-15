@@ -16,12 +16,16 @@ class TagsShowController(val tagService: TagService) {
     fun tags(@PathVariable tagID: Long?, model: Model): String {
         val tags = tagService.getTag()
         var tag: Tag? = null
+        var usedTagId: Long? = null
         if (tagID != null) {
+            usedTagId = tagID
             tag = tagService.getTag(tagID).unwrap()
         } else {
 
+
             if (tags.isNotEmpty()) {
                 tag = tags[0]
+                usedTagId = tag.id
             }
         }
 
@@ -30,7 +34,7 @@ class TagsShowController(val tagService: TagService) {
 
         model.addAttribute("tags", tags)
         model.addAttribute("blogs", blogs)
-        model.addAttribute("tagID", tagID)
+        model.addAttribute("tagID", usedTagId)
 
         return "tags"
     }
