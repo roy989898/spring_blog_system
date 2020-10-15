@@ -296,6 +296,7 @@ a {
     margin-top: 0;
     width: 65px;
     height: 65px;
+    object-fit: cover;
 }
 
 .blog-comment .post-comments {
