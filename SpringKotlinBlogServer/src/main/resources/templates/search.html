@@ -14,13 +14,17 @@
 
     <div class="card">
         <!--                head-->
-        <div class="card-header border-bottom-0">
+       
+
+        <div class="card-header">
             <div class="row">
-                <div class="col-md text-center text-md-left card-title text-info">Search Results</div>
-                <div class="col-md text-center text-md-right">
-                    Total
-                    <div class="text-danger h4 m_inline_block" th:text="${page.totalElements}">14</div>
-                    Results
+                <div class="col-md text-center text-md-left text-info d-flex align-items-center">Search Results</div>
+                <div class="col-md text-center text-md-right d-flex align-items-center justify-content-end">
+                    <div>Total
+                        <div class="text-danger h4 m_inline_block" th:text="${blogs.size()}">14</div>
+                        Results
+                    </div>
+
                 </div>
             </div>
         </div>
