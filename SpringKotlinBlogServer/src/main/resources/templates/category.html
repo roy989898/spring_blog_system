@@ -14,16 +14,21 @@
 
     <div class="card">
         <!--                head-->
+
         <div class="card-header">
             <div class="row">
-                <div class="col-md text-center text-md-left card-title text-info">Category</div>
-                <div class="col-md text-center text-md-right">
-                    Total
-                    <div class="text-danger h4 m_inline_block" th:text="${types.size()}">14</div>
-                    Categories
+                <div class="col-md text-center text-md-left text-info d-flex align-items-center">Category</div>
+                <div class="col-md text-center text-md-right d-flex align-items-center justify-content-end">
+                    <div>Total
+                        <div class="text-danger h4 m_inline_block" th:text="${types.size()}">14</div>
+                        Categories
+                    </div>
+
                 </div>
             </div>
         </div>
+
+
         <div class="card-body">
             <div class="d-flex  flex-wrap">
                 <!--                category element-->

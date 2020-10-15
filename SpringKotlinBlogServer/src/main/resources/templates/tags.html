@@ -14,13 +14,16 @@
 
     <div class="card">
         <!--                head-->
+
         <div class="card-header">
             <div class="row">
-                <div class="col-md text-center text-md-left card-title text-info">Tags</div>
-                <div class="col-md text-center text-md-right">
-                    Total
-                    <div class="text-danger h4 m_inline_block" th:text="${tags.size()}">14</div>
-                    Tags
+                <div class="col-md text-center text-md-left text-info d-flex align-items-center">Tags</div>
+                <div class="col-md text-center text-md-right d-flex align-items-center justify-content-end">
+                    <div>Total
+                        <div class="text-danger h4 m_inline_block" th:text="${tags.size()}">14</div>
+                        tags
+                    </div>
+
                 </div>
             </div>
         </div>
