@@ -56,8 +56,8 @@
                                                    class="small_img_icon_rounded m_inline_block"
                                                    th:if="${!blog?.firstPicture.isEmpty()}"
                                                    th:src="'data:image/jpeg;base64,'+${blog?.firstPicture}">-->
-                                            <a href="*" class="m_inline_block text-info pr-1"
-                                               th:text="${blog.user?.getNickname()}">name</a>
+                                            <div href="*" class="m_inline_block text-info pr-1"
+                                               th:text="${blog.user?.getNickname()}">name</div>
                                             <div class="m_inline_block blog_inf_small_text pr-1"
                                                  th:text="${blog.getFormatedUpdateTime()}">2020-09-25
                                             </div>
