@@ -135,17 +135,18 @@
 
 
                 <div class="card m-3">
-                    <!--                    tag list-->
-                    <ul class="list-group list-group-flush" th:each="type:${types}">
-                        <li class="list-group-item">
-                            <a class="row">
-                                <div class="col-sm text-md-left text-center" th:text="${type.name}">
+                    <!--                    type list-->
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item" th:each="type:${types}">
+                            <div class="row">
+                                <a class="col-sm text-md-left text-center" th:text="${type.name}"
+                                   th:href="@{/types/{id}(id=${type.id})}">
                                     Javacript
-                                </div>
+                                </a>
                                 <div class="col-sm text-md-right text-center">
                                     <a href="*" class="btn btn-sm btn-secondary" th:text="${type?.blogs.size()}">12</a>
                                 </div>
-                            </a>
+                            </div>
                         </li>
 
                     </ul>
