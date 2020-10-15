@@ -57,7 +57,8 @@
                                                    th:if="${!blog?.firstPicture.isEmpty()}"
                                                    th:src="'data:image/jpeg;base64,'+${blog?.firstPicture}">-->
                                             <div href="*" class="m_inline_block text-info pr-1"
-                                               th:text="${blog.user?.getNickname()}">name</div>
+                                                 th:text="${blog.user?.getNickname()}">name
+                                            </div>
                                             <div class="m_inline_block blog_inf_small_text pr-1"
                                                  th:text="${blog.getFormatedUpdateTime()}">2020-09-25
                                             </div>
@@ -168,7 +169,7 @@
 
                 </div>
                 <div style="display:flex;flex-wrap: wrap">
-                    <div class="badge badge-secondary d-flex align-items-center p-1 m-1" th:each="tag:${tags}">
+                    <div class="badge badge-info d-flex align-items-center p-1 m-1" th:each="tag:${tags}">
                         <th:block th:text="${tag.name}"></th:block>
                         <span th:text="${tag.blogs.size()}">12</span></div>
 
@@ -206,13 +207,13 @@
 
             <!--            qr code-->
 
-            <div class="h2 text-center mt-3">QR Code</div>
+            <!-- <div class="h2 text-center mt-3">QR Code</div>
 
-            <div class="card">
-                <div class="center_image_container">
-                    <img th:src="@{images/qr.png}" class="rounded qr_code  "/>
-                </div>
-            </div>
+             <div class="card">
+                 <div class="center_image_container">
+                     <img th:src="@{images/qr.png}" class="rounded qr_code  "/>
+                 </div>
+             </div>-->
 
 
         </div>

@@ -35,7 +35,7 @@
                   </button>-->
                 <a type="button" class="btn  m-2" th:each="tag:${tags}"
                    th:href="@{/tags/{id}(id=${tag.id})}"
-                   th:classappend="${tag.id==tagID?'btn-danger':'btn-secondary'}">
+                   th:classappend="${tag.id==tagID?'btn-info':'btn-secondary'}">
                     <span th:text="${tag.name}">Programming</span> <span class="badge badge-light"
                                                                          th:text="${tag.blogs.size()}">12</span>
                 </a>

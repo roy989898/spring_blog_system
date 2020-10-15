@@ -34,7 +34,7 @@
                 <!--                category element-->
                 <a type="button" class="btn  m-2" th:each="type:${types}"
                    th:href="@{/types/{id}(id=${type.id})}"
-                   th:classappend="${type.id==typeId?'btn-primary':'btn-secondary'}">
+                   th:classappend="${type.id==typeId?'btn-danger':'btn-secondary'}">
                     <span th:text="${type.name}">Programming</span> <span class="badge badge-light"
                                                                           th:text="${type.blogs.size()}">12</span>
                 </a>
