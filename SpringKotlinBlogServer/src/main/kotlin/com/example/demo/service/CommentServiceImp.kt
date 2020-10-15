@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service
 @Service
 class CommentServiceImp(val commentRepository: CommentRepository) : CommentService {
     override fun addComment(comment: Comment): Comment {
+        comment.avatar = "/images/try2.jpg"
         return commentRepository.save(comment)
     }
 
