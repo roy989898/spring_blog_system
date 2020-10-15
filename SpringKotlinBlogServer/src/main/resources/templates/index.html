@@ -126,7 +126,7 @@
                             Category
                         </div>
                         <div class="col-md text-md-right text-center">
-                            <a href="*"> more</a>
+                            <a href="*" th:href="@{/types}"> more</a>
                         </div>
                     </div>
 
@@ -162,16 +162,19 @@
                             Tags
                         </div>
                         <div class="col-md text-md-right text-center">
-                            <a href="*"> more</a>
+                            <a href="*" th:href="@{/tags}"> more</a>
                         </div>
                     </div>
 
 
                 </div>
                 <div style="display:flex;flex-wrap: wrap">
-                    <div class="badge badge-info d-flex align-items-center p-1 m-1" th:each="tag:${tags}">
-                        <th:block th:text="${tag.name}"></th:block>
-                        <span th:text="${tag.blogs.size()}">12</span></div>
+                    <a class="badge badge-info d-flex align-items-center p-1 m-1" th:each="tag:${tags}"
+                       th:href="@{/tags/{id}(id=${tag.id})}">
+
+                        <span th:text="${tag.name}"></span>
+                        <span th:text="${tag.blogs.size()}">12</span>
+                    </a>
 
                 </div>
 
@@ -186,9 +189,9 @@
                         <div class="col-md text-md-left text-center">
                             Suggestion
                         </div>
-                        <div class="col-md text-md-right text-center">
-                            <a href="*"> more</a>
-                        </div>
+                        <!--    <div class="col-md text-md-right text-center">
+                                <a href="*"> more</a>
+                            </div>-->
                     </div>
 
 
