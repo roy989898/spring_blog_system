@@ -14,6 +14,12 @@
 <div class="container pt-3">
 
     <form method="post" th:action="@{/admin/aboutMeAdmin}">
+
+        <div class="form-group">
+            <label for="nickNameInput">NickName</label>
+            <input type="text" class="form-control" id="nickNameInput" name="nickName" aria-describedby="emailHelp">
+        </div>
+
         <div class="form-group">
             <label for="emailInput">Email address</label>
             <input type="text" class="form-control" id="emailInput" name="email" aria-describedby="emailHelp">
@@ -33,6 +39,14 @@
         <div class="form-group">
             <label for="myFile">Picture</label>
             <input type="file" id="myFile" accept="image/x-png,image/gif,image/jpeg">
+        </div>
+
+
+        <img alt="" style="max-height: 100px; margin-top: 10px" id="iconDisplay">
+        <input type="hidden" class="form-control" placeholder="image address" name="hiddenIconInput">
+        <div class="form-group">
+            <label for="IconFile">Icon</label>
+            <input type="file" id="IconFile" accept="image/x-png,image/gif,image/jpeg">
         </div>
 
         <button type="submit" class="btn btn-primary" id="bt_save">Save</button>
@@ -59,13 +73,15 @@
         // Check for the File API support.
         if (window.File && window.FileReader && window.FileList && window.Blob) {
             // document.getElementById('myFile').addEventListener('change', handleFileSelect, false);
-            $('#myFile').on("change", handleFileSelect
+            $('#myFile').on("change", handleFileSelectImage
+            );
+            $('#IconFile').on("change", handleFileSelectIcon
             );
         } else {
             alert('The File APIs are not fully supported in this browser.');
         }
 
-        function handleFileSelect(evt) {
+        function handleFileSelect(evt, inputFieldSelector, displayFieldSelector) {
             var f = evt.target.files[0]; // FileList object
             var reader = new FileReader();
             // Closure to capture the file information.
@@ -75,18 +91,26 @@
                     //Converting Binary Data to base 64
                     var base64String = window.btoa(binaryData);
 
-                    let hiddenPictureInput = $('[name ="hiddenPictureInput"]')
+                    let hiddenPictureInput = $(inputFieldSelector)
                     hiddenPictureInput.val(base64String)
                     //showing file converted to base64
                     /*      document.getElementById('base64').value = base64String;*/
 
                     console.log(base64String)
-                    $("#imageDisplay").attr('src', "data:image/jpeg;base64," + base64String)
+                    $(displayFieldSelector).attr('src', "data:image/jpeg;base64," + base64String)
                     // alert('File converted to base64 successfuly!\nCheck in Textarea');
                 };
             })(f);
             // Read in the image file as a data URL.
             reader.readAsBinaryString(f);
+        }
+
+        function handleFileSelectImage(evt) {
+            handleFileSelect(evt, '[name ="hiddenPictureInput"]', "#imageDisplay")
+        }
+
+        function handleFileSelectIcon(evt) {
+            handleFileSelect(evt, '[name ="hiddenIconInput"]', "#iconDisplay")
         }
 
     })
