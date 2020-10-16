@@ -85,8 +85,10 @@
             <div class="dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown"
                  data-display="static" aria-haspopup="true" aria-expanded="false">
                 <img src="https://onaliternote.files.wordpress.com/2016/11/wp-1480230666843.jpg"
-                     class="small_img_icon_rounded m_inline_block">
-                name
+                     class="small_img_icon_rounded m_inline_block" th:src="'data:image/jpeg;base64,'+${user?.picture}">
+
+                <th:block th:text="${user?.nickname}"></th:block>
+
             </div>
             <div class="dropdown-menu dropdown-menu-sm-right" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" th:href="@{/admin/logout}">Logout</a>

@@ -4,6 +4,7 @@ import com.example.demo.getSessionUser
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Component
 import org.springframework.web.servlet.HandlerInterceptor
+import org.springframework.web.servlet.ModelAndView
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 
@@ -18,5 +19,11 @@ class LoginInterceptor : HandlerInterceptor {
         } else
 
             super.preHandle(request, response, handler)
+    }
+
+    override fun postHandle(request: HttpServletRequest, response: HttpServletResponse, handler: Any, modelAndView: ModelAndView?) {
+        val userInSession = request.session.getSessionUser()
+        modelAndView?.addObject("user", userInSession)
+        super.postHandle(request, response, handler, modelAndView)
     }
 }
