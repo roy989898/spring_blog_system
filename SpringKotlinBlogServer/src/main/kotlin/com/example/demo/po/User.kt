@@ -32,4 +32,12 @@ data class User(
         @OneToMany(mappedBy = "user", cascade = [CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE, CascadeType.REFRESH])
         var blogs: List<Blog>
 
-)
+) {
+    fun copyRightString(): String {
+        val startYear = 2019
+        val currentYear = Calendar.getInstance().get(Calendar.YEAR)
+        val cr = "© $startYear-$currentYear $nickname All Rights Reserved"
+        return cr
+
+    }
+}

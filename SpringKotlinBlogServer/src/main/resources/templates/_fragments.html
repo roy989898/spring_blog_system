@@ -191,9 +191,11 @@
             </h5>
 
 
-            <div class="text-center"><a href="*" class="footer_detail_text">User Story 1</a></div>
-            <div class="text-center"><a href="*" class="footer_detail_text">User Story 1</a></div>
-            <div class="text-center"><a href="*" class="footer_detail_text">User Story 1</a></div>
+            <a class="text-center"><a href="*" class="footer_detail_text" th:each="blog:${blogs}"
+                                      th:text="${blog.title}" th:href="@{/blog/{id}(id=${blog.id})}">User Story
+                1</a></a>
+            <!--   <div class="text-center"><a href="*" class="footer_detail_text">User Story 1</a></div>
+               <div class="text-center"><a href="*" class="footer_detail_text">User Story 1</a></div>-->
 
         </div>
         <div class="col-md-2  ">
@@ -202,14 +204,18 @@
             </h5>
 
 
-            <div class="text-center"><a href="*" class="footer_detail_text">23456788</a></div>
-            <div class="text-center"><a href="*" class="footer_detail_text">erwer@gmail.com</a></div>
+            <div class="text-center">
+                <div href="*" class="footer_detail_text" th:text="${user?.phone}">23456788</div>
+            </div>
+            <div class="text-center">
+                <div href="*" class="footer_detail_text" th:text="${user?.email}">erwer@gmail.com</div>
+            </div>
         </div>
         <div class="col-md-8  ">
-            <h5 class="text-center">
+            <h5 class="text-center" th:text="${user?.nickname}">
                 My Name
             </h5>
-            <div class="text-center footer_detail_text">
+            <div class="text-center footer_detail_text" th:text="${user?.aboutMe}">
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
                 massa. Cum sociis natoque penatibus et
             </div>
@@ -219,7 +225,8 @@
     </div>
 
 
-    <div class="text-center mt-3">
+    <div class="text-center mt-3" th:text="${user?.copyRightString()
+    }">
         © 2005-2011 John Doe All Rights Reserved
     </div>
 </footer>

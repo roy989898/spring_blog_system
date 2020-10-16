@@ -17,6 +17,7 @@ interface BlogService {
     fun listBlog(key: String, pageable: Pageable): Page<Blog>
     fun listBlog( sort:Sort): List<Blog>
     fun listBlogTop(size: Int): List<Blog>
+    fun listNewestBlogTop(size: Int): List<Blog>
     fun saveBlog(blog: Blog): Blog
 
     fun updateBlog(id: Long, blog: Blog): Blog

@@ -68,6 +68,13 @@ class BlogServiceImp(val blogRepository: BlogRepository) : BlogService {
         return blogRepository.findAll(pb).content
     }
 
+    override fun listNewestBlogTop(size: Int): List<Blog> {
+        val usedPageNUm = 0
+        val sort = Sort.by(Sort.Direction.DESC, "createTime")
+        val pb = PageRequest.of(usedPageNUm, size, sort)
+        return blogRepository.findAll(pb).content
+    }
+
     @Transactional
     override fun saveBlog(blog: Blog): Blog {
         return blogRepository.save(blog)
