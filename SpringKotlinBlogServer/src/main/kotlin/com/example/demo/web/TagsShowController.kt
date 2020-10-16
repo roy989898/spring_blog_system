@@ -1,7 +1,6 @@
 package com.example.demo.web
 
 import com.example.demo.po.Tag
-import com.example.demo.po.Type
 import com.example.demo.service.TagService
 import com.example.demo.unwrap
 import org.springframework.stereotype.Controller
@@ -14,7 +13,7 @@ class TagsShowController(val tagService: TagService) {
 
     @GetMapping("/tags", "/tags/{tagID}")
     fun tags(@PathVariable tagID: Long?, model: Model): String {
-        val tags = tagService.getTag()
+        val tags = tagService.listTag()
         var tag: Tag? = null
         var usedTagId: Long? = null
         if (tagID != null) {

@@ -8,14 +8,15 @@
 <body>
 
 <!-- Nav-->
-<div th:replace="_fragments.html::menu(4)"> </div>
+<div th:replace="_fragments.html::menu(4)"></div>
 <!-- contect-->
 <div class="container pt-3">
 
     <div class="row">
         <div class="col-md-8  ">
             <div class="card p-3">
-                <img src="../static/images/example.jpg" th:src="@{/images/example.jpg}" class="img-fluid rounded">
+                <img src="../static/images/example.jpg" th:src="'data:image/jpeg;base64,'+${user?.picture}"
+                     class="img-fluid rounded">
             </div>
 
 
@@ -35,7 +36,7 @@
 
                 </div>
 
-                <div class="card-body">
+                <div class="card-body" th:text="${user?.aboutMe}">
                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
                     massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec
                     quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
@@ -60,9 +61,11 @@
 
 
                 <div style="display:flex;flex-wrap: wrap">
-                    <div class="btn btn-success btn-sm p-1 m-1">category</div>
-                    <div class="btn btn-success btn-sm p-1 m-1">category</div>
-                    <div class="btn btn-success btn-sm p-1 m-1">category</div>
+                    <div class="btn btn-success btn-sm p-1 m-1" th:each="type:${types}" th:text="${type.name}">
+                        category
+                    </div>
+                    <!--     <div class="btn btn-success btn-sm p-1 m-1">category</div>
+                         <div class="btn btn-success btn-sm p-1 m-1">category</div>-->
                 </div>
 
 
@@ -75,19 +78,19 @@
                         <div class="col-md text-md-left text-center">
                             Tags
                         </div>
-                        <div class="col-md text-md-right text-center">
-                            <a href="*"> more</a>
-                        </div>
+                        <!--  <div class="col-md text-md-right text-center">
+                              <a href="*"> more</a>
+                          </div>-->
                     </div>
 
 
                 </div>
                 <div style="display:flex;flex-wrap: wrap">
-                    <div class="btn btn-danger btn-sm p-1 m-1">tag</div>
-                    <div class="btn btn-danger btn-sm p-1 m-1">tag</div>
-                    <div class="btn btn-danger btn-sm p-1 m-1">tag</div>
-                    <div class="btn btn-danger btn-sm p-1 m-1">tag</div>
-                    <div class="btn btn-danger btn-sm p-1 m-1">tag</div>
+                    <div class="btn btn-danger btn-sm p-1 m-1" th:each="tag:${tags}" th:text="${tag.name}">tag</div>
+                    <!-- <div class="btn btn-danger btn-sm p-1 m-1">tag</div>
+                     <div class="btn btn-danger btn-sm p-1 m-1">tag</div>
+                     <div class="btn btn-danger btn-sm p-1 m-1">tag</div>
+                     <div class="btn btn-danger btn-sm p-1 m-1">tag</div>-->
                 </div>
 
 

@@ -12,6 +12,6 @@ interface TagService {
     fun getTagsTop(size: Int): List<Tag>
     fun getTag(name: String): Optional<Tag>
     fun deleteTags(tags: List<Tag>)
-    fun getTag(): List<Tag>
+    fun listTag(): List<Tag>
 
 }

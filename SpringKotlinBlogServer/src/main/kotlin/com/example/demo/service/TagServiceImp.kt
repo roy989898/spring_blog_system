@@ -19,7 +19,7 @@ class TagServiceImp(private val tagRepository: TagRepository) : TagService {
         return tagRepository.findTagByNameEquals(name)
     }
 
-    override fun getTag(): List<Tag> {
+    override fun listTag(): List<Tag> {
         return tagRepository.findAll()
     }
 

@@ -19,6 +19,10 @@ class UserServiceImp(val userRepository: UserRepository) : UserService {
         return userRepository.findById(id)
     }
 
+    override fun listUser(): List<User> {
+        return userRepository.findAll()
+    }
+
     @Transactional
     override fun saveUser(user: User) {
         userRepository.save(user)

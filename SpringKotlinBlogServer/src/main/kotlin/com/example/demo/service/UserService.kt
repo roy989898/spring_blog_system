@@ -9,5 +9,7 @@ interface UserService {
 
     fun getUser(id: Long): Optional<User>
 
+    fun listUser(): List<User>
+
     fun saveUser(user: User)
 }
