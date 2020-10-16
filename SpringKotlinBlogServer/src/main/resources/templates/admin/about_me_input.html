@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+<head th:replace="_fragments.html::head(title='About me')">
+<body>
+
+<!-- Nav-->
+
+<div th:replace="_fragments.html::admin_nav(2)"></div>
+
+
+<!-- contect-->
+<div class="container pt-3">
+
+    <form>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="emailInput" name="email" aria-describedby="emailHelp">
+        </div>
+        <div class="form-group">
+            <label for="phoneInput">Phone</label>
+            <input type="email" class="form-control" id="phoneInput" name="phone" aria-describedby="emailHelp">
+
+        </div>
+
+        <div class="form-group">
+            <label for="aboutMe">AboutMe</label>
+            <textarea class="form-control" id="aboutMe" rows="3" name="aboutMe"></textarea>
+        </div>
+        <img alt="" style="max-height: 100px; margin-top: 10px" id="imageDisplay">
+        <input type="hidden" class="form-control" placeholder="image address" name="hiddenPictureInput">
+        <div class="form-group">
+            <label for="myFile">Picture</label>
+            <input type="file" id="myFile" accept="image/x-png,image/gif,image/jpeg">
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="bt_save">Save</button>
+    </form>
+
+
+</div>
+
+
+<!-- footer-->
+
+<!---->
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<div th:replace="_fragments.html::script"></div>
+<!--<script src="../../static/lib/editormd/editormd.js"></script>-->
+<script th:src="@{/lib/prism/prism.js}"></script>
+<script th:src="@{/lib/editormd/editormd.js}"></script>
+
+
+<script>
+
+    $(document).ready(function () {
+        // Check for the File API support.
+        if (window.File && window.FileReader && window.FileList && window.Blob) {
+            // document.getElementById('myFile').addEventListener('change', handleFileSelect, false);
+            $('#myFile').on("change", handleFileSelect
+            );
+        } else {
+            alert('The File APIs are not fully supported in this browser.');
+        }
+
+        function handleFileSelect(evt) {
+            var f = evt.target.files[0]; // FileList object
+            var reader = new FileReader();
+            // Closure to capture the file information.
+            reader.onload = (function (theFile) {
+                return function (e) {
+                    var binaryData = e.target.result;
+                    //Converting Binary Data to base 64
+                    var base64String = window.btoa(binaryData);
+
+                    let hiddenPictureInput = $('[name ="hiddenPictureInput"]')
+                    hiddenPictureInput.val(base64String)
+                    //showing file converted to base64
+                    /*      document.getElementById('base64').value = base64String;*/
+
+                    console.log(base64String)
+                    $("#imageDisplay").attr('src', "data:image/jpeg;base64," + base64String)
+                    // alert('File converted to base64 successfuly!\nCheck in Textarea');
+                };
+            })(f);
+            // Read in the image file as a data URL.
+            reader.readAsBinaryString(f);
+        }
+
+    })
+
+</script>
+
+</body>
+</html>
