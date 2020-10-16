@@ -4,6 +4,7 @@ import com.example.demo.dao.UserRepository
 import com.example.demo.po.User
 import com.example.demo.toMD5
 import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
 import java.util.*
 
 
@@ -16,5 +17,10 @@ class UserServiceImp(val userRepository: UserRepository) : UserService {
 
     override fun getUser(id: Long): Optional<User> {
         return userRepository.findById(id)
+    }
+
+    @Transactional
+    override fun saveUser(user: User) {
+        userRepository.save(user)
     }
 }

@@ -13,16 +13,16 @@ data class User(
         var username: String,
         var password: String,
         var email: String?,
-        val phone: String?,
+        var phone: String?,
         @Lob
         @Column(columnDefinition = "TEXT")
-        val aboutMe: String?,
+        var aboutMe: String?,
         @Lob
         @Column(columnDefinition = "TEXT")
         var avatar: String?,
         @Lob
         @Column(columnDefinition = "TEXT")
-        val picture: String?,
+        var picture: String?,
         var type: Int?,
         @Temporal(TemporalType.TIMESTAMP)
         var createTime: Date,

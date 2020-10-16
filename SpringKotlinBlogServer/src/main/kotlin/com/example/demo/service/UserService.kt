@@ -5,7 +5,9 @@ import org.springframework.data.jpa.repository.JpaRepository
 import java.util.*
 
 interface UserService {
-  fun checkUser(username:String,password:String): Optional<User>
+    fun checkUser(username: String, password: String): Optional<User>
 
-  fun getUser(id:Long): Optional<User>
+    fun getUser(id: Long): Optional<User>
+
+    fun saveUser(user: User)
 }
