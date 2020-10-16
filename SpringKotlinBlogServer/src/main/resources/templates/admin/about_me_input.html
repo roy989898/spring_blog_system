@@ -17,33 +17,39 @@
 
         <div class="form-group">
             <label for="nickNameInput">NickName</label>
-            <input type="text" class="form-control" id="nickNameInput" name="nickName" aria-describedby="emailHelp">
+            <input type="text" class="form-control" id="nickNameInput" name="nickName" th:value="${user.nickname}">
         </div>
 
         <div class="form-group">
             <label for="emailInput">Email address</label>
-            <input type="text" class="form-control" id="emailInput" name="email" aria-describedby="emailHelp">
+            <input type="text" class="form-control" id="emailInput" name="email" aria-describedby="emailHelp"
+                   th:value="${user.email}">
         </div>
         <div class="form-group">
             <label for="phoneInput">Phone</label>
-            <input type="text" class="form-control" id="phoneInput" name="phone" aria-describedby="emailHelp">
+            <input type="text" class="form-control" id="phoneInput" name="phone" aria-describedby="emailHelp"
+                   th:value="${user.phone}">
 
         </div>
 
         <div class="form-group">
             <label for="aboutMe">AboutMe</label>
-            <textarea class="form-control" id="aboutMe" rows="3" name="aboutMe"></textarea>
+            <textarea class="form-control" id="aboutMe" rows="3" name="aboutMe" th:text="${user.aboutMe}"></textarea>
         </div>
-        <img alt="" style="max-height: 100px; margin-top: 10px" id="imageDisplay">
-        <input type="hidden" class="form-control" placeholder="image address" name="hiddenPictureInput">
+        <img alt="" style="max-height: 100px; margin-top: 10px" id="imageDisplay"
+             th:src="'data:image/jpeg;base64,'+${user?.picture}">
+        <input type="hidden" class="form-control" placeholder="image address" name="hiddenPictureInput"
+               th:value="${user?.picture}">
         <div class="form-group">
             <label for="myFile">Picture</label>
             <input type="file" id="myFile" accept="image/x-png,image/gif,image/jpeg">
         </div>
 
 
-        <img alt="" style="max-height: 100px; margin-top: 10px" id="iconDisplay">
-        <input type="hidden" class="form-control" placeholder="image address" name="hiddenIconInput">
+        <img alt="" style="max-height: 100px; margin-top: 10px" id="iconDisplay"
+             th:src="'data:image/jpeg;base64,'+${user?.avatar}">
+        <input type="hidden" class="form-control" placeholder="image address" name="hiddenIconInput"
+               th:value="${user?.avatar}">
         <div class="form-group">
             <label for="IconFile">Icon</label>
             <input type="file" id="IconFile" accept="image/x-png,image/gif,image/jpeg">

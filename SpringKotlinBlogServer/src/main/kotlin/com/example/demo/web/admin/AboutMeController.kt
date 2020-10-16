@@ -7,6 +7,7 @@ import com.example.demo.saveSessionUser
 import com.example.demo.service.UserService
 import com.example.demo.unwrap
 import org.springframework.stereotype.Controller
+import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestMapping
@@ -17,9 +18,16 @@ import javax.servlet.http.HttpSession
 class AboutMeController(val userService: UserService) {
 
     @GetMapping("/aboutMeAdmin")
-    fun aboutMe(): String {
+    fun aboutMe(httpSession: HttpSession, model: Model): String {
+        val sessionUser = httpSession.getSessionUser()
+        val dbUser = userService.getUser(sessionUser?.id ?: -1).unwrap()
+        if (dbUser != null) {
+            model.addAttribute("user", dbUser)
+            return "admin/about_me_input"
+        } else {
+            throw NotFoundException("User not found")
+        }
 
-        return "admin/about_me_input"
 
     }
 
