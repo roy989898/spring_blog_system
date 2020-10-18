@@ -31,7 +31,11 @@ class SecSecurityConfig(private val passwordConfig: PasswordConfig, private val 
         http.csrf().disable().authorizeRequests()
                 .antMatchers("/admin/**").hasRole("USER")
                 ?.antMatchers("/**")?.permitAll()
-                ?.anyRequest()?.authenticated()?.and()?.httpBasic()
+                ?.anyRequest()?.authenticated()?.and()
+                ?.formLogin()
+                ?.loginPage("/admin")?.permitAll()
+                ?.loginProcessingUrl("/perform_login")
+                ?.defaultSuccessUrl("/types")
 
     }
 

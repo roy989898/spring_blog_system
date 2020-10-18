@@ -13,7 +13,7 @@
         <th:block th:text="${message}"></th:block>
     </div>
     <h1 class="text-center">Blog management System Login</h1>
-    <form method="post" th:action="@{/admin/login}">
+    <form method="post" action="/perform_login">
         <div class="form-group">
             <label for="usernameInput">Username</label>
             <input type="text" class="form-control " id="usernameInput" name="username">
