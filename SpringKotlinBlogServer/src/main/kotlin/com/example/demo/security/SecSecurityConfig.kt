@@ -13,10 +13,20 @@ class SecSecurityConfig : WebSecurityConfigurerAdapter() {
     @Throws(Exception::class)
     override fun configure(auth: AuthenticationManagerBuilder) {
         // authentication manager (see below)
+        auth.inMemoryAuthentication()
+                .withUser("user1").password(passwordEncoder().encode("user1Pass")).roles("USER")
+                .and()
+                .withUser("user2").password(passwordEncoder().encode("user2Pass")).roles("USER")
+
+
     }
 
-    @Throws(Exception::class)
     override fun configure(http: HttpSecurity) {
         // http builder configurations for authorize requests and form login (see below)
+        http.csrf().disable().authorizeRequests()
+                .antMatchers("/admin/**").hasRole("USER")
+                ?.antMatchers("/**")?.permitAll()
+                ?.anyRequest()?.authenticated()?.and()?.httpBasic()
+
     }
 }
