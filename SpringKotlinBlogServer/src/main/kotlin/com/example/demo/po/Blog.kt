@@ -63,15 +63,19 @@ data class Blog(
     fun contentToPlainText(): String {
         val parser: Parser = Parser.builder().build()
         val document = parser.parse(content)
-        val renderer = TextContentRenderer .builder().build()
-        return renderer.render(document) // "<p>This is <em>Sparta</em></p>\n"
+        val renderer = TextContentRenderer.builder().build()
+        var result = renderer.render(document)
+        if (result.length > 100) {
+            result.subSequence(0, 100)
+        }
+        return result // "<p>This is <em>Sparta</em></p>\n"
 
     }
 
     fun contentToHtml(): String {
         val parser: Parser = Parser.builder().build()
         val document = parser.parse(content)
-        val renderer = HtmlRenderer .builder().build()
+        val renderer = HtmlRenderer.builder().build()
         return renderer.render(document) // "<p>This is <em>Sparta</em></p>\n"
 
     }

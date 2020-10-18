@@ -21,7 +21,7 @@ class WebConfig(val staticResourceInterceptor: StaticResourceInterceptor, val lo
                 .addPathPatterns("/admin/**")
                 .excludePathPatterns("/admin/login", "/admin/logout", "/admin")
 
-        registry.addInterceptor(blogDisplayInterceptor)
-                .excludePathPatterns("/admin/**")
+//        registry.addInterceptor(blogDisplayInterceptor)
+//                .excludePathPatterns("/admin/**")
     }
 }

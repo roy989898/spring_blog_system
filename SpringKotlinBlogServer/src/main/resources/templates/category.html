@@ -55,7 +55,7 @@
                     <div th:classappend="${blog?.firstPicture.isEmpty()} ?  'col-md': 'col-md-8'">
                         <a class="font-weight-bold" th:text="${blog.title}"
                            th:href="@{/blog/{id}(id=${blog.id})}">I am a title</a>
-                        <div class="" th:text="${blog.contentToPlainText().substring(0,100)}">Lorem ipsum
+                        <div class="" th:text="${blog.contentToPlainText()}">Lorem ipsum
                             dolor
                             sit amet,
                             consectetuer
@@ -71,7 +71,8 @@
                                        th:if="${!blog?.firstPicture.isEmpty()}"
                                        th:src="'data:image/jpeg;base64,'+${blog?.firstPicture}">-->
                                 <div href="*" class="m_inline_block text-info pr-1"
-                                   th:text="${blog.user?.getNickname()}">name</div>
+                                     th:text="${blog.user?.getNickname()}">name
+                                </div>
                                 <div class="m_inline_block blog_inf_small_text pr-1"
                                      th:text="${blog.getFormatedUpdateTime()}">2020-09-25
                                 </div>

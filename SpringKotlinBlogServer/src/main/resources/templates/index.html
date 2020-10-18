@@ -41,7 +41,7 @@
                                 <div th:classappend="${blog?.firstPicture.isEmpty()} ?  'col-md': 'col-md-8'">
                                     <a class="font-weight-bold" th:text="${blog.title}"
                                        th:href="@{/blog/{id}(id=${blog.id})}">I am a title</a>
-                                    <div class="" th:text="${blog.contentToPlainText().substring(0,100)}">Lorem ipsum
+                                    <div class="" th:text="${blog.contentToPlainText()}">Lorem ipsum
                                         dolor
                                         sit amet,
                                         consectetuer
