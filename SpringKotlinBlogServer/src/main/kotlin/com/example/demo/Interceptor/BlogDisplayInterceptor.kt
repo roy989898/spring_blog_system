@@ -3,6 +3,7 @@ package com.example.demo.Interceptor
 import com.example.demo.service.BlogService
 import com.example.demo.service.UserService
 import org.slf4j.LoggerFactory
+import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.stereotype.Component
 import org.springframework.web.servlet.HandlerInterceptor
 import org.springframework.web.servlet.ModelAndView

@@ -35,7 +35,7 @@ class SecSecurityConfig(private val passwordConfig: PasswordConfig, private val 
                 ?.formLogin()
                 ?.loginPage("/admin")?.permitAll()
                 ?.loginProcessingUrl("/perform_login")
-                ?.defaultSuccessUrl("/types")
+                ?.defaultSuccessUrl("/admin/blogs")
 
     }
 

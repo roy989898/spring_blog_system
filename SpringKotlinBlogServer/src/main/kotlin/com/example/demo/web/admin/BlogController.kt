@@ -1,6 +1,7 @@
 package com.example.demo.web.admin
 
 import com.example.demo.NotFoundException
+import com.example.demo.currentUser
 import com.example.demo.form.BlogInputForm
 import com.example.demo.form.BlogSearchForm
 import com.example.demo.getSessionUser
@@ -14,6 +15,7 @@ import com.example.demo.unwrap
 import org.slf4j.LoggerFactory
 import org.springframework.data.domain.PageRequest
 import org.springframework.data.domain.Sort
+import org.springframework.security.core.Authentication
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.validation.BindingResult
@@ -54,7 +56,7 @@ class BlogController(val tagService: TagService, val blogService: BlogService, v
 
     //    @Transactional
     @PostMapping("/blogs")
-    fun blogInput(@Valid blogInputForm: BlogInputForm, bindingResult: BindingResult, redirectAttributes: RedirectAttributes, model: Model, httpSession: HttpSession): String {
+    fun blogInput(@Valid blogInputForm: BlogInputForm, bindingResult: BindingResult, redirectAttributes: RedirectAttributes, model: Model, httpSession: HttpSession, authentication: Authentication): String {
 
 
         return if (bindingResult.allErrors.size > 0) {
@@ -67,7 +69,7 @@ class BlogController(val tagService: TagService, val blogService: BlogService, v
             redirectAttributes.addFlashAttribute("errors", errors)
             "redirect:/admin/blogs/input"
         } else {
-            val userInSession = httpSession.getSessionUser()
+            val userInSession = authentication.currentUser()
             /*    val dbUser = userInSession?.id?.let {
                     return@let userService.getUser(it).unwrap()
                 }*/
@@ -139,11 +141,11 @@ class BlogController(val tagService: TagService, val blogService: BlogService, v
     }
 
     @GetMapping("/blogs/{blogId}/delete")
-    fun blogDelete(@PathVariable blogId: Long, model: Model, httpSession: HttpSession): String {
+    fun blogDelete(@PathVariable blogId: Long, model: Model, httpSession: HttpSession, authentication: Authentication): String {
 
         val blog = blogService.getBlog(blogId)
         blog?.let {
-            if (httpSession.getSessionUser()?.id == it.user?.id) {
+            if (authentication.currentUser()?.id == it.user?.id) {
                 blogService.deleteBlog(blogId)
             }
 

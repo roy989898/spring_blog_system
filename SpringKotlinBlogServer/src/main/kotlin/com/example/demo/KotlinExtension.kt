@@ -2,6 +2,7 @@ package com.example.demo
 
 import com.example.demo.po.User
 import com.example.demo.utility.MD5
+import org.springframework.security.core.Authentication
 import java.util.*
 import javax.servlet.http.HttpSession
 
@@ -18,6 +19,10 @@ fun HttpSession.saveSessionUser(user: User) {
 
 fun HttpSession.removeSessionUser() {
     this.removeAttribute("user")
+}
+
+fun Authentication.currentUser(): User? {
+    return this.principal as User?
 }
 
 fun String.toMD5(): String? {

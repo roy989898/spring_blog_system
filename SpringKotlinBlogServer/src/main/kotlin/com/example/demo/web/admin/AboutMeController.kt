@@ -1,11 +1,9 @@
 package com.example.demo.web.admin
 
-import com.example.demo.NotFoundException
+import com.example.demo.*
 import com.example.demo.form.AboutMeInputForm
-import com.example.demo.getSessionUser
-import com.example.demo.saveSessionUser
 import com.example.demo.service.UserService
-import com.example.demo.unwrap
+import org.springframework.security.core.Authentication
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
@@ -18,8 +16,8 @@ import javax.servlet.http.HttpSession
 class AboutMeController(val userService: UserService) {
 
     @GetMapping("/aboutMeAdmin")
-    fun aboutMe(httpSession: HttpSession, model: Model): String {
-        val sessionUser = httpSession.getSessionUser()
+    fun aboutMe(httpSession: HttpSession, model: Model,authentication: Authentication): String {
+        val sessionUser = authentication.currentUser()
         val dbUser = userService.getUser(sessionUser?.id ?: -1).unwrap()
         if (dbUser != null) {
             model.addAttribute("user", dbUser)
@@ -33,9 +31,9 @@ class AboutMeController(val userService: UserService) {
 
 
     @PostMapping("/aboutMeAdmin")
-    fun aboutMeInput(aboutMeInputForm: AboutMeInputForm, httpSession: HttpSession): String {
+    fun aboutMeInput(aboutMeInputForm: AboutMeInputForm, httpSession: HttpSession,authentication: Authentication): String {
 
-        val sessionUser = httpSession.getSessionUser()
+        val sessionUser = authentication.currentUser()
         val dbUser = userService.getUser(sessionUser?.id ?: -1).unwrap()
         if (dbUser != null) {
             val nickName = aboutMeInputForm.nickName
