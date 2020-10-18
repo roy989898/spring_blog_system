@@ -16,6 +16,7 @@ class BlogDisplayInterceptor(val userService: UserService, val blogService: Blog
 
 
     override fun postHandle(request: HttpServletRequest, response: HttpServletResponse, handler: Any, modelAndView: ModelAndView?) {
+       val url= request.requestURI
         val user = userService.listUser().run {
             if (this.isEmpty()) {
                 null
