@@ -19,6 +19,10 @@ class UserServiceImp(val userRepository: UserRepository) : UserService {
         return userRepository.findById(id)
     }
 
+    override fun getUser(name: String): Optional<User> {
+        return userRepository.findUserByUsername(name)
+    }
+
     override fun listUser(): List<User> {
         return userRepository.findAll()
     }

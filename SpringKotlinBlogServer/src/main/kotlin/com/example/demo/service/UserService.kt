@@ -8,6 +8,7 @@ interface UserService {
     fun checkUser(username: String, password: String): Optional<User>
 
     fun getUser(id: Long): Optional<User>
+    fun getUser(name: String): Optional<User>
 
     fun listUser(): List<User>
 
