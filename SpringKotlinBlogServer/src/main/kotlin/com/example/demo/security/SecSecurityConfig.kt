@@ -53,9 +53,9 @@ class SecSecurityConfig(private val passwordConfig: PasswordConfig, private val 
 
     }
 
-    @Bean
+    /*@Bean
     fun requestDataValueProcessor(): RequestDataValueProcessor {
         return CsrfRequestDataValueProcessor()
     }
-
+*/
 }
