@@ -13,7 +13,10 @@
         <th:block th:text="${message}"></th:block>
     </div>
     <h1 class="text-center">Blog management System Login</h1>
-    <form method="post" action="/perform_login">
+    <form method="post" action="/perform_login" th:action="@{/perform_login}">
+        <!--   <input type="hidden"
+                  th:name="${_csrf.parameterName}"
+                  th:value="${_csrf.token}"/>-->
         <div class="form-group">
             <label for="usernameInput">Username</label>
             <input type="text" class="form-control " id="usernameInput" name="username">
