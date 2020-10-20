@@ -1,26 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="_fragments.html::head(title='Index Page')">
-
-
-    <!--    <title>Index Page</title>-->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-
-<!-- Nav-->
-<div th:replace="_fragments.html::menu(2)"></div>
-<!-- contect-->
-<div class="container pt-3">
-
+<h1>Error</h1>
+<div>
     505
+    <div th:utext="'&lt;!--'" th:remove="tag"></div>
+    <div th:utext="'Failed Request URL : ' + ${url}" th:remove="tag">
+    </div>
+    <div th:utext="'Exception message : ' + ${exception.message}"
+         th:remove="tag"></div>
+    <ul th:remove="tag">
+        <li th:each="st : ${exception.stackTrace}" th:remove="tag"><span
+                th:utext="${st}" th:remove="tag"></span></li>
+    </ul>
+    <div th:utext="'--&gt;'" th:remove="tag"></div>
 </div>
-
-
-<!-- footer-->
-<div th:replace="_fragments.html::footer"></div>
-<!---->
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<div th:replace="_fragments.html::script"></div>
 </body>
 </html>
