@@ -121,6 +121,9 @@
             <div class="border-0" id="commentContainer">
                 <div class=" list-group-item" th:fragment="commentlist">
 
+                    <input id="csrf_vairable_holder" type="hidden"
+                           th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+
                     <th:block th:utext="${comments}"></th:block>
                     <!--                comment start-->
 
@@ -211,6 +214,9 @@
     $(document).ready(function () {
 
         let messageTextArea = $("#messageInput")
+        let csrf_vairable_holder = $("#csrf_vairable_holder")
+
+
         let nameInput = $("input[name='name']")
         let emailInput = $("input[name='email']")
         let parentCommentIdInput = $("[name='parentCommentId']")
@@ -258,13 +264,18 @@
             } else {
                 // data class CommentInputForm(val message: String?, val name: String?,val email: String?,val blogID:Long?)
                 //cal ajax
-                $("#commentContainer").load("/blog/comment", {
+                let csrfName = csrf_vairable_holder.attr('name')
+                let csrfValue = csrf_vairable_holder.attr('value')
+                console.log(csrfName + ' ' + csrfValue)
+                let data = {
                     message: message,
                     name: name,
                     email: email,
                     blogID: $("[name='blogID']").val(),
                     parentCommentId: parentCommentIdInput.val()
-                }, function () {
+                }
+                data[csrfName] = csrfValue
+                $("#commentContainer").load("/blog/comment", data, function () {
                     messageTextArea.val('')
                     nameInput.val('')
                     emailInput.val('')
