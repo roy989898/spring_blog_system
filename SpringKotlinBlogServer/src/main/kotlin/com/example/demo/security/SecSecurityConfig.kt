@@ -33,7 +33,10 @@ class SecSecurityConfig(private val passwordConfig: PasswordConfig, private val 
         http
                 .antMatcher("/api/**")
                 .csrf().disable()
-                .cors()
+                .cors().disable()
+                .authorizeRequests()
+                .antMatchers("/api/private").hasRole("USER")
+                .antMatchers("/**").permitAll()
 
                 .and()
 
