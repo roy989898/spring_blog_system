@@ -31,7 +31,14 @@ class SecSecurityConfig(private val passwordConfig: PasswordConfig, private val 
     override fun configure(http: HttpSecurity) {
         // http builder configurations for authorize requests and form login (see below)
         http
+                .antMatcher("/api/**")
+                .csrf().disable()
+                .cors()
+
+                .and()
+
 //                .csrf().disable()
+                .antMatcher("/**")
                 .authorizeRequests()
                 .antMatchers("/admin/**").hasRole("USER")
                 ?.antMatchers("/**")?.permitAll()
