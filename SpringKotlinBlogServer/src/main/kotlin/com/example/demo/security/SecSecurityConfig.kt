@@ -41,12 +41,13 @@ class SecSecurityConfig(private val passwordConfig: PasswordConfig, private val 
                 .antMatcher("/**")
                 .authorizeRequests()
                 .antMatchers("/admin/**").hasRole("USER")
-                ?.antMatchers("/**")?.permitAll()
-                ?.anyRequest()?.authenticated()?.and()
-                ?.formLogin()
-                ?.loginPage("/admin")?.permitAll()
-                ?.loginProcessingUrl("/perform_login")
-                ?.defaultSuccessUrl("/admin/blogs")
+                .antMatchers("/**").permitAll()
+                .anyRequest().authenticated()
+                .and()
+                .formLogin()
+                .loginPage("/admin").permitAll()
+                .loginProcessingUrl("/perform_login")
+                .defaultSuccessUrl("/admin/blogs")
 
     }
 
