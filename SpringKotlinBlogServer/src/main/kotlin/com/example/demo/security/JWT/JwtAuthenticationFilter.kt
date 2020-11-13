@@ -27,6 +27,7 @@ class JwtAuthenticationFilter(private val authenticationManagerI: Authentication
 
 
     override fun attemptAuthentication(request: HttpServletRequest, response: HttpServletResponse): Authentication {
+        val requestURI = request.requestURI
         val username = request.getParameter("username")
         val password = request.getParameter("password")
         val authenticationToken = UsernamePasswordAuthenticationToken(username, password)

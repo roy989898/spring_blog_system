@@ -22,6 +22,7 @@ class JwtAuthorizationFilter(val authenticationManagerI: AuthenticationManager) 
 
     override fun doFilterInternal(request: HttpServletRequest, response: HttpServletResponse, chain: FilterChain) {
 //        TODO
+        val requestURI = request.requestURI
         var authentication = getAuthentication(request);
         if (authentication == null) {
             chain.doFilter(request, response);

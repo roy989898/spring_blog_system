@@ -7,11 +7,10 @@ import org.springframework.context.annotation.Configuration
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
+import org.springframework.security.config.annotation.web.builders.WebSecurity
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter
 import org.springframework.security.config.http.SessionCreationPolicy
-import org.springframework.security.web.servlet.support.csrf.CsrfRequestDataValueProcessor
-import org.springframework.web.servlet.support.RequestDataValueProcessor
 
 
 @Configuration
@@ -30,6 +29,10 @@ class SecSecurityConfig(private val passwordConfig: PasswordConfig, private val 
 
     }
 
+    @Throws(Exception::class)
+    override fun configure(web: WebSecurity) {
+        web.ignoring().antMatchers("/css/**", "/images/**", "/lib/**")
+    }
 
     override fun configure(http: HttpSecurity) {
         // http builder configurations for authorize requests and form login (see below)
