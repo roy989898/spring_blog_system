@@ -15,6 +15,7 @@ class WebConfig(val staticResourceInterceptor: StaticResourceInterceptor, val lo
     override fun addInterceptors(registry: InterceptorRegistry) {
         super.addInterceptors(registry)
         registry.addInterceptor(staticResourceInterceptor)
+//                .excludePathPatterns("/api/**")
 //                .addPathPatterns("/static/lib/**")
 
         registry.addInterceptor(loginInterceptor)
@@ -22,6 +23,6 @@ class WebConfig(val staticResourceInterceptor: StaticResourceInterceptor, val lo
                 .excludePathPatterns("/admin/login", "/admin/logout", "/admin")
 
         registry.addInterceptor(blogDisplayInterceptor)
-                .excludePathPatterns("/admin/**", "/css/**", "/lib/**", "/images/**")
+                .excludePathPatterns("/admin/**", "/css/**", "/lib/**", "/images/**", "/api/**")
     }
 }
