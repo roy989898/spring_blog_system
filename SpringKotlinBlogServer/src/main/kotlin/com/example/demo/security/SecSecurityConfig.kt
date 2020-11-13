@@ -1,5 +1,7 @@
 package com.example.demo.security
 
+import com.example.demo.security.JWT.JwtAuthenticationFilter
+import com.example.demo.security.JWT.JwtAuthorizationFilter
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider
@@ -7,6 +9,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter
+import org.springframework.security.config.http.SessionCreationPolicy
 import org.springframework.security.web.servlet.support.csrf.CsrfRequestDataValueProcessor
 import org.springframework.web.servlet.support.RequestDataValueProcessor
 
@@ -37,9 +40,13 @@ class SecSecurityConfig(private val passwordConfig: PasswordConfig, private val 
                 .authorizeRequests()
                 .antMatchers("/api/private").hasRole("USER")
                 .antMatchers("/**").permitAll()
-
                 .and()
-
+                .antMatcher("/api/**")
+                .addFilter(JwtAuthenticationFilter(authenticationManager()))
+                .addFilter(JwtAuthorizationFilter(authenticationManager()))
+                .sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .and()
 //                .csrf().disable()
                 .antMatcher("/**")
                 .authorizeRequests()
