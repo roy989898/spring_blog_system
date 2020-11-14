@@ -1,5 +1,7 @@
 package com.example.demo.security
 
+import com.example.demo.errorHandle.RestAPICustomAccessDeniedHandler
+import com.example.demo.errorHandle.RestException
 import com.example.demo.security.JWT.JwtAuthenticationFilter
 import com.example.demo.security.JWT.JwtAuthorizationFilter
 import org.springframework.beans.factory.annotation.Autowired
@@ -13,7 +15,10 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter
 import org.springframework.security.config.http.SessionCreationPolicy
+import org.springframework.security.core.AuthenticationException
 import org.springframework.security.core.userdetails.UserDetailsService
+import javax.servlet.http.HttpServletRequest
+import javax.servlet.http.HttpServletResponse
 
 @EnableWebSecurity
 class MultiHttpSecurityConfig {
@@ -51,6 +56,13 @@ class MultiHttpSecurityConfig {
                     .addFilter(JwtAuthorizationFilter(authenticationManager()))
                     .sessionManagement()
                     .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+
+
+            http.antMatcher("/api/**")
+                    .exceptionHandling().authenticationEntryPoint { httpServletRequest: HttpServletRequest, httpServletResponse: HttpServletResponse, authenticationException: AuthenticationException ->
+                        throw RestException(authenticationException.message ?: "")
+
+                    }
         }
 
     }

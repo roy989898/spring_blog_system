@@ -4,7 +4,6 @@ import com.example.demo.errorHandle.NotFoundException
 import com.example.demo.currentUser
 import com.example.demo.form.BlogInputForm
 import com.example.demo.form.BlogSearchForm
-import com.example.demo.getSessionUser
 import com.example.demo.po.Tag
 import com.example.demo.po.Type
 import com.example.demo.service.BlogService
@@ -25,7 +24,6 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.servlet.mvc.support.RedirectAttributes
 import javax.servlet.http.HttpSession
-import javax.transaction.Transactional
 import javax.validation.Valid
 
 @Controller

@@ -1,7 +1,6 @@
 package com.example.demo.web
 
 import com.example.demo.errorHandle.NotFoundException
-import com.example.demo.form.BlogSearchForm
 import com.example.demo.form.CommentInputForm
 import com.example.demo.po.Comment
 import com.example.demo.service.BlogService
@@ -9,7 +8,6 @@ import com.example.demo.service.CommentService
 import com.example.demo.service.TagService
 import com.example.demo.service.TypeService
 import com.example.demo.utility.createCommentHtmlFullList
-import com.example.demo.utility.fakeComments
 
 import org.springframework.data.domain.PageRequest
 import org.springframework.data.domain.Sort

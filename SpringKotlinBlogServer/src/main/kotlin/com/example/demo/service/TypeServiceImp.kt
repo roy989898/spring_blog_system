@@ -4,7 +4,6 @@ import com.example.demo.errorHandle.NotFoundException
 import com.example.demo.dao.TypeRepository
 import com.example.demo.po.Type
 import com.example.demo.unwrap
-import org.springframework.beans.BeanUtils
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.PageRequest
 import org.springframework.data.domain.Pageable

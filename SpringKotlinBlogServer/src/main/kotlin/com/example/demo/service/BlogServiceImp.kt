@@ -6,7 +6,6 @@ import com.example.demo.form.BlogSearchForm
 import com.example.demo.po.Blog
 import com.example.demo.po.Type
 import com.example.demo.unwrap
-import org.springframework.beans.BeanUtils
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.PageRequest
 import org.springframework.data.domain.Pageable
