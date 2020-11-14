@@ -2,18 +2,26 @@ package com.example.demo.security
 
 import com.example.demo.security.JWT.JwtAuthenticationFilter
 import com.example.demo.security.JWT.JwtAuthorizationFilter
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.core.annotation.Order
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
 import org.springframework.security.config.annotation.web.builders.WebSecurity
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter
 import org.springframework.security.config.http.SessionCreationPolicy
+import org.springframework.security.core.userdetails.UserDetailsService
 
 @EnableWebSecurity
-class MultiHttpSecurityConfig(private val passwordConfig: PasswordConfig, private val applicationUserService: ApplicationUserService) {
+class MultiHttpSecurityConfig {
+    @Autowired
+    private lateinit var passwordConfig: PasswordConfig
+
+    @Autowired
+    private lateinit var applicationUserService: UserDetailsService
 
     @Bean
     fun daoAuthenticationProvide(): DaoAuthenticationProvider {
@@ -27,7 +35,7 @@ class MultiHttpSecurityConfig(private val passwordConfig: PasswordConfig, privat
 
     @Configuration
     @Order(1)
-    class ApiWebSecurityConfigurationAdapter : WebSecurityConfigurerAdapter() {
+    class ApiWebSecurityConfigurationAdapter : BasicSecurityConfigurerAdapter() {
 
         override fun configure(http: HttpSecurity) {
             http
@@ -50,7 +58,8 @@ class MultiHttpSecurityConfig(private val passwordConfig: PasswordConfig, privat
 
     @Configuration
     @Order(2)
-    class FormLoginWebSecurityConfigurerAdapter : WebSecurityConfigurerAdapter() {
+    class FormLoginWebSecurityConfigurerAdapter : BasicSecurityConfigurerAdapter() {
+
 
         override fun configure(http: HttpSecurity) {
             http
@@ -68,11 +77,29 @@ class MultiHttpSecurityConfig(private val passwordConfig: PasswordConfig, privat
 
     }
 
-    @Configuration
-    @Order(3)
-    class BasicSecurityConfigurerAdapter : WebSecurityConfigurerAdapter() {
+
+    abstract class BasicSecurityConfigurerAdapter : WebSecurityConfigurerAdapter() {
+        @Autowired
+        private lateinit var passwordConfig: PasswordConfig
+
+        @Autowired
+        private lateinit var daoAuthenticationProvide: DaoAuthenticationProvider
+
         override fun configure(web: WebSecurity) {
             web.ignoring().antMatchers("/css/**", "/images/**", "/lib/**")
+        }
+
+        @Throws(Exception::class)
+        override fun configure(auth: AuthenticationManagerBuilder) {
+            // authentication manager (see below)
+            /* auth.inMemoryAuthentication()
+                     .withUser("user1").password(passwordConfig.passwordEncoder().encode("user1Pass")).roles("USER")
+                     .and()
+                     .withUser("user2").password(passwordConfig.passwordEncoder().encode("user2Pass")).roles("USER")*/
+
+            auth.authenticationProvider(daoAuthenticationProvide)
+
+
         }
     }
 }

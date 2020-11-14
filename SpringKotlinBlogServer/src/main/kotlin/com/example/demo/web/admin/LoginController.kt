@@ -6,10 +6,7 @@ import com.example.demo.service.UserService
 import com.example.demo.toMD5
 import com.example.demo.unwrap
 import org.springframework.stereotype.Controller
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RequestParam
+import org.springframework.web.bind.annotation.*
 import org.springframework.web.servlet.mvc.support.RedirectAttributes
 import javax.servlet.http.HttpSession
 
@@ -17,6 +14,12 @@ import javax.servlet.http.HttpSession
 @RequestMapping("/admin")
 class LoginController(val userService: UserService) {
 
+    @GetMapping("/test")
+    @ResponseBody
+    fun testing(): String {
+        return "test message"
+
+    }
 
     @GetMapping
     fun loginPage(): String {
