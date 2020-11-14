@@ -1,6 +1,6 @@
 package com.example.demo.web
 
-import com.example.demo.NotFoundException
+import com.example.demo.errorHandle.NotFoundException
 import com.example.demo.form.BlogSearchForm
 import com.example.demo.form.CommentInputForm
 import com.example.demo.po.Comment

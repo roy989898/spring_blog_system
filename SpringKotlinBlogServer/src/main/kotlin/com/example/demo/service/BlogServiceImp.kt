@@ -1,6 +1,6 @@
 package com.example.demo.service
 
-import com.example.demo.NotFoundException
+import com.example.demo.errorHandle.NotFoundException
 import com.example.demo.dao.BlogRepository
 import com.example.demo.form.BlogSearchForm
 import com.example.demo.po.Blog

@@ -1,6 +1,6 @@
 package com.example.demo.service
 
-import com.example.demo.NotFoundException
+import com.example.demo.errorHandle.NotFoundException
 import com.example.demo.dao.TypeRepository
 import com.example.demo.po.Type
 import com.example.demo.unwrap

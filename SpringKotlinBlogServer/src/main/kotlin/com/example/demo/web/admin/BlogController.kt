@@ -1,6 +1,6 @@
 package com.example.demo.web.admin
 
-import com.example.demo.NotFoundException
+import com.example.demo.errorHandle.NotFoundException
 import com.example.demo.currentUser
 import com.example.demo.form.BlogInputForm
 import com.example.demo.form.BlogSearchForm

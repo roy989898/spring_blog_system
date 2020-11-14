@@ -1,6 +1,7 @@
 package com.example.demo.web.admin
 
 import com.example.demo.*
+import com.example.demo.errorHandle.NotFoundException
 import com.example.demo.form.AboutMeInputForm
 import com.example.demo.service.UserService
 import org.springframework.security.core.Authentication

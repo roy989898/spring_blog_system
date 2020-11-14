@@ -1,6 +1,5 @@
-package com.example.demo.web
+package com.example.demo.errorHandle
 
-import com.example.demo.NotFoundException
 import org.slf4j.LoggerFactory
 import org.springframework.core.annotation.AnnotationUtils
 import org.springframework.ui.Model
