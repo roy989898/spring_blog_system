@@ -23,7 +23,7 @@ class JwtAuthorizationFilter(val authenticationManagerI: AuthenticationManager) 
     override fun doFilterInternal(request: HttpServletRequest, response: HttpServletResponse, chain: FilterChain) {
 //        TODO
         val requestURI = request.requestURI
-        var authentication = getAuthentication(request);
+        var authentication = getAuthentication(request,response);
         if (authentication == null) {
             chain.doFilter(request, response);
             return;
@@ -33,7 +33,7 @@ class JwtAuthorizationFilter(val authenticationManagerI: AuthenticationManager) 
         chain.doFilter(request, response)
     }
 
-    private fun getAuthentication(request: HttpServletRequest): UsernamePasswordAuthenticationToken? {
+    private fun getAuthentication(request: HttpServletRequest, response: HttpServletResponse): UsernamePasswordAuthenticationToken? {
         val token = request.getHeader(SecurityConstants.TOKEN_HEADER)
         if (!token.isNullOrEmpty() && token.startsWith(SecurityConstants.TOKEN_PREFIX)) {
             try {

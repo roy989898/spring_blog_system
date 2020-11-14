@@ -62,13 +62,16 @@ class MultiHttpSecurityConfig {
 
             http.antMatcher("/api/**")
                     .exceptionHandling().authenticationEntryPoint { httpServletRequest: HttpServletRequest, httpServletResponse: HttpServletResponse, authenticationException: AuthenticationException ->
-                        val gson = Gson()
-                        val json = gson.toJson(createRestError(authenticationException.message ?: ""))
-                        val out: PrintWriter = httpServletResponse.getWriter()
-                        httpServletResponse.contentType = "application/json"
-                        httpServletResponse.characterEncoding = "UTF-8"
-                        out.print(json)
-                        out.flush()
+                        /*      val gson = Gson()
+                              val json = gson.toJson(createRestError(authenticationException.message ?: ""))
+                              val out: PrintWriter = httpServletResponse.getWriter()
+                              httpServletResponse.contentType = "application/json"
+                              httpServletResponse.characterEncoding = "UTF-8"
+                              out.print(json)
+                              out.flush()*/
+
+                        createRestError(authenticationException.message
+                                ?: "").addErrorToResponseAJson(httpServletResponse)
 
                     }
         }
