@@ -1,9 +1,9 @@
 package com.example.demo.security
 
-import com.example.demo.errorHandle.RestAPICustomAccessDeniedHandler
-import com.example.demo.errorHandle.RestException
+import com.example.demo.errorHandle.createRestError
 import com.example.demo.security.JWT.JwtAuthenticationFilter
 import com.example.demo.security.JWT.JwtAuthorizationFilter
+import com.google.gson.Gson
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -17,8 +17,10 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy
 import org.springframework.security.core.AuthenticationException
 import org.springframework.security.core.userdetails.UserDetailsService
+import java.io.PrintWriter
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
+
 
 @EnableWebSecurity
 class MultiHttpSecurityConfig {
@@ -60,7 +62,13 @@ class MultiHttpSecurityConfig {
 
             http.antMatcher("/api/**")
                     .exceptionHandling().authenticationEntryPoint { httpServletRequest: HttpServletRequest, httpServletResponse: HttpServletResponse, authenticationException: AuthenticationException ->
-                        throw RestException(authenticationException.message ?: "")
+                        val gson = Gson()
+                        val json = gson.toJson(createRestError(authenticationException.message ?: ""))
+                        val out: PrintWriter = httpServletResponse.getWriter()
+                        httpServletResponse.contentType = "application/json"
+                        httpServletResponse.characterEncoding = "UTF-8"
+                        out.print(json)
+                        out.flush()
 
                     }
         }
