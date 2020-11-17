@@ -98,6 +98,8 @@ class IndexController(val blogService: BlogService, val tagService: TagService, 
     fun index2(): String {
 
 
+//        throw Exception("index2")
+
         return "timeline"
     }
 }
