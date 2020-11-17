@@ -1,3 +1,4 @@
+/*
 package com.example.demo.errorHandle
 
 import org.slf4j.LoggerFactory
@@ -19,13 +20,18 @@ class RestControllerExceptionHandler {
 
     private val LOGGER = LoggerFactory.getLogger(RestControllerExceptionHandler::class.java)
 
-    /*  @ExceptionHandler(value = [NotFoundException::class])
+    */
+/*  @ExceptionHandler(value = [NotFoundException::class])
       fun handleNotFoundException(request: HttpServletRequest, e: Exception, model: Model): ModelAndView {
           LOGGER.error("Request Url :${request.requestURI}, Exception: ${e.message}")
-          *//*  if (AnnotationUtils.findAnnotation(e.javaClass,
+          *//*
+*/
+/*  if (AnnotationUtils.findAnnotation(e.javaClass,
                           ResponseStatus::class.java) != null) {
               throw e
           }*//*
+*/
+/*
         val mav = ModelAndView();
         mav.addObject("url", request.requestURI)
         mav.addObject("exception", e)
@@ -34,7 +40,8 @@ class RestControllerExceptionHandler {
         mav.viewName = "error/error"
         return mav
 
-    }*/
+    }*//*
+
 
     @ExceptionHandler(value = [RestException::class])
     fun handleException(request: HttpServletRequest, e: RestException): RestErrorResponse {
@@ -45,4 +52,4 @@ class RestControllerExceptionHandler {
 
     }
 
-}
+}*/

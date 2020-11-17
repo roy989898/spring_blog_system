@@ -52,7 +52,7 @@ class JwtAuthenticationFilter(private val authenticationManagerI: Authentication
                 .setIssuer(SecurityConstants.TOKEN_ISSUER)
                 .setAudience(SecurityConstants.TOKEN_AUDIENCE)
                 .setSubject(user.username)
-                .setExpiration(Date(System.currentTimeMillis() + 100))
+                .setExpiration(Date(System.currentTimeMillis() + 864000000))
                 .claim("rol2", RolesContainer(rolesString))
                 .compact()
         response.addHeader(SecurityConstants.TOKEN_HEADER, SecurityConstants.TOKEN_PREFIX + token);
