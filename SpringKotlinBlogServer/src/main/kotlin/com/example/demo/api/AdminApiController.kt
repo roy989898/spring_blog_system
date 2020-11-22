@@ -214,4 +214,27 @@ class AdminApiController(private val blogService: BlogService, private val tagSe
     }
 
 
+    @PreAuthorize("hasRole('USER')")
+    @PostMapping("/tag")
+    fun addTag(@Valid tag: Tag, bindingResult: BindingResult, redirectAttributes: RedirectAttributes) {
+        val findTag = tagService.getTag(tag.name).unwrap()
+        if (findTag == null) {
+            if (bindingResult.allErrors.size > 0) {
+
+                val errorString = bindingResult.toRestErrorString()
+                throw RuntimeException(errorString)
+
+
+            } else {
+                val aType = Type(tag.id, tag.name, emptyList())
+                typeService.save(aType)
+
+
+            }
+        }
+
+ 
+    }
+
+
 }
