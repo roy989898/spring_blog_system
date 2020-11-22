@@ -3,13 +3,16 @@ package com.example.demo.api
 import com.example.demo.api.Response.GetBlogListResponse
 import com.example.demo.api.Response.RestBlogDetailResponse
 import com.example.demo.api.Response.RestTypeListResponse
+import com.example.demo.currentUser
 import com.example.demo.errorHandle.NotFoundException
 import com.example.demo.errorHandle.RestAPi.DefaultError
 import com.example.demo.errorHandle.RestErrorResponse
+import com.example.demo.form.AboutMeInputForm
 import com.example.demo.form.BlogInputForm
 import com.example.demo.form.BlogSearchForm
 import com.example.demo.po.Tag
 import com.example.demo.po.Type
+import com.example.demo.saveSessionUser
 import com.example.demo.service.BlogService
 import com.example.demo.service.TagService
 import com.example.demo.service.TypeService
@@ -21,6 +24,7 @@ import org.springframework.data.domain.Sort
 import org.springframework.http.HttpStatus
 import org.springframework.security.access.prepost.PreAuthorize
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
+import org.springframework.security.core.Authentication
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.transaction.annotation.Transactional
 import org.springframework.validation.BindingResult
@@ -28,6 +32,7 @@ import org.springframework.web.bind.annotation.*
 import org.springframework.web.context.request.WebRequest
 import org.springframework.web.servlet.mvc.support.RedirectAttributes
 import java.lang.RuntimeException
+import javax.servlet.http.HttpSession
 import javax.validation.Valid
 
 
@@ -248,6 +253,46 @@ class AdminApiController(private val blogService: BlogService, private val tagSe
             }
             blogService.removeBlogTagByBlogIds(ids, it.id)
             tagService.deleteTagBuId(id)
+        }
+
+
+    }
+
+    @PostMapping("/aboutMe")
+    fun aboutMeInput(aboutMeInputForm: AboutMeInputForm) {
+
+        val user = getUser()
+        val dbUser = userService.getUser(user.name).unwrap()
+        if (dbUser != null) {
+            val nickName = aboutMeInputForm.nickName
+            val email = aboutMeInputForm.email
+            val phone = aboutMeInputForm.phone
+            val aboutMe = aboutMeInputForm.aboutMe
+            val hiddenPictureInput = aboutMeInputForm.hiddenPictureInput
+            val hiddenIconInput = aboutMeInputForm.hiddenIconInput
+            nickName?.let {
+                dbUser.nickname = it
+            }
+            email?.let {
+                dbUser.email = it
+            }
+            phone?.let {
+                dbUser.phone = it
+            }
+            aboutMe?.let {
+                dbUser.aboutMe = it
+            }
+            hiddenPictureInput?.let {
+                dbUser.picture = it
+            }
+            hiddenIconInput?.let {
+                dbUser.avatar = it
+            }
+            userService.saveUser(dbUser)
+
+
+        } else {
+            throw NotFoundException("User not found")
         }
 
 
