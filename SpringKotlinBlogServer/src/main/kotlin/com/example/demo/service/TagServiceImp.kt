@@ -60,5 +60,10 @@ class TagServiceImp(private val tagRepository: TagRepository, private val blogRe
 
     }
 
+    @Transactional
+    override fun deleteTagBuId(id: Long) {
+        tagRepository.deleteById(id)
+    }
+
 
 }

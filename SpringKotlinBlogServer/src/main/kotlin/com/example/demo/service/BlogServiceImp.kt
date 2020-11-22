@@ -48,7 +48,7 @@ class BlogServiceImp(val blogRepository: BlogRepository) : BlogService {
         }, pageable)
     }
 
-    override fun listBlog(blogForm: BlogSearchForm,sort: Sort): List<Blog> {
+    override fun listBlog(blogForm: BlogSearchForm, sort: Sort): List<Blog> {
         return blogRepository.findAll(Specification { root: Root<Blog>, criteriaQuery: CriteriaQuery<*>, criteriaBuilder: CriteriaBuilder ->
             val predicates = mutableListOf<Predicate>()
 
@@ -68,7 +68,7 @@ class BlogServiceImp(val blogRepository: BlogRepository) : BlogService {
 //            TODO
             return@Specification null
 
-        },sort)
+        }, sort)
     }
 
     override fun listBlog(pageable: Pageable): Page<Blog> {
@@ -142,5 +142,17 @@ class BlogServiceImp(val blogRepository: BlogRepository) : BlogService {
 //
 
 
+    }
+
+    override fun removeBlogTagByBlogIds(ids: List<Long>, tagId: Long?) {
+        val selectedBlogs = blogRepository.findBlogsByIdIn(ids)
+        selectedBlogs.forEach { blog ->
+            val newTags = blog.tags.filter {
+                it.id != tagId
+            }
+            blog.tags = newTags.toMutableSet()
+        }
+
+        blogRepository.saveAll(selectedBlogs)
     }
 }

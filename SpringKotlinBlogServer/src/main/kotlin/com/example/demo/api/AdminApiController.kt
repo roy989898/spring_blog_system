@@ -22,13 +22,12 @@ import org.springframework.http.HttpStatus
 import org.springframework.security.access.prepost.PreAuthorize
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
 import org.springframework.security.core.context.SecurityContextHolder
+import org.springframework.transaction.annotation.Transactional
 import org.springframework.validation.BindingResult
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.context.request.WebRequest
-import org.springframework.web.server.ResponseStatusException
 import org.springframework.web.servlet.mvc.support.RedirectAttributes
 import java.lang.RuntimeException
-import java.util.stream.Collectors
 import javax.validation.Valid
 
 
@@ -189,6 +188,7 @@ class AdminApiController(private val blogService: BlogService, private val tagSe
 
     @PreAuthorize("hasRole('USER')")
     @GetMapping("/category/{id}/delete")
+    @Transactional
     fun deleteCategory(@PathVariable id: Long) {
         val types = typeService.getType(id)
         types?.let {
@@ -233,7 +233,24 @@ class AdminApiController(private val blogService: BlogService, private val tagSe
             }
         }
 
- 
+
+    }
+
+    @PreAuthorize("hasRole('USER')")
+    @GetMapping("/tag/{id}/delete")
+    @Transactional
+    fun deleteTag(@PathVariable id: Long) {
+        val tag = tagService.getTag(id).unwrap()
+        tag?.let {
+            val blogs = it.blogs
+            val ids = blogs.map {
+                return@map it.id ?: 0
+            }
+            blogService.removeBlogTagByBlogIds(ids, it.id)
+            tagService.deleteTagBuId(id)
+        }
+
+
     }
 
 

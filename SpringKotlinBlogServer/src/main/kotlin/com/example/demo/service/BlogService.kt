@@ -2,7 +2,6 @@ package com.example.demo.service
 
 import com.example.demo.form.BlogSearchForm
 import com.example.demo.po.Blog
-import com.example.demo.po.Type
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import org.springframework.data.domain.Sort
@@ -25,5 +24,6 @@ interface BlogService {
     fun deleteBlog(id: Long)
 
     fun removeBlogTypeByBlogIds(ids: List<Long>)
+    fun removeBlogTagByBlogIds(ids: List<Long>, tagId: Long?)
     fun listBlog(blogForm: BlogSearchForm, sort: Sort): List<Blog>
 }
