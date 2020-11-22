@@ -2,6 +2,7 @@ package com.example.demo.web.admin
 
 import com.example.demo.Interceptor.StaticResourceInterceptor
 import com.example.demo.po.Type
+import com.example.demo.service.BlogService
 import com.example.demo.service.TypeService
 import org.slf4j.LoggerFactory
 import org.springframework.data.domain.PageRequest
@@ -16,7 +17,7 @@ import javax.validation.Valid
 
 @Controller
 @RequestMapping("/admin")
-class TypeController(val typeService: TypeService) {
+class TypeController(val typeService: TypeService, val blogService: BlogService) {
     private val LOGGER = LoggerFactory.getLogger(TypeController::class.java)
 
     @GetMapping("/types", "/types/{page_num}")
@@ -49,6 +50,7 @@ class TypeController(val typeService: TypeService) {
 
     @GetMapping("/types/{id}/delete")
     fun delete(@PathVariable id: Long, model: Model): String {
+
         typeService.deleteType(id)
         return "redirect:/admin/types"
     }

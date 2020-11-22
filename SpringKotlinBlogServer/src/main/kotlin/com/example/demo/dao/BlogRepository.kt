@@ -20,4 +20,6 @@ interface BlogRepository : JpaRepository<Blog, Long>, JpaSpecificationExecutor<B
     @Modifying
     @Query("update Blog b set b.vies=b.vies+1 where b.id = ?1")
     fun updateBlogView(id: Long ):Int
+
+    fun findBlogsByIdIn(ids:List<Long>):List<Blog>
 }

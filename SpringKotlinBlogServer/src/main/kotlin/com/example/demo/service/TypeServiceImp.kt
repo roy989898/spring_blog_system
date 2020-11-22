@@ -13,7 +13,7 @@ import javax.transaction.Transactional
 
 
 @Service
-class TypeServiceImp(val typeRepository: TypeRepository) : TypeService {
+class TypeServiceImp(val typeRepository: TypeRepository, val blogService: BlogService) : TypeService {
 
     @Transactional
     override fun save(type: Type): Type {
@@ -60,6 +60,16 @@ class TypeServiceImp(val typeRepository: TypeRepository) : TypeService {
 
     @Transactional
     override fun deleteType(id: Long) {
+        val types = getType(id)
+        types?.let {
+            val blogs = it.blogs ?: emptyList()
+            val ids = blogs.map {
+                return@map it.id ?: 0
+            }
+            blogService.removeBlogTypeByBlogIds(ids)
+        }
+
+
         typeRepository.deleteById(id)
     }
 }

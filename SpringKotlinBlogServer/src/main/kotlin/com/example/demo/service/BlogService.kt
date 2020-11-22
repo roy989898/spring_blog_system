@@ -23,4 +23,6 @@ interface BlogService {
     fun updateBlog(id: Long, blog: Blog): Blog
     fun updateBlogVIew(id: Long): Int
     fun deleteBlog(id: Long)
+
+    fun removeBlogTypeByBlogIds(ids: List<Long>)
 }

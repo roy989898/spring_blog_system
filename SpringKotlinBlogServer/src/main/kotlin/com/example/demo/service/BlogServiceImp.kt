@@ -56,7 +56,7 @@ class BlogServiceImp(val blogRepository: BlogRepository) : BlogService {
         return blogRepository.searchBlog(key, pageable)
     }
 
-    override fun listBlog( sort: Sort): List<Blog> {
+    override fun listBlog(sort: Sort): List<Blog> {
         return blogRepository.findAll(sort)
     }
 
@@ -104,5 +104,20 @@ class BlogServiceImp(val blogRepository: BlogRepository) : BlogService {
     @Transactional
     override fun deleteBlog(id: Long) {
         blogRepository.deleteById(id)
+    }
+
+    @Transactional
+    override fun removeBlogTypeByBlogIds(ids: List<Long>) {
+//        find all the blog that have the tag
+        val selectedBlogs = blogRepository.findBlogsByIdIn(ids)
+        selectedBlogs.forEach {
+            it.type = null
+        }
+
+        blogRepository.saveAll(selectedBlogs)
+//        remove it from all the select blog
+//
+
+
     }
 }
