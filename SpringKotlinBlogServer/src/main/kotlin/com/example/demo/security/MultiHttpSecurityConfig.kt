@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration
 import org.springframework.core.annotation.Order
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
 import org.springframework.security.config.annotation.web.builders.WebSecurity
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
@@ -23,6 +24,10 @@ import javax.servlet.http.HttpServletResponse
 
 
 @EnableWebSecurity
+@EnableGlobalMethodSecurity(
+        prePostEnabled = true,
+        securedEnabled = true,
+        jsr250Enabled = true)
 class MultiHttpSecurityConfig {
     @Autowired
     private lateinit var passwordConfig: PasswordConfig
@@ -46,36 +51,23 @@ class MultiHttpSecurityConfig {
 
         override fun configure(http: HttpSecurity) {
             http
+//                    .antMatcher("/api/**")
+//                    .csrf().disable()
+//                    .cors().disable()
+//                    .authorizeRequests()
+//                    .antMatchers("/api/private").hasRole("USER")
+//                    .antMatchers("/**").permitAll()
+//                    .and()
                     .antMatcher("/api/**")
                     .csrf().disable()
                     .cors().disable()
-                    .authorizeRequests()
-                    .antMatchers("/api/private").hasRole("USER")
-                    .antMatchers("/**").permitAll()
-                    .and()
-                    .antMatcher("/api/**")
                     .addFilter(JwtAuthenticationFilter(authenticationManager()))
                     .addFilter(JwtAuthorizationFilter(authenticationManager()))
                     .sessionManagement()
                     .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 
 
-//            TODO
 
-//            http.antMatcher("/api/**")
-//                    .exceptionHandling().authenticationEntryPoint { httpServletRequest: HttpServletRequest, httpServletResponse: HttpServletResponse, authenticationException: AuthenticationException ->
-//                        /*      val gson = Gson()
-//                              val json = gson.toJson(createRestError(authenticationException.message ?: ""))
-//                              val out: PrintWriter = httpServletResponse.getWriter()
-//                              httpServletResponse.contentType = "application/json"
-//                              httpServletResponse.characterEncoding = "UTF-8"
-//                              out.print(json)
-//                              out.flush()*/
-//
-//                        createRestError(authenticationException.message
-//                                ?: "").addErrorToResponseAJson(httpServletResponse)
-//
-//                    }
         }
 
     }

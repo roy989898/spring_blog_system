@@ -1,5 +1,6 @@
 package com.example.demo.api
 
+import org.springframework.security.access.prepost.PreAuthorize
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.web.bind.annotation.GetMapping
@@ -15,10 +16,11 @@ class PrivateController {
 
 
     @GetMapping("/api/private")
+    @PreAuthorize("hasRole('USER')")
     fun private(): String {
 //        get current user information
-//        val up = SecurityContextHolder.getContext().authentication as UsernamePasswordAuthenticationToken
-        return "Hello from private API controller"
+        val up = SecurityContextHolder.getContext().authentication as UsernamePasswordAuthenticationToken
+        return "Hello from private API controller: " + up.name
     }
 
 
