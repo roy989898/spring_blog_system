@@ -203,4 +203,15 @@ class AdminApiController(private val blogService: BlogService, private val tagSe
     }
 
 
+    @PreAuthorize("hasRole('USER')")
+    @GetMapping("/tag")
+    fun getTags(@PathVariable id: Long): List<RestTypeListResponse> {
+        val result = tagService.listTag().map {
+            RestTypeListResponse(it.id, it.name)
+        }
+
+        return result
+    }
+
+
 }
