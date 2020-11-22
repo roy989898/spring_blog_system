@@ -187,4 +187,20 @@ class AdminApiController(private val blogService: BlogService, private val tagSe
     }
 
 
+    @PreAuthorize("hasRole('USER')")
+    @PostMapping("/category/{id}/delete")
+    fun deleteCategory(@PathVariable id: Long) {
+        val types = typeService.getType(id)
+        types?.let {
+            val blogs = it.blogs ?: emptyList()
+            val ids = blogs.map {
+                return@map it.id ?: 0
+            }
+            blogService.removeBlogTypeByBlogIds(ids)
+        }
+        typeService.deleteType(id)
+
+    }
+
+
 }
