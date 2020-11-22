@@ -25,4 +25,5 @@ interface BlogService {
     fun deleteBlog(id: Long)
 
     fun removeBlogTypeByBlogIds(ids: List<Long>)
+    fun listBlog(blogForm: BlogSearchForm, sort: Sort): List<Blog>
 }

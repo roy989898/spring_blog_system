@@ -48,6 +48,29 @@ class BlogServiceImp(val blogRepository: BlogRepository) : BlogService {
         }, pageable)
     }
 
+    override fun listBlog(blogForm: BlogSearchForm,sort: Sort): List<Blog> {
+        return blogRepository.findAll(Specification { root: Root<Blog>, criteriaQuery: CriteriaQuery<*>, criteriaBuilder: CriteriaBuilder ->
+            val predicates = mutableListOf<Predicate>()
+
+
+            if (!blogForm.title.isNullOrBlank()) {
+                predicates.add(criteriaBuilder.like(root.get<String>("title"), "%" + blogForm.title + "%"))
+            }
+
+            if (blogForm.typeId != null) {
+                predicates.add(criteriaBuilder.equal(root.get<Type?>("type").get<Long?>("id"), blogForm.typeId ?: 0))
+            }
+            if (blogForm.recommend == true) {
+                predicates.add(criteriaBuilder.equal(root.get<Boolean>("recommend"), blogForm.recommend))
+            }
+
+            criteriaQuery.where(*predicates.toTypedArray())
+//            TODO
+            return@Specification null
+
+        },sort)
+    }
+
     override fun listBlog(pageable: Pageable): Page<Blog> {
         return blogRepository.findAll(pageable)
     }

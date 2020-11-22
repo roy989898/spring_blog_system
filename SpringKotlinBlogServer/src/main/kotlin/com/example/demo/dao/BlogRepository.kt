@@ -22,4 +22,9 @@ interface BlogRepository : JpaRepository<Blog, Long>, JpaSpecificationExecutor<B
     fun updateBlogView(id: Long ):Int
 
     fun findBlogsByIdIn(ids:List<Long>):List<Blog>
+
+
+    fun findBlogsByTitleContaining(title: String):List<Blog>
+
+
 }
