@@ -1,6 +1,7 @@
 package com.example.demo.api
 
 import com.example.demo.api.Response.GetBlogListResponse
+import com.example.demo.api.Response.RestAboutMeResponse
 import com.example.demo.api.Response.RestBlogDetailResponse
 import com.example.demo.api.Response.RestTypeListResponse
 import com.example.demo.currentUser
@@ -258,6 +259,7 @@ class AdminApiController(private val blogService: BlogService, private val tagSe
 
     }
 
+    @PreAuthorize("hasRole('USER')")
     @PostMapping("/aboutMe")
     fun aboutMeInput(aboutMeInputForm: AboutMeInputForm) {
 
@@ -289,6 +291,25 @@ class AdminApiController(private val blogService: BlogService, private val tagSe
                 dbUser.avatar = it
             }
             userService.saveUser(dbUser)
+
+
+        } else {
+            throw NotFoundException("User not found")
+        }
+
+
+    }
+
+    @PreAuthorize("hasRole('USER')")
+    @GetMapping("/aboutMe")
+    fun aboutMe(): RestAboutMeResponse {
+
+        val user = getUser()
+        val dbUser = userService.getUser(user.name).unwrap()
+        if (dbUser != null) {
+
+
+            return RestAboutMeResponse(dbUser.nickname, dbUser.email, dbUser.phone, dbUser.aboutMe, dbUser.picture, dbUser.avatar)
 
 
         } else {
