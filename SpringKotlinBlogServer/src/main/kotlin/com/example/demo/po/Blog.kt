@@ -43,13 +43,13 @@ data class Blog(
         @ManyToOne(cascade = [])
         var user: User?,
         @ManyToMany(cascade = [CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH])
-        var tags: List<Tag>
+        var tags: MutableSet<Tag>
 ) {
 
 
     fun getTagsString(): String {
 
-        return tags.joinToString("_", transform = {
+        return tags.toList().joinToString("_", transform = {
             return@joinToString it.name
         })
     }

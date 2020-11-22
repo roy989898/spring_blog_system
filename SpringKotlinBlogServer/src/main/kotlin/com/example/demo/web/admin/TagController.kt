@@ -25,4 +25,12 @@ class TagController(private val tagService: TagService) {
     }
 
 
+    @GetMapping("/tagsDelete/{name}")
+    @ResponseBody
+    fun deleteTag(@PathVariable name: String) {
+        tagService.deleteTagByName(name)
+
+    }
+
+
 }

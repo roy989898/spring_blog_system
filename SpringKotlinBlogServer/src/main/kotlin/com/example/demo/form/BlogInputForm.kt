@@ -1,6 +1,7 @@
 package com.example.demo.form
 
 import com.example.demo.po.Blog
+import com.example.demo.po.Tag
 import java.util.*
 import javax.validation.constraints.NotBlank
 import javax.validation.constraints.NotNull
@@ -31,7 +32,7 @@ data class BlogInputForm(
     fun toBlog(): Blog {
         val newBlog = Blog(id, title ?: "", content ?: "", firstPicture, flag, 0, appreciation
                 ?: false, shareStatement ?: false, commentabled ?: false, published ?: false, recommend
-                ?: false, Date(), Date(), null, emptyList(), null, emptyList()
+                ?: false, Date(), Date(), null, emptyList(), null, emptyList<Tag>().toMutableSet()
 
         )
 

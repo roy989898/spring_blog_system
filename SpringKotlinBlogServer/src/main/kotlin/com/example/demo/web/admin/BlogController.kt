@@ -89,7 +89,7 @@ class BlogController(val tagService: TagService, val blogService: BlogService, v
                     return@map gotTag ?: it
                 }
 //
-                newBlog.tags = vTags
+                newBlog.tags = vTags.toMutableSet()
 
                 newBlog.user = userInSession
                 type?.let {
