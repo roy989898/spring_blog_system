@@ -2,6 +2,7 @@ package com.example.demo.api
 
 import com.example.demo.api.Response.GetBlogListResponse
 import com.example.demo.api.Response.RestBlogDetailResponse
+import com.example.demo.api.Response.RestTypeListResponse
 import com.example.demo.errorHandle.NotFoundException
 import com.example.demo.errorHandle.RestAPi.DefaultError
 import com.example.demo.errorHandle.RestErrorResponse
@@ -151,6 +152,17 @@ class AdminApiController(private val blogService: BlogService, private val tagSe
             GetBlogListResponse(it.id, it.title, it.recommend, it.published, it.updateTime)
         }
         return result
+    }
+
+    @PreAuthorize("hasRole('USER')")
+    @GetMapping("/category")
+    fun getCategory(): List<RestTypeListResponse> {
+//        val sort = Sort.by(Sort.Direction.DESC, "updateTime")
+        val types = typeService.listType().map {
+            RestTypeListResponse(it.id, it.name)
+        }
+
+        return types
     }
 
 
