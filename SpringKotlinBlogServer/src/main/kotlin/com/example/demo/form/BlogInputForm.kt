@@ -16,7 +16,7 @@ data class BlogInputForm(
         var firstPicture: String?,
         @field:NotNull(message = "please enter")
         @field:NotBlank(message = "please enter")
-        var flag: String,
+        var flag: String?,
         @field:NotNull
         var typeId: Long?,
         var recommend: Boolean?,
@@ -30,7 +30,7 @@ data class BlogInputForm(
 
 ) {
     fun toBlog(): Blog {
-        val newBlog = Blog(id, title ?: "", content ?: "", firstPicture, flag, 0, appreciation
+        val newBlog = Blog(id, title ?: "", content ?: "", firstPicture, flag ?: "", 0, appreciation
                 ?: false, shareStatement ?: false, commentabled ?: false, published ?: false, recommend
                 ?: false, Date(), Date(), null, emptyList(), null, emptyList<Tag>().toMutableSet()
 
