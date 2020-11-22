@@ -50,7 +50,14 @@ class TypeController(val typeService: TypeService, val blogService: BlogService)
 
     @GetMapping("/types/{id}/delete")
     fun delete(@PathVariable id: Long, model: Model): String {
-
+        val types = typeService.getType(id)
+        types?.let {
+            val blogs = it.blogs ?: emptyList()
+            val ids = blogs.map {
+                return@map it.id ?: 0
+            }
+            blogService.removeBlogTypeByBlogIds(ids)
+        }
         typeService.deleteType(id)
         return "redirect:/admin/types"
     }

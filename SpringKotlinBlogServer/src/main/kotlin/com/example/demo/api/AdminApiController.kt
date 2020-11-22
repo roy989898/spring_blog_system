@@ -9,10 +9,12 @@ import com.example.demo.errorHandle.RestErrorResponse
 import com.example.demo.form.BlogInputForm
 import com.example.demo.form.BlogSearchForm
 import com.example.demo.po.Tag
+import com.example.demo.po.Type
 import com.example.demo.service.BlogService
 import com.example.demo.service.TagService
 import com.example.demo.service.TypeService
 import com.example.demo.service.UserService
+import com.example.demo.toRestErrorString
 import com.example.demo.unwrap
 import org.slf4j.LoggerFactory
 import org.springframework.data.domain.Sort
@@ -24,6 +26,7 @@ import org.springframework.validation.BindingResult
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.context.request.WebRequest
 import org.springframework.web.server.ResponseStatusException
+import org.springframework.web.servlet.mvc.support.RedirectAttributes
 import java.lang.RuntimeException
 import java.util.stream.Collectors
 import javax.validation.Valid
@@ -85,13 +88,8 @@ class AdminApiController(private val blogService: BlogService, private val tagSe
     fun addBlog(@Valid blogInputForm: BlogInputForm, bindingResult: BindingResult) {
 
         if (bindingResult.allErrors.size > 0) {
-            val errorFields = bindingResult.fieldErrors
 
-            val errorList = errorFields.map {
-
-                return@map (it.field + ": " + it.defaultMessage ?: "")
-            }
-            val errorString = errorList.stream().collect(Collectors.joining(" \n "))
+            val errorString = bindingResult.toRestErrorString()
 
 
             throw RuntimeException(errorString)
@@ -163,6 +161,29 @@ class AdminApiController(private val blogService: BlogService, private val tagSe
         }
 
         return types
+    }
+
+
+    @PreAuthorize("hasRole('USER')")
+    @PostMapping("/category")
+    fun addSaveCategory(@Valid type: Type, bindingResult: BindingResult, redirectAttributes: RedirectAttributes) {
+//        val sort = Sort.by(Sort.Direction.DESC, "updateTime")
+        val findType = typeService.getTypeNyName(type.name)
+        if (findType == null) {
+            if (bindingResult.allErrors.size > 0) {
+
+                val errorString = bindingResult.toRestErrorString()
+                throw RuntimeException(errorString)
+
+
+            } else {
+                val aType = Type(type.id, type.name, emptyList())
+                typeService.save(aType)
+
+
+            }
+        }
+
     }
 
 
