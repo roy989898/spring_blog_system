@@ -1,6 +1,8 @@
 package com.example.demo.api
 
 import com.example.demo.api.Response.GetBlogListResponse
+import com.example.demo.api.Response.RestBlogDetailResponse
+import com.example.demo.errorHandle.NotFoundException
 import com.example.demo.errorHandle.RestAPi.DefaultError
 import com.example.demo.errorHandle.RestErrorResponse
 import com.example.demo.form.BlogInputForm
@@ -44,6 +46,38 @@ class AdminApiController(private val blogService: BlogService, private val tagSe
         return RestErrorResponse("", DefaultError(ex.message))
 
     }
+
+
+    @PreAuthorize("hasRole('USER')")
+    @GetMapping("/blogs/{id}")
+    fun getBlogDetail(@PathVariable id: Long): RestBlogDetailResponse {
+        val blog = blogService.getBlog(id)
+
+
+        if (blog != null) {
+            val comment = blog.comments.map {
+                it.removeAllRelation()
+                return@map it
+            }
+
+            val tag = blog.tags.map {
+                it.blogs = emptyList()
+                return@map it
+            }
+
+            return RestBlogDetailResponse(
+                    blog.id, blog.title, blog.content, blog.firstPicture, blog.flag, blog.vies, blog.appreciation, blog.shareStatement, blog.commentabled, blog.published, blog.recommend, blog.createTime, blog.updateTime,
+                    blog.type?.removeAllRelation(), comment, tag.toMutableSet()
+            )
+
+        } else {
+            throw NotFoundException("blog not found")
+        }
+
+
+        TODO()
+    }
+
 
     @PreAuthorize("hasRole('USER')")
     @PostMapping("/blogs")

@@ -13,4 +13,9 @@ data class Tag(
         @ManyToMany(mappedBy = "tags", fetch = FetchType.LAZY)
         var blogs: List<Blog>
 
-)
+) {
+
+    fun removeAllRelation() {
+        blogs = emptyList()
+    }
+}

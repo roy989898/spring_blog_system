@@ -20,4 +20,10 @@ data class Type(
 ) {
 
 
+        fun removeAllRelation(): Type {
+                this.blogs=null
+                return this
+        }
+
+
 }

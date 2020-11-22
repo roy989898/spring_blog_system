@@ -23,4 +23,9 @@ data class Comment(
         @ManyToOne()
         var parentComment: Comment?
 
-)
+){
+        fun removeAllRelation(){
+                this.blog=null
+                parentComment=null
+        }
+}
