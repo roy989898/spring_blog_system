@@ -9,6 +9,7 @@ import com.example.demo.service.TypeService
 import com.example.demo.service.UserService
 import org.springframework.data.domain.Sort
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
@@ -36,6 +37,12 @@ class ClientApiController(private val blogService: BlogService,
 
 
         return result
+
+    }
+
+    @GetMapping("/blogs/view/{id}")
+    fun getUpdateBlogView(@PathVariable id: Long) {
+        blogService.updateBlogVIew(id)
 
     }
 
