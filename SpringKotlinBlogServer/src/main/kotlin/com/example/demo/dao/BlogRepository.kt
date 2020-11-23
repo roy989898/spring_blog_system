@@ -27,4 +27,6 @@ interface BlogRepository : JpaRepository<Blog, Long>, JpaSpecificationExecutor<B
     fun findBlogsByTitleContaining(title: String):List<Blog>
 
 
+
+
 }

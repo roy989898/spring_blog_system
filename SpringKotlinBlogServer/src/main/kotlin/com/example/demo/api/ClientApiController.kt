@@ -91,6 +91,21 @@ class ClientApiController(private val blogService: BlogService,
         return types
     }
 
+    @GetMapping("/blogs/category/{id}")
+    fun getBlogByCategoryID(@PathVariable id: Long): List<RestClientBlogResponse> {
+        val result = typeService.getType(id)?.blogs?.map { blog ->
+            val newType = blog.type?.let {
+                RestTypeListResponse(it.id, it.name)
+            }
+            RestClientBlogResponse(blog.id ?: -1, blog.title, blog.contentToPlainText().getBrief(), blog.user?.nickname
+                    ?: "", blog.createTime, blog.vies, newType
+            )
+        } ?: emptyList()
+
+        return result
+
+    }
+
 
     @GetMapping("/tag")
     fun getTags(@PathVariable id: Long): List<RestTypeListResponse> {
