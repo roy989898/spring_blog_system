@@ -1,13 +1,16 @@
 package com.example.demo.api
 
+import com.example.demo.api.Response.RestBlogDetailResponse
 import com.example.demo.api.Response.RestClientBlogResponse
 import com.example.demo.api.Response.RestTypeListResponse
+import com.example.demo.errorHandle.NotFoundException
 import com.example.demo.getBrief
 import com.example.demo.service.BlogService
 import com.example.demo.service.TagService
 import com.example.demo.service.TypeService
 import com.example.demo.service.UserService
 import org.springframework.data.domain.Sort
+import org.springframework.security.access.prepost.PreAuthorize
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
@@ -37,6 +40,35 @@ class ClientApiController(private val blogService: BlogService,
 
 
         return result
+
+    }
+
+
+    @GetMapping("/blogs/{id}")
+    fun getBlogDetail(@PathVariable id: Long): RestBlogDetailResponse {
+        val blog = blogService.getBlog(id)
+
+
+        if (blog != null) {
+            val comment = blog.comments.map {
+                it.removeAllRelation()
+                return@map it
+            }
+
+            val tag = blog.tags.map {
+                it.blogs = emptyList()
+                return@map it
+            }
+
+            return RestBlogDetailResponse(
+                    blog.id, blog.title, blog.content, blog.firstPicture, blog.flag, blog.vies, blog.appreciation, blog.shareStatement, blog.commentabled, blog.published, blog.recommend, blog.createTime, blog.updateTime,
+                    blog.type?.removeAllRelation(), comment, tag.toMutableSet()
+            )
+
+        } else {
+            throw NotFoundException("blog not found")
+        }
+
 
     }
 
