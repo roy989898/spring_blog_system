@@ -1,9 +1,6 @@
 package com.example.demo.api
 
-import com.example.demo.api.Response.RestBlogDetailResponse
-import com.example.demo.api.Response.RestClientBlogResponse
-import com.example.demo.api.Response.RestClientCategoryResponse
-import com.example.demo.api.Response.RestTypeListResponse
+import com.example.demo.api.Response.*
 import com.example.demo.errorHandle.NotFoundException
 import com.example.demo.getBrief
 import com.example.demo.service.BlogService
@@ -153,5 +150,22 @@ class ClientApiController(private val blogService: BlogService,
 
     }
 
+    @GetMapping("/aboutMe")
+    fun aboutMe(): RestAboutMeResponse {
 
+
+        val users = userService.listUser()
+        if (users.isNotEmpty()) {
+            val dbUser = users[0]
+
+
+            return RestAboutMeResponse(dbUser.nickname, dbUser.email, dbUser.phone, dbUser.aboutMe, dbUser.picture, dbUser.avatar)
+
+
+        } else {
+            throw NotFoundException("User not found")
+        }
+
+
+    }
 }
