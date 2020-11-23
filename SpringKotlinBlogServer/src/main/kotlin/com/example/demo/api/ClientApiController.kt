@@ -2,6 +2,7 @@ package com.example.demo.api
 
 import com.example.demo.api.Response.RestBlogDetailResponse
 import com.example.demo.api.Response.RestClientBlogResponse
+import com.example.demo.api.Response.RestClientCategoryResponse
 import com.example.demo.api.Response.RestTypeListResponse
 import com.example.demo.errorHandle.NotFoundException
 import com.example.demo.getBrief
@@ -77,5 +78,18 @@ class ClientApiController(private val blogService: BlogService,
         blogService.updateBlogVIew(id)
 
     }
+
+
+    @GetMapping("/category")
+    fun getCategory(): List<RestClientCategoryResponse> {
+//        val sort = Sort.by(Sort.Direction.DESC, "updateTime")
+        val types = typeService.listType().map {
+            val blogNumber = (it.blogs ?: emptyList()).size
+            RestClientCategoryResponse(it.id, it.name, blogNumber)
+        }
+
+        return types
+    }
+
 
 }
