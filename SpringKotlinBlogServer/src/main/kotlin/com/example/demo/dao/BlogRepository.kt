@@ -16,6 +16,10 @@ interface BlogRepository : JpaRepository<Blog, Long>, JpaSpecificationExecutor<B
     @Query("select b from Blog b  where b.title like %?1% or b.content like %?1%")
     fun searchBlog(key: String, pageable: Pageable): Page<Blog>
 
+
+    @Query("select b from Blog b  where b.title like %?1% or b.type.name like %?1% ")
+    fun searchBlogByTitleAndType(key: String): List<Blog>
+
     @Transactional
     @Modifying
     @Query("update Blog b set b.vies=b.vies+1 where b.id = ?1")

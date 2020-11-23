@@ -168,4 +168,21 @@ class ClientApiController(private val blogService: BlogService,
 
 
     }
+
+
+    @GetMapping("/search/{key}")
+    fun search(@PathVariable key: String): List<RestClientBlogResponse> {
+
+        val blogs = blogService.listBlogSearchInTitleTagType(key).map { blog ->
+            val newType = blog.type?.let {
+                RestTypeListResponse(it.id, it.name)
+            }
+            RestClientBlogResponse(blog.id ?: -1, blog.title, blog.contentToPlainText().getBrief(), blog.user?.nickname
+                    ?: "", blog.createTime, blog.vies, newType
+            )
+        }
+
+        return blogs
+
+    }
 }

@@ -2,6 +2,7 @@ package com.example.demo.service
 
 import com.example.demo.errorHandle.NotFoundException
 import com.example.demo.dao.BlogRepository
+import com.example.demo.dao.TagRepository
 import com.example.demo.form.BlogSearchForm
 import com.example.demo.po.Blog
 import com.example.demo.po.Type
@@ -20,7 +21,7 @@ import javax.persistence.criteria.Root
 
 
 @Service
-class BlogServiceImp(val blogRepository: BlogRepository) : BlogService {
+class BlogServiceImp(val blogRepository: BlogRepository, val tagRepository: TagRepository) : BlogService {
     override fun getBlog(id: Long): Blog? {
         return blogRepository.findById(id).unwrap()
     }
@@ -69,6 +70,18 @@ class BlogServiceImp(val blogRepository: BlogRepository) : BlogService {
             return@Specification null
 
         }, sort)
+    }
+
+    override fun listBlogSearchInTitleTagType(key: String): List<Blog> {
+        val r1 = blogRepository.findBlogsByTitleContaining(key)
+        val r2 = tagRepository.findAllByNameContains(key).flatMap {
+
+            it.blogs
+        }
+        val fr = (r1 + r2).toHashSet().toList()
+
+        return fr
+
     }
 
     override fun listBlog(pageable: Pageable): Page<Blog> {
