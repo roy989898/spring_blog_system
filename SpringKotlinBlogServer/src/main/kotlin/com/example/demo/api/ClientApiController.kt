@@ -10,6 +10,7 @@ import com.example.demo.service.BlogService
 import com.example.demo.service.TagService
 import com.example.demo.service.TypeService
 import com.example.demo.service.UserService
+import com.example.demo.unwrap
 import org.springframework.data.domain.Sort
 import org.springframework.security.access.prepost.PreAuthorize
 import org.springframework.web.bind.annotation.GetMapping
@@ -106,6 +107,21 @@ class ClientApiController(private val blogService: BlogService,
 
     }
 
+    @GetMapping("/blogs/tag/{id}")
+    fun getBlogByTagID(@PathVariable id: Long): List<RestClientBlogResponse> {
+
+        val result = tagService.getTag(id).unwrap()?.blogs?.map { blog ->
+            val newType = blog.type?.let {
+                RestTypeListResponse(it.id, it.name)
+            }
+            RestClientBlogResponse(blog.id ?: -1, blog.title, blog.contentToPlainText().getBrief(), blog.user?.nickname
+                    ?: "", blog.createTime, blog.vies, newType
+            )
+        } ?: emptyList()
+
+        return result
+
+    }
 
     @GetMapping("/tag")
     fun getTags(@PathVariable id: Long): List<RestTypeListResponse> {
@@ -115,6 +131,7 @@ class ClientApiController(private val blogService: BlogService,
 
         return result
     }
+
 
     @GetMapping("/blogs/suggestion")
     fun getClientBlogsSuggestion(): List<RestClientBlogResponse> {
