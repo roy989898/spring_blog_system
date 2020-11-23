@@ -39,7 +39,7 @@ import javax.validation.Valid
 
 @RestController()
 @RequestMapping("/api/admin")
-class AdminApiController(private val blogService: BlogService, private val tagService: TagService, private val userService: UserService, private val typeService: TypeService) {
+class AdminApiController(private val blogService: BlogService, private val tagService: TagService, private val userService: UserService, private val typeService: TypeService): BaseRestController() {
 
     private val LOGGER = LoggerFactory.getLogger(AdminApiController::class.java)
 
@@ -49,12 +49,6 @@ class AdminApiController(private val blogService: BlogService, private val tagSe
         return up
     }
 
-    @ExceptionHandler(Exception::class)
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    fun handleError(ex: Exception, request: WebRequest): RestErrorResponse {
-        return RestErrorResponse("", DefaultError(ex.message))
-
-    }
 
 
     @PreAuthorize("hasRole('USER')")
