@@ -101,6 +101,25 @@ class ClientApiController(private val blogService: BlogService,
         return result
     }
 
+    @GetMapping("/blogs/suggestion")
+    fun getClientBlogsSuggestion(): List<RestClientBlogResponse> {
+
+        val allBlog = blogService.listBlogTop(7)
+
+
+        val result = allBlog.map { blog ->
+            val newType = blog.type?.let {
+                RestTypeListResponse(it.id, it.name)
+            }
+            RestClientBlogResponse(blog.id ?: -1, blog.title, blog.contentToPlainText().getBrief(), blog.user?.nickname
+                    ?: "", blog.createTime, blog.vies, newType
+            )
+        }
+
+
+        return result
+
+    }
 
 
 }
