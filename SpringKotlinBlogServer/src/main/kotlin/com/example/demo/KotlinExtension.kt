@@ -43,3 +43,12 @@ fun BindingResult.toRestErrorString(): String {
 
     return errorString
 }
+
+
+fun String.getBrief(): String {
+    return if (this.length <= 50) {
+        this
+    } else {
+        this.substring(50)
+    }
+}
